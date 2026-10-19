@@ -1,0 +1,11 @@
+countries:
+  - {name: Northland, region: CEE,         iso3: NTH, bis: NT, ccy: NTD, query: 'Northland economy'}
+  - {name: Eastovia,  region: Middle East, iso3: EST, bis: '', ccy: EVP, query: 'Eastovia economy'}
+  - {name: Southmark, region: Africa,      iso3: STH, bis: SM, ccy: SMR, query: 'Southmark economy'}
+imf_indicators:
+  NGDP_RPCH:   {label: Real GDP growth, unit: '%'}
+  PCPIPCH:     {label: Inflation, unit: '%'}
+  GGXWDG_NGDP: {label: Govt debt, unit: '% GDP'}
+  GGXCNL_NGDP: {label: Fiscal balance, unit: '% GDP'}
+  BCA_NGDPD:   {label: Current account, unit: '% GDP'}
+news: {max_items: 6, lookback_hours: 36}
