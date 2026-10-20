@@ -164,7 +164,7 @@ def main(argv: list[str] | None = None) -> int:
     use_llm = not args.no_llm and llm.available()
     if not args.no_llm and not use_llm:
         log("GITHUB_TOKEN not set: using extractive summaries")
-    client = llm.GitHubModels() if use_llm else None   # one client, so calls are paced
+    client = llm.ChatClient() if use_llm else None   # one client, so calls are paced
     run(run_date=args.date, raw=raw, cfg=cfg, use_llm=use_llm, out_dir=args.out,
         history_dir=args.data / "history", label=args.label, client=client)
     return 0
