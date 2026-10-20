@@ -77,7 +77,7 @@ def from_llm_json(obj: dict, country: Country, model: str) -> CountryBrief:
 
 def llm_brief(country, articles, data_lines, changes, *, client=None, model: str = DEFAULT_MODEL) -> CountryBrief:
     """client: any object with complete(system, user) -> str (llm.GitHubModels, or a fake in tests)."""
-    client = client or llm.GitHubModels(model=model)
+    client = client or llm.ChatClient(model=model)
     text = client.complete(SYSTEM, build_prompt(country, articles, data_lines, changes))
     return from_llm_json(extract_json(text), country, getattr(client, "model", model))
 
