@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write               # lets the job commit the new brief back to the repo
-  models: read                  # free GitHub Models access for the summaries (no API key)
+  
 
 concurrency:
   group: daily-brief
@@ -33,7 +33,7 @@ jobs:
 
       - name: Build brief
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # built in; nothing to set up
+                    LLM_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # free key from aistudio.google.com
         run: python -m ceemea_brief.pipeline --date "$(date -u +%F)"
 
       - name: Publish
