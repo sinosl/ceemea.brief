@@ -200,8 +200,9 @@ def test_github_models_client_sends_openai_format(monkeypatch):
 
     monkeypatch.setattr(llm.requests, "post", fake_post)
     monkeypatch.setattr(llm, "PAUSE_SECONDS", 0)
-    assert sent["url"].startswith("https://generativelanguage.googleapis.com/")
+    c = llm.ChatClient(token="t", model="gemini-3.8-flash")
     assert c.complete("sys", "user") == '{"ok": 1}'
-    assert sent["url"].startswith("https://models.github.ai/")
+    assert sent["url"].startswith("https://generativelanguage.googleapis.com/")
     assert sent["headers"]["Authorization"] == "Bearer t"
     assert [m["role"] for m in sent["body"]["messages"]] == ["system", "user"]
+
