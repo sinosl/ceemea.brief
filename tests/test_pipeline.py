@@ -200,7 +200,7 @@ def test_github_models_client_sends_openai_format(monkeypatch):
 
     monkeypatch.setattr(llm.requests, "post", fake_post)
     monkeypatch.setattr(llm, "PAUSE_SECONDS", 0)
-    c = llm.GitHubModels(token="t", model="openai/gpt-4.1-mini")
+    assert sent["url"].startswith("https://generativelanguage.googleapis.com/")
     assert c.complete("sys", "user") == '{"ok": 1}'
     assert sent["url"].startswith("https://models.github.ai/")
     assert sent["headers"]["Authorization"] == "Bearer t"
