@@ -1,8 +1,8 @@
 {
  "report": {
-  "run_date": "2026-10-30",
-  "generated": "2026-10-30T11:24:36.161811+00:00",
-  "previous": "2026-10-29",
+  "run_date": "2026-11-02",
+  "generated": "2026-11-02T13:29:35.278087+00:00",
+  "previous": "2026-10-30",
   "status": {
    "news": "10/10 feeds",
    "imf": "ok",
@@ -15,13 +15,17 @@
   ],
   "label": "",
   "method": "llm:gemini-3.8-flash",
-  "bullets": 37,
+  "bullets": 39,
   "flags": 0,
   "fallbacks": [
    "Poland",
    "Hungary",
+   "Romania",
    "Egypt",
-   "Saudi Arabia"
+   "Saudi Arabia",
+   "Nigeria",
+   "Kenya",
+   "South Africa"
   ]
  },
  "briefs": [
@@ -34,31 +38,31 @@
     "ccy": "PLN",
     "query": "Poland (economy OR budget OR NBP OR inflation OR bonds OR rating)"
    },
-   "headline": "Economic Calendar: Preliminary European GDP and German Inflation in Market Focus",
+   "headline": "Czechia to hike, Poland on hold facing S&P review",
    "bullets": [
     {
-     "text": "Economic Calendar: Preliminary European GDP and German Inflation in Market Focus (XTB.com).",
+     "text": "Czechia to hike, Poland on hold facing S&P review (FXStreet).",
      "sources": [
       "POL-1"
      ],
      "flags": []
     },
     {
-     "text": "Information on the upholding of the rating by the credit rating agency Moody\u2019s (TradingView).",
+     "text": "What is happening in Poland? Brussels instigator of a coup... they made the Prime Minister eliminate the President (bankingnews.gr).",
      "sources": [
       "POL-2"
      ],
      "flags": []
     },
     {
-     "text": "Inflation in Poland slows to 3.5% in October \u2014 RMF24 (UA.NEWS).",
+     "text": "\u00abEarthquake\u00bb in Poland: Germany behind the Tusk coup - Wants to send hordes of illegal migrants to Warsaw (bankingnews.gr).",
      "sources": [
       "POL-3"
      ],
      "flags": []
     },
     {
-     "text": "Deputies Adopt 2027 Budget Bill in First Reading (REFORM.news).",
+     "text": "How Poland\u2019s Political Standoff Risks Paralyzing the Central Bank (Bloomberg).",
      "sources": [
       "POL-4"
      ],
@@ -70,75 +74,75 @@
    "articles": [
     {
      "id": "POL-1",
-     "title": "Economic Calendar: Preliminary European GDP and German Inflation in Market Focus",
-     "publisher": "XTB.com",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ3F5X04zRGZwQU1FaUxLY0FCOGFiaWwxSVlIV05ZbVU2aENUOUpiWkNDdERTMzJZMFVPTFBqT05SSnNVcEF5eTVDbEhueHQ3bWtIQ2ZVZ3pOWUJVTUJKMU0wVjBzc095Z2YxVzlqR2RvVFF2N2RjbVVKYmg5bXhPYjlYMnNMc3ZDV2ppMVhnbkh1LUJfUnBLNFVtTnNrNWNOR2lJdGJ3NkFpbHVTMW9yMjZCUTluN25sMGc?oc=5",
-     "published": "2026-10-30T07:34:05+00:00",
-     "snippet": "Economic Calendar: Preliminary European GDP and German Inflation in Market Focus XTB.com",
-     "score": 4.89
+     "title": "Czechia to hike, Poland on hold facing S&P review",
+     "publisher": "FXStreet",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZTVoQ0laU0hsSVBXN0xVMkdrWlNhaE52bHBDUlJMZ1c0aUFsRmVObFBVZUN3Nm5tUW9xTnZ3U2ZydXh6ckY1X2tPMWtON05tUTFzSTJsWTlKWjExUjhxZXRnbTlEbE14RkFXc0J6NEVnRlhxQ2FvUzc0alhwWmxjRk1WY2FZRHZjQ1IybFFyUU1PTTFsZTZzeEV3?oc=5",
+     "published": "2026-11-02T06:28:30+00:00",
+     "snippet": "Czechia to hike, Poland on hold facing S&P review FXStreet",
+     "score": 4.81
     },
     {
      "id": "POL-2",
-     "title": "Information on the upholding of the rating by the credit rating agency Moody\u2019s",
-     "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQT2IxYjg1OWF0Rkc1WEdlVjJOV3M1UTBHWVFKb1pFdEJybnBuTy1ic0FlZEtrUFBwcEFBSnJCekpyQlFITzBiU19YWnZzakQ1Z1doaVloOGEtREhXdFlOVGZnb1dTXy12YWxoVEk1cDRWbV9LaFAwTUFscUlZdm1XaFJPTE9PMktjRVptZXQyQkFFcEV6VnpDRE01TndCbDFlVk13OEJaTVp4MlVmNXJDbnhvLUFZS1FTSjBhQlJLX1Etb2VIenBhamVkZDItTjNVRWg2a3NvZFAyLU1D?oc=5",
-     "published": "2026-10-29T16:40:00+00:00",
-     "snippet": "Information on the upholding of the rating by the credit rating agency Moody\u2019s TradingView",
-     "score": 2.98
+     "title": "What is happening in Poland? Brussels instigator of a coup... they made the Prime Minister eliminate the President",
+     "publisher": "bankingnews.gr",
+     "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPNkFPUXFFRF9rcHZrU3FhRHBYTER2SHM1V3NSYWs1c1JTQTZWYTZfRkRzbGVZZE9waS13NGFHQ0txLXVkbzhvdk9OT1cyMjlFcnJkNnI3ZmZiSmtSUFZydkRKTlFFRTJIS1hiakh4MEp2TjZMM20ySy1UYXN6a3UxNnRXSkhfR2RfdkN2cDdrV0d0bnBydVZycjdXb2xCU3ItQ0JOZWFPQnJGNl9XMlI5RUJvaHAtUGtuM3JVQ0JBNVVBeFBHa042VlVsMV83ZWJDanpieE1hM1dCVmFjOFR4eVVXVlpsQUdraGhiVXZhcVBwSDB5QXVqV3gwRGN6cU5kQU9Wb1IwT2F1dHJ2a0JmZlpR?oc=5",
+     "published": "2026-11-01T12:52:51+00:00",
+     "snippet": "What is happening in Poland? Brussels instigator of a coup... they made the Prime Minister eliminate the President bankingnews.gr",
+     "score": 4.32
     },
     {
      "id": "POL-3",
-     "title": "Inflation in Poland slows to 3.5% in October \u2014 RMF24",
-     "publisher": "UA.NEWS",
-     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNX29UUFY1cXlRV3RaVlp3SEVhbjk2R21XbVREaTBNa20zeXFCWE83WlpkQ0NZMnZYQmhyNjd4ZXFTYk01WmhOM1ZMaGNham9fSmVfUnkwbEJZalZWNHU5MzRSck5SRHF4M1BKdVN4U0poVm4yZTQwVHQ3QVYzTFZXVTNMNFNjS000Ny1iY0tQdw?oc=5",
-     "published": "2026-10-30T09:38:21+00:00",
-     "snippet": "Inflation in Poland slows to 3.5% in October \u2014 RMF24 UA.NEWS",
-     "score": 2.95
+     "title": "\u00abEarthquake\u00bb in Poland: Germany behind the Tusk coup - Wants to send hordes of illegal migrants to Warsaw",
+     "publisher": "bankingnews.gr",
+     "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQR18yWkh5b0RtMVVrZXBOZU0yVU9zVGVlVUowb2NGc25kb0JTX3ZjVDJ2WHctdktieFZzVjlNTnI2MlE3NkNfcmdzd1VBdU5ld2dzWEVnNC1pdFc5MmZHTzhpczBnREZkVTFKS25LY2tXRGloLVJ4QnN1czIyWUhvSmtuV1pQcUo0ZDMtUG9GQWtOT3owbjJnVmRPbXJQUTcxYV82NkRhcERmcWVDZmNRNnZqT0lvQm80YVZwLWdlNV9JcVdKZ0pLVEJsZThVQTNaal9ENmh1RkFuWXZTYk12WU0yS25BZllLcExXMTdxeW5GSVJocnhKR1hOdjE0S2lXZWNIZA?oc=5",
+     "published": "2026-11-01T20:56:30+00:00",
+     "snippet": "\u00abEarthquake\u00bb in Poland: Germany behind the Tusk coup - Wants to send hordes of illegal migrants to Warsaw bankingnews.gr",
+     "score": 3.54
     },
     {
      "id": "POL-4",
-     "title": "Deputies Adopt 2027 Budget Bill in First Reading",
-     "publisher": "REFORM.news",
-     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE8wc214b2ppWUxtbHljQ0IxMUN4RXkzcGJuOVFKTk51c3lZMzQ0MFpMVVhlMGhBbFpDYmFqX2E4ZGdpR281anBwVkxObEl2XzZoS3hVRmZwN2xGTms3QWF0SVJqbThvQTQ1UWo5aXFqSm9jQ1N1N0Nzalh4NVXSAYIBQVVfeXFMTTdsRkRTWm1TUWozbkZRbk0yWl9rc2pNVWRNSEptNlRxN0JmSkx0Ty1qTnkxQUpTMlFYbTFxZjREQ3RoMC1vbFVZTUJZT1lRNjVIV0dwTTk3VVEzbTJRakpLQmFEam5IaHdGQnlkOWU0U0ZBSEJUX2NjRi1JMGpKaEF2UQ?oc=5",
-     "published": "2026-10-30T08:50:55+00:00",
-     "snippet": "Deputies Adopt 2027 Budget Bill in First Reading REFORM.news",
-     "score": 2.93
+     "title": "How Poland\u2019s Political Standoff Risks Paralyzing the Central Bank",
+     "publisher": "Bloomberg",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbkNCOS1kVVVic3hfTW1Md3JyZzBBQW9fR0RxWmhmbkpBUmxKWjFfTjJHMk80dUtQd3JNSlhnYndEU3B0TWpCWUJyV3Azd01aaUNHbEZvNENqRGNqQVZCZDVxTEVWQ3FCd2JNUkpSczJQd3hqUXFfWTVpbnE5Ynh4T1RzXzVET0ZUQU9UeXJOaWlOY21KZ1ZqVUVkWWw5X2RZRHBTemFWa1pndFFTUDVGY0JXbDB0MGFJUmE4OVZVaVJrVGZxUUQ4?oc=5",
+     "published": "2026-11-02T06:31:07+00:00",
+     "snippet": "How Poland\u2019s Political Standoff Risks Paralyzing the Central Bank Bloomberg",
+     "score": 3.31
     },
     {
      "id": "POL-5",
-     "title": "Poland Inflation Eases in October",
-     "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVm9pQnoxZGlJWjlMVEV2QnhEb2ZIYm4tMlZvVWRWZkR0SHJMMWRnUmNKdm9RQ29weWZJZWZSZ05BWGx3Z3NDTmpZbkY5Szg1VUo3akQwRkRwU1RFNnM2UlNjbEp4RW5TUUpHS0gzakdVS2NNU3BhVlBGb2U1cFM4R3E0WGh5OXR6MmQ2VA?oc=5",
-     "published": "2026-10-30T08:41:36+00:00",
-     "snippet": "Poland Inflation Eases in October TradingView",
-     "score": 2.92
+     "title": "Lehendakaritza raises its budget for 2027 to 101.6 million, 0.7% more than the previous year",
+     "publisher": "Dem\u00f3crata",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUzhxSXM4UFp4UUd1aWp6eFdNYlE1NjlPT18wVExudEw1MmxJVGsxWXM5OHpBTS1MVXdDZHI3bDVSbDNJUXVNUjNaMDJfQWJyT2o5ZlBFRHJsb1NCMkczOU5TTktpUUhRNF9MZ2RPcWkyMWhFNkNVbVJJZkI1VU9SRWVUbmVPVjkxVEY5OXl5d2Ftc21ia09WN1kwZDMwel91TG9xeS1NUDZoLUdkOHJJcklXcU51bG1weWlwWllJVm5Tc2tNUWfSAcsBQVVfeXFMT2ljb3h3cFlKUGJVaXJ5M0hLTDVPdnV4QjJObGV3NTl0MmJlcFBvZ2xOZjZvMlpMazNEel9FbmZIZ2tWSk11eDJmcEVtNEE1MUJZbENRU0xFQS1XLW9COWd6ZW5wUnBxWGluNXMzeC1LVHNSRHk4akpyRUxSVjFQWlpNdmU1VkZOZmg1WFBKYTBqS0ZtMHZ1Nkt6RlpWTmdVcUNQX0pBQ1JLQ3RpNkJheXcwODNEN25RcEl1ZjY5NzZBWW11Y0thQnAzclU?oc=5",
+     "published": "2026-11-02T12:08:48+00:00",
+     "snippet": "Lehendakaritza raises its budget for 2027 to 101.6 million, 0.7% more than the previous year Dem\u00f3crata",
+     "score": 2.96
     },
     {
      "id": "POL-6",
-     "title": "Average Overdue Debt in Poland Rises to PLN 23,557, ERIF Data Show",
-     "publisher": "CEO Magazyn",
-     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE80ekJ0cE1PM181TFhZRlU3WjNGa29NX1puU09IckNReW42NnNCNmVPbDlxUnI3S081amk3MnRwVUsxZXp6Z3B0YnZoS0RwQktlajhxdXlHb2p5Y2tjZ3VPS3c0c21PR1RzRWU3U1QzUS0?oc=5",
-     "published": "2026-10-30T01:07:12+00:00",
-     "snippet": "Average Overdue Debt in Poland Rises to PLN 23,557, ERIF Data Show CEO Magazyn",
-     "score": 2.71
+     "title": "COMMENT: Poland's court war could split its central bank in two - The Peg",
+     "publisher": "IntelliNews",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd3lMcTFfWjdNNFRaTmtGNGpUblVpNUcyc2pqbUFESHJVMzZkaE1lRUhtNzJDWk91czh1VTVNaU91X0V5clUxSVdrYWlWNkZQSFpvNFdSVU44Wjg2U0pjUDFFUHpRVXBEcWdKN3RvdngzLWVDZ1VrelFJU0N2M1JfNzE5YWZidU5fcmUtMlBBN3NDWm1iWkNaNDhsX2tjUXNXcm1yOUdXbkpFdw?oc=5",
+     "published": "2026-11-01T17:32:50+00:00",
+     "snippet": "COMMENT: Poland's court war could split its central bank in two - The Peg IntelliNews",
+     "score": 2.95
     },
     {
      "id": "POL-7",
-     "title": "Poland\u2019s Surprise Inflation Cool-Down Put Pressure On CEE Currencies",
-     "publisher": "Finimize",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTGltVmZpMjJfWTE5Vl9sYVdWeFowNUdrZk9MekxNV1RmX3lQQXNpVDZqRVdIT01NbXJDZFB3V2txNEphMFFyR0dDTDROSUUzOWZZc0sxaG5GRjZkS2d0TG5IRmFudXI4eEMwRDU1dTYwNTNuSFl6UmhCNTBGNVpueThuWHIwaWZJMkw4LXdkZWxXOTdvLVk4bWx5VHM?oc=5",
-     "published": "2026-10-29T23:47:10+00:00",
-     "snippet": "Poland\u2019s Surprise Inflation Cool-Down Put Pressure On CEE Currencies Finimize",
-     "score": 2.68
+     "title": "Polish Zloty: Inflation slowdown expected to push back tightening \u2013 Commerzbank",
+     "publisher": "www.tmgm.com",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZkN4U3JKQkhaMW1mQkM2T1J3ZnBDTHpIQjRHQnFQaXZmOVBqY09rNUMwR2ZrRm9PVmxpaGVLNldya0p0dlFmNU1DSUFoQVhJUlN0aDVCUi02NERpQWN4bVRNaVZOam80endvYk1jYm9PeW5sMlBXUVlOZFpXMTlKaHNMUkJ1Q2FGelQ4YVBtYV8tR2JESHNYdDcxTk4wU0xZVjRBbUREYnQ3UWI2Umw1d3dJMUxzbjJEN2ZUYnhWeTg4VjQwanRTc3NR?oc=5",
+     "published": "2026-11-02T10:45:13+00:00",
+     "snippet": "Polish Zloty: Inflation slowdown expected to push back tightening \u2013 Commerzbank www.tmgm.com",
+     "score": 2.92
     },
     {
      "id": "POL-8",
-     "title": "Ukraine plans to spend nearly 44% of its GDP on defense next year",
-     "publisher": "MILMAG",
-     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUmVQenJlVWdzcjBfZ24xdUVQMTQ0SlM0ZGlFYl9HMEpuUWNNeUVTaHA0YW00UnlPX0V1VTJpbUdPT19sZnlDSDlTQWVLcUZqb3UydlRRbHlseDExUTE1bnJIZExkRFVuUURPeEZpamxPa01pVnowSEZNOXl3Yi1OVUF6ZVZtNHdaR1ZhVGhFVQ?oc=5",
-     "published": "2026-10-29T23:25:37+00:00",
-     "snippet": "Ukraine plans to spend nearly 44% of its GDP on defense next year MILMAG",
-     "score": 2.67
+     "title": "Polish Zloty: Is lower inflation likely to delay tightening? \u2013 Commerzbank",
+     "publisher": "www.tmgm.com",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNM3VnOXk3MFMyOEpSQ1R2RmRGNGhDR3JsSDQyTWZqUmtrdk9QRjBMVkFHQlBNLU9TSk5hZVdoVWVfQUhkVW5ob1BmMVplZkpGTkI1anp2Y1NKM2VVUkpsTjV0YjJ3ejB2bTN0WWxCRFBrLUFTRUFxRm56WG9ULTRLTWEyLVlPeUpWU21fbE01cWtQdGtXWXQ1MnlJTy1TcE9KdXpsXzdxV2VXUkJoNHNGajM3b3V2MVZRVTBOc2VKUnVjYTZkQWpLSFVQRHA?oc=5",
+     "published": "2026-11-02T09:32:55+00:00",
+     "snippet": "Polish Zloty: Is lower inflation likely to delay tightening? \u2013 Commerzbank www.tmgm.com",
+     "score": 2.89
     }
    ],
    "macro": {
@@ -170,32 +174,56 @@
       "rate": 3.75,
       "change_bp": 0
      },
-     "fx": 3.937333,
+     "fx": 3.951165,
      "articles": [
-      "3e7237a380c2",
-      "3e7000ec0225",
-      "71caa6cca612",
-      "c23649ea071b",
-      "4b373ba569be",
-      "588e963c8a34",
-      "ffba54704203",
-      "4ea5c955015f",
-      "341b575d3d26",
-      "af420d6ad2b8",
-      "cf8a5652940b",
-      "610713fc931c",
-      "4b323bc4db73",
-      "a86420e45d1b",
-      "2d2dcf326cfd",
-      "6f3ec92796d2",
-      "6ea9cc0b6925",
-      "3e8f890bfc4e",
-      "ef6c0ad85ff6",
-      "6aa6418145cc",
-      "bc24f6f3bb4c",
-      "c24bc0818be9",
-      "0ed2e6d14a73",
-      "fe0a001f7492"
+      "9652f24b3100",
+      "7923fbbc15c4",
+      "928c713371b2",
+      "8d7173b6e518",
+      "36daabe22af6",
+      "81f7c1f4f1cf",
+      "ed1aa3afa453",
+      "432d231958a3",
+      "06fe7629e0e2",
+      "249ea471b9d9",
+      "3380f11c009b",
+      "ed5e6dcd068b",
+      "27a9d5aaff0c",
+      "957dea35aedb",
+      "effcf578d639",
+      "266449579050",
+      "060a51fecb80",
+      "2c8e43b9bf21",
+      "f943f2555c99",
+      "bba4100bad8c",
+      "ba7587305db4",
+      "1a70a0984119",
+      "2b2f8c2c26f2",
+      "eeb929278cf6",
+      "b5b660b015d5",
+      "1337da8efdd8",
+      "51bd4f7bf8e6",
+      "adb15a156661",
+      "3117c6fab641",
+      "b1f0dcae5a12",
+      "0537688b7a86",
+      "47ca46c89294",
+      "c8e0a24b76ca",
+      "35328da64f14",
+      "b1e281e09319",
+      "54afa683d71e",
+      "8f266e98a9d6",
+      "c591711205e1",
+      "e4c6afbe58a4",
+      "60e107ebe0db",
+      "3edd199f4398",
+      "8b6774f1922d",
+      "691835b03e01",
+      "e26c19766833",
+      "0d1338a1f6ea",
+      "378debc683b1",
+      "da552e40c5cf",
+      "51d3ecf052a9"
      ]
     },
     "lines": [
@@ -210,7 +238,7 @@
      "Current account 2026 (IMF WEO forecast): -1.9% of GDP",
      "Current account 2027 (IMF WEO forecast): -1.5% of GDP",
      "Policy rate (BIS, 2026-09): 3.75%",
-     "PLN per USD (open.er-api.com, Fri, 30 Oct 2026): 3.937"
+     "PLN per USD (open.er-api.com, Mon, 02 Nov 2026): 3.951"
     ]
    },
    "changes": [],
@@ -227,31 +255,31 @@
     "ccy": "HUF",
     "query": "Hungary (economy OR budget OR MNB OR forint OR bonds OR rating)"
    },
-   "headline": "Hungary's fiscal council approves crucial 2027 budget bill",
+   "headline": "Hungary's GDP growth stalls at 0.1% q/q in third quarter",
    "bullets": [
     {
-     "text": "Hungary's fiscal council approves crucial 2027 budget bill (TradingView).",
+     "text": "Hungary's GDP growth stalls at 0.1% q/q in third quarter (IntelliNews).",
      "sources": [
       "HUN-1"
      ],
      "flags": []
     },
     {
-     "text": "Hungary Sets 2030 Euro Readiness Goal in Growth and Deficit Plan (BBJ - Budapest Business Journal).",
+     "text": "US dollar to Hungarian forint forecast: Sideways consolidation likely as downside risk remains (Traders Union).",
      "sources": [
       "HUN-2"
      ],
      "flags": []
     },
     {
-     "text": "Hungary plans grants and loans covering up to 95% of home solar and heat pump upgrade costs (The Cool Down).",
+     "text": "Fuel prices could soar to terrifying levels in Hungary by the end of the year (Daily News Hungary).",
      "sources": [
       "HUN-3"
      ],
      "flags": []
     },
     {
-     "text": "Eurasia Group Sees Hungary on Track for Eurozone Membership despite Budget Pressures (Hungary Today).",
+     "text": "Hungary plans to increase funding for railway projects (RailFreight.com).",
      "sources": [
       "HUN-4"
      ],
@@ -263,75 +291,75 @@
    "articles": [
     {
      "id": "HUN-1",
-     "title": "Hungary's fiscal council approves crucial 2027 budget bill",
-     "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNQWhqSUhjUlkzTVRMV3FvZV9KbDZnbnRiRXlzdFAzbUVhS2txLXF3b0g3TjdfOVExTmpSaThRNTlmdzRXUHE1eVo5Wnp6U0QyMFJMU0FoUEwxeVMwak5yeG1Dd1hZS0VVWjhCaVFSME90X0cyV2xIQmUtZ1hLYkVvRDlSRUNkTzVvZnZManRmVkJLUXNqcnp0UFZjSzJXdU9hVmx2VWpzU0JsWHZnY1Bwb3JnRFVOVE9HTTN3ZWNKQjQ0cFppMzRz?oc=5",
-     "published": "2026-10-30T09:16:23+00:00",
-     "snippet": "Hungary's fiscal council approves crucial 2027 budget bill TradingView",
-     "score": 4.94
+     "title": "Hungary's GDP growth stalls at 0.1% q/q in third quarter",
+     "publisher": "IntelliNews",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRlVMYlZXeWcyNG85VEktZXNlZ19kUkVmR2VoV3VmczN0ZTNMTy0wNW1NNzV1bnBLZ1l0c0Ziamh4V1VHbUtSWlNxVEZxZk03ZTdSQ2NjdlJVNFZYM1hROHNFZ3FrQ1Y2ck9xRFJ5ZHZwZlNleVZiUllWVDVZdWd5ckdicWFPeXdMUlN0Q0RSeGVvS1pFNFpORy01bzlZYXpBZ0oyQlIzTld1QQ?oc=5",
+     "published": "2026-11-01T14:18:28+00:00",
+     "snippet": "Hungary's GDP growth stalls at 0.1% q/q in third quarter IntelliNews",
+     "score": 3.36
     },
     {
      "id": "HUN-2",
-     "title": "Hungary Sets 2030 Euro Readiness Goal in Growth and Deficit Plan",
-     "publisher": "BBJ - Budapest Business Journal",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNM19EcFpCcVlVcElrZkdnN0ZBLTg1X3V0OVB1S0pKWWIzbzNLSlRqWlBra013OTl6RXBmcE8zcmE2Z1hEN25GbldzaFJWMXcwOVdlTGpiSVVOajhhU1BlTm1HLTNDdG1nTTk5aDFyZzJORXZxVUU3dWlPRlRuLUFkU0JlTTJuakFyODBOVUhZSEpsQV9tblJFQ09VUEtCNmppLXlQYm5XYi1sZVpS?oc=5",
-     "published": "2026-10-29T11:30:00+00:00",
-     "snippet": "Hungary Sets 2030 Euro Readiness Goal in Growth and Deficit Plan BBJ - Budapest Business Journal",
-     "score": 3.84
+     "title": "US dollar to Hungarian forint forecast: Sideways consolidation likely as downside risk remains",
+     "publisher": "Traders Union",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQX25rdXREeXE0aF80RHFKUHl6QlZQeU5paUtwajdZQjBBV000d3FHWDVpcFhsX1F0LXFoMkl2djZTT3l2TTNKQVZDX3BXbmQ1UWVLN2g3Q2dIbVdkZHFFa2NWS21vcEpsbU9ZVHYtSFRpM25RakVFS2lJd05uV2pxdnBYWEUtZw?oc=5",
+     "published": "2026-11-02T08:43:48+00:00",
+     "snippet": "US dollar to Hungarian forint forecast: Sideways consolidation likely as downside risk remains Traders Union",
+     "score": 0.87
     },
     {
      "id": "HUN-3",
-     "title": "Hungary plans grants and loans covering up to 95% of home solar and heat pump upgrade costs",
-     "publisher": "The Cool Down",
-     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNa2dMWmVLMFdBTEVpNlhzQmVaMmZNeXhGX292Vnd0MmRKM3Fzc1hNVWtZSFVWXzlmTDdHYU1vcDEzbGxnVnZPT2dsYWp5Nm9jNzNKb2NlS3hGU1UwV0ZGaTAxNVFmU3hlNjRMNHlBenpLX205azlSaF9iRFZmNWk2MA?oc=5",
-     "published": "2026-10-29T21:58:00+00:00",
-     "snippet": "Hungary plans grants and loans covering up to 95% of home solar and heat pump upgrade costs The Cool Down",
-     "score": 3.63
+     "title": "Fuel prices could soar to terrifying levels in Hungary by the end of the year",
+     "publisher": "Daily News Hungary",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5rQjFxemZILVozWm1PcjQwVURsZldURkloc0VXTWJGZmw4TlZ1NkdPVkZOQnpTMEJnRV9jY21jQUhrMV9FNkNKbUxFdl9IQ0Foc3RSZWVyejNRVkNTVnZKd3JBSHdFbnFCQVdndnlVQUt2S0ZEZllqTg?oc=5",
+     "published": "2026-11-02T08:34:00+00:00",
+     "snippet": "Fuel prices could soar to terrifying levels in Hungary by the end of the year Daily News Hungary",
+     "score": 0.86
     },
     {
      "id": "HUN-4",
-     "title": "Eurasia Group Sees Hungary on Track for Eurozone Membership despite Budget Pressures",
-     "publisher": "Hungary Today",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbnJlQ2M0eVdqY0NWMm9BcG43alpudzcxY0tudkIxREZoUDREUlBzamlIbzdET1dPeE9DVEc5Ml85ekp4NnJmeWdSeVdNeXNfdXh6a0thWmtYd0ExbjVhX09pSkl5bDJKSjkzMGtLa0o1ZUdlcXBOeERJQmtzZUtjeDMzTldtMXNFdG95UGdaWjZhOFdyYVZyY3hIWW11cl9ERHRsOGNpOHhwMkEzOWc?oc=5",
-     "published": "2026-10-29T12:41:27+00:00",
-     "snippet": "Eurasia Group Sees Hungary on Track for Eurozone Membership despite Budget Pressures Hungary Today",
-     "score": 2.37
+     "title": "Hungary plans to increase funding for railway projects",
+     "publisher": "RailFreight.com",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNR0lnSm53empYazV5RlF1bDhKQV9PcTRiejk0OWdmc2h6UHoyS2pxT2dDYkFTMVhfeVJsZnpUZFBPNlljWlNwS1VSREpKTHBhdGlXekFHZVlmWVpUeERPeEoyRUczdjl4SGJlYk9sYkNxUTVVTzFzSlRYZHRmVGp2UFFtWWo5Mjc2RzZmQm12c0QwZ2lYM3A0LWxtVWNpMUJNdVk0?oc=5",
+     "published": "2026-11-02T08:10:39+00:00",
+     "snippet": "Hungary plans to increase funding for railway projects RailFreight.com",
+     "score": 0.85
     },
     {
      "id": "HUN-5",
-     "title": "Inflation Accelerates, but Remains below Expectations",
+     "title": "Euro Adoption Must Not Be Rushed, Central Bank Governor Warns",
      "publisher": "Hungary Today",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaXJuaUs4STg1VXpWSk03VDhFOVM2bEhHMW1SSmF3Ylg3cVRWek16Z2Q5dllDdWl6ZVVBUkpfeG9rTHFDU2NIc1hPVW5WbGVfeXMzYy1vdGdlbThCV2tfc1RuOGZFcVNWdkg2aW9hTDJsWjI3SFFxOV9RcnNKeFlBOGNLbw?oc=5",
-     "published": "2026-10-29T10:22:16+00:00",
-     "snippet": "Inflation Accelerates, but Remains below Expectations Hungary Today",
-     "score": 2.3
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeTB1c0FmZlRObnpXS3VnTVRjQkVYS3o0S280V3I4WTdGbGRJM1JicVNEd0s1dm1NU3g5QmtVTFJtc19OaTZaLXBoZzlVOWI3RGt1ODRoSWJpemR1WV9fSkRqaHFwcDZGT01mUUNhY0IzMUFwNldiN2VKQ0dXTHV2OTJXOHFOczVTV2FjQjln?oc=5",
+     "published": "2026-11-01T05:43:57+00:00",
+     "snippet": "Euro Adoption Must Not Be Rushed, Central Bank Governor Warns Hungary Today",
+     "score": 0.62
     },
     {
      "id": "HUN-6",
-     "title": "Drought Dragged On Hungary\u2019s Growth As Czech Output Missed Forecasts",
-     "publisher": "Finimize",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMkVRLXBQMU9KbWtfZnJUYWJxSHlDOU9rMkdTUUQ4UW9WWEFLUWk5T211MDdWQ0Z5OU9Wd3VGdUZFWk1wdVYydzdsSlVuLXFUZEdUMzVsYU5Oek1yVVYyaS04NS1BTWJWVHQ3R2hCNjU2NlVDejNKaFVfNERqa2xMZEVwb1hFa0ItM2NHcjBPZkRGSlIybm5pVDZLOEs?oc=5",
-     "published": "2026-10-30T10:01:55+00:00",
-     "snippet": "Drought Dragged On Hungary\u2019s Growth As Czech Output Missed Forecasts Finimize",
-     "score": 1.96
+     "title": "Viktor Orb\u00e1n Reacts to TISZA\u2019s 2027 Budget, Warns of Threat to Jobs",
+     "publisher": "Hungary Today",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcXJJc2ZhbVkwbGRBT05JMUdXaVJTdTRZZnBla3VxQ0hWYVhDRFh2S3ZDMkVtVi1CX1FCT3RDM3NfYVBIWkotT1NGWWsxOExOM2YtRlNmYVUzRjJqT3JQVEl5Uk0tQ2d2RUVRYWJZSzBrZzBGNFJwTEljUGhqVkxWWlN3Z2ZBdlZRR3gxb2JMSGFCZEx1?oc=5",
+     "published": "2026-11-01T12:38:13+00:00",
+     "snippet": "Viktor Orb\u00e1n Reacts to TISZA\u2019s 2027 Budget, Warns of Threat to Jobs Hungary Today",
+     "score": 0.31
     },
     {
      "id": "HUN-7",
-     "title": "Many member states oppose the EU's energy tax plan.",
-     "publisher": "Vietnam.vn",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQaENUZVlrTXZKRlpYZm0xU3ZfVzVfMlNTMDlka0pzTVlndVFlTjZHNkZ5UnpnVzBwa1lZUGhNQkFMWi1CSXhOeFJDMmtRQmpsRmdCN3pmZE5reEVRc0FlcVB6MnNNX3Y0c2V4S1pvRTktZHE1a000T21HTkJ3VGdGT00tQlZCTlJHRW5jSHZzaTRfUQ?oc=5",
-     "published": "2026-10-30T02:38:54+00:00",
-     "snippet": "Many member states oppose the EU's energy tax plan. Vietnam.vn",
-     "score": 1.76
+     "title": "Convert 1 USDC (USD Coin) to HUF (Hungarian Forint)",
+     "publisher": "Bybit",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAtVUI5M3dyMkhnQmE2RmtVU3Nhbm5qSXJqazdaaVJLNUszTUJBeEJPSHdHSFl2cUoxVTJLSS1IWUt0SnM2VnlaUEc4QnpkWWx5bS1aV3Jrbm0?oc=5",
+     "published": "2026-11-01T10:45:01+00:00",
+     "snippet": "Convert 1 USDC (USD Coin) to HUF (Hungarian Forint) Bybit",
+     "score": 0.26
     },
     {
      "id": "HUN-8",
-     "title": "Back to Reality: IMF Sends Hungary a Crippling Austerity Wishlist",
-     "publisher": "Hungary Today",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ1psQWRuYzRjZUZKZTFWMF9TQy1qSDQwek0zLWVJRGlUSXR3endpRkR2OVRzUjZoWW5GNzFrOW1GRnk5S1Q2V2dVaVg4Z0RPWVBhUkMxVlJ0Q3F5MGdMQVZJbFhIa2Z6MmNwUnJoOVpUNjVTVHk0blNVdHFQUU1NN2ZURDNwcGZ4MTZ2eklrMFVOWUxM?oc=5",
-     "published": "2026-10-29T06:32:02+00:00",
-     "snippet": "Back to Reality: IMF Sends Hungary a Crippling Austerity Wishlist Hungary Today",
-     "score": 1.2
+     "title": "Convert 1 HUF (Hungarian Forint) to USDT (Tether USDT)",
+     "publisher": "Bybit",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8tWlkyRHg5LV9DNkVnQXBMOHVuaGNNdzhxNXNmMm5MaF9iVWd4Q0x1bGpmTENJdE9xYWxUM3RidTk3VXRlUjY5eEtFdGIwY0VRS2tuaGFUVDE?oc=5",
+     "published": "2026-11-01T05:38:43+00:00",
+     "snippet": "Convert 1 HUF (Hungarian Forint) to USDT (Tether USDT) Bybit",
+     "score": 0.12
     }
    ],
    "macro": {
@@ -363,43 +391,18 @@
       "rate": 5.5,
       "change_bp": 0
      },
-     "fx": 327.833216,
+     "fx": 327.657935,
      "articles": [
-      "87f059aab8c0",
-      "0b11858bb0e9",
-      "2dab63987d7f",
-      "5f7c02522f66",
-      "3fc97f829da9",
-      "4fe9ed41bb9e",
-      "1a80f19782dd",
-      "14d0c229fcbc",
-      "87235703a9ee",
-      "f3f3fbcaa4d2",
-      "dd4bf2c5ca9f",
+      "806ac0da34d7",
+      "3368b2ea82c7",
+      "c37c62a65d6e",
       "686ebf0954d7",
-      "60765938ebde",
-      "eded3c1eeb43",
+      "b197f6e0aa5b",
       "c8be2978be97",
-      "a740b85757e9",
-      "05151011c854",
-      "e906bfe382c4",
-      "b6ca15031f54",
-      "862dcb56f822",
-      "a7b715b641be",
       "1bd9fe110e2a",
-      "207d878e4080",
-      "05fc7435a94b",
-      "15178d4118f0",
-      "fb87851cba64",
-      "996ab20f6886",
-      "5bac60071a6f",
-      "d9610a0080a9",
-      "d229f601cb1b",
-      "1dd74d8d348c",
-      "8d1815ca7fad",
-      "6b3827c1f6ed",
-      "b92ae5e5e785",
-      "afa3aad8c9e1"
+      "73765692e7f6",
+      "99ccd93d985c",
+      "b91bcca0b3f1"
      ]
     },
     "lines": [
@@ -414,13 +417,13 @@
      "Current account 2026 (IMF WEO forecast): -0.5% of GDP",
      "Current account 2027 (IMF WEO forecast): 0.3% of GDP",
      "Policy rate (BIS, 2026-09): 5.50%",
-     "HUF per USD (open.er-api.com, Fri, 30 Oct 2026): 327.8"
+     "HUF per USD (open.er-api.com, Mon, 02 Nov 2026): 327.7"
     ]
    },
    "changes": [],
    "angle_sources": [],
    "angle_flags": [],
-   "note": "LLM step failed (ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)); fell back to extractive."
+   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
   },
   {
    "country": {
@@ -431,105 +434,111 @@
     "ccy": "RON",
     "query": "Romania (deficit OR budget OR BNR OR bonds OR rating OR leu)"
    },
-   "headline": "Romania maintains 2026 deficit target at 6.2% of GDP amid downward growth revisions",
+   "headline": "Romania Launches Eurobond Sale to Finance Budget Deficit",
    "bullets": [
     {
-     "text": "The government drafted a 2026 budget revision maintaining its deficit target at 6.2% of GDP, despite reports of pressure surrounding the target.",
+     "text": "Romania Launches Eurobond Sale to Finance Budget Deficit (The Romania Journal).",
      "sources": [
-      "ROU-1",
+      "ROU-1"
+     ],
+     "flags": []
+    },
+    {
+     "text": "Romania\u2019s Fiscal Council warns PNRR implementation is main risk for 2026 budget (Romania Insider).",
+     "sources": [
       "ROU-2"
      ],
      "flags": []
     },
     {
-     "text": "Romania has revised downward its economic growth forecasts for both 2026 and 2027.",
+     "text": "Romania sells 501.5 million lei of October 2036 bonds, sells 2.32 billion lei of July 2028 bonds (TradingView).",
      "sources": [
-      "ROU-6"
+      "ROU-3"
      ],
      "flags": []
     },
     {
-     "text": "On domestic debt issuance, Romania sold 715 mln lei of July 2031 bonds, 759 mln lei of July 2033 bonds, and 1.11 bln lei of 7-month T-bills.",
+     "text": "Romania\u2019s public debt cost as per Fidelis issues stays steady but high in November (Romania Insider).",
      "sources": [
-      "ROU-5"
+      "ROU-4"
      ],
      "flags": []
     }
    ],
-   "bond_angle": "Holding the 2026 fiscal deficit target at 6.2% of GDP aligns with IMF projections, but lower growth forecasts and high debt levels could test fiscal consolidation and pressure sovereign issuance.",
-   "method": "llm:gemini-3.8-flash",
+   "bond_angle": "",
+   "method": "extractive",
    "articles": [
     {
      "id": "ROU-1",
-     "title": "Romania\u2019s government drafts 2026 budget revision, keeps deficit target at 6.2% of GDP",
-     "publisher": "Romania Insider",
-     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORmVEMU43V2E4WjlveFdUS25NTU9NT2xGRFZDa3Ffa2dfUF9hU2lCZElwdGxNZ0ItSzQ0X1lqNWhsdlFRN01OcGtBZGF1UFIybTFIbDRCcHRaazg5QnVBLXZsUzQ2eWcwV01HQmJObW5LYjRQcW55Yl8zd0FzZ1pHblRGMEFiRjRveGZManA0SURXRUR2MlVjMEt4SzRJSnE1U2VFRQ?oc=5",
-     "published": "2026-10-30T05:49:00+00:00",
-     "snippet": "Romania\u2019s government drafts 2026 budget revision, keeps deficit target at 6.2% of GDP Romania Insider",
-     "score": 7.34
+     "title": "Romania Launches Eurobond Sale to Finance Budget Deficit",
+     "publisher": "The Romania Journal",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeUEzbVpGaVlkSXdBVV9OMVZobmxfT3VnN1M4XzRha2daYldOQ0h3T1NCMS1QWVdxY3ZpNnBwaUw2NjY1dXNvZWt4ZDY4eWJLVGpLR0IyWk9xNHRhdHF4MGJOdnBkcU5Qa3NWdlUtZGF2LThQakdHdVhYYmF3cHFkRDJ2OFlGaXAtblVYM2xVY1pHYTdxMmtrYjdEX1ExQjI0TUs4cG12dlFPZ9IBrwFBVV95cUxOXzh2clFzcW1BaG96UG0ycmJaYlF1emNGbGt3aGcxZjRSdzNSS0dxak9yQjJKUC1iX0ZDYy1Md3FGaDQ4WVB3WnpDYWF0MS1zcE9NMFU2clFwdmMxRW5XYVpBT2J1a3U1eG9nZWtXSXNyUE9Gcll1UnV3ZTdnYXFEUDR4Y0pIOS1aQ2VLLTY4OW9wSFVhbDhuc1BwWUR3Q0hhOVBLNlNfRkF4Mk4xeTJ3?oc=5",
+     "published": "2026-11-02T11:16:37+00:00",
+     "snippet": "Romania Launches Eurobond Sale to Finance Budget Deficit The Romania Journal",
+     "score": 8.94
     },
     {
      "id": "ROU-2",
-     "title": "Romania's Budget Revision Under Pressure Over Deficit Target",
-     "publisher": "The Romania Journal",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMEJ0MGVQM3NvWlEyaF9mUUNRX1IwNHUzbVRfMWJSdmJ4MDVOYkhNS1EwVFJKNnlrUHk4NGVYZlhvTjZFZlpPS1dZTW56UHJ6OC1qYzFVT1QwaHY0a2QxaXFuY29TbjFIYXdOZHBJME9qUS1pejJfSGN5U2NySUhkXzk1ZXRIYkF0STN1SUE5Nm9Kc3Q3aDBWcl9fdjdHOXV60gGmAUFVX3lxTFA1VmhPMWlIbVpLbVVmS2ZSZTlmS1pxM25qVEs2RVBwU1RuRnFjeVA5VlZjVW1uMHpDVUd4U0wxOVlQbmpDT3FxcG5EM1RnVFBtelJQckZtcDF1VmpSTGljbHktaEYxMFZkekQzTEtUN2RfSS1JUGFXTkotOHp6eDFCa043MVVfd3BIa0d0dnFXeDNrOVBoQVJWRTE5ZHJ3dVdlblJFb0E?oc=5",
-     "published": "2026-10-29T17:07:43+00:00",
-     "snippet": "Romania's Budget Revision Under Pressure Over Deficit Target The Romania Journal",
-     "score": 4.99
+     "title": "Romania\u2019s Fiscal Council warns PNRR implementation is main risk for 2026 budget",
+     "publisher": "Romania Insider",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYjhNSlFyRVE5dUFBdE82SE8zNkIzMDQzNkY3bEczdDAtTHpqd1NNNXNfMWVQRC1LX0xuRFNlOHJtaWt4X3RSeFdmeXpUTWxWTnRiRHJLanJTeTVBWUhpX0pYVkxWT2VaOFNJZmUwRWpaR0NIbFczWmhPXzVFTjlyTF85Uk0tZ2tHWnJRS3E4di1DU0REcHBvLUdtSlAxdm1JcEE?oc=5",
+     "published": "2026-11-02T05:28:03+00:00",
+     "snippet": "Romania\u2019s Fiscal Council warns PNRR implementation is main risk for 2026 budget Romania Insider",
+     "score": 4.78
     },
     {
      "id": "ROU-3",
-     "title": "Romania's BRD to launch 1.5 bln euro MTNP bond programme",
-     "publisher": "SeeNews",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQSUg2bm5uNGo0ejlUN3Iya1ZkZ19MM0VyakU4QnR3a1lqYS1VZ3dSTGp3Z1k2M3VwWG1iZjVWYVZfemFULVV5eGdWZHJQXzQ2T1VCMlVwNHBnTlBfOFRjZW85NEI2ZS1xZWJ1VjZRNG1ZbjlMMFByVkY5ckpsX1dXdmx6TWJIUXZCeFRJODlPb1pYUQ?oc=5",
-     "published": "2026-10-29T13:05:14+00:00",
-     "snippet": "Romania's BRD to launch 1.5 bln euro MTNP bond programme SeeNews",
-     "score": 3.88
+     "title": "Romania sells 501.5 million lei of October 2036 bonds, sells 2.32 billion lei of July 2028 bonds",
+     "publisher": "TradingView",
+     "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQbkpqdzZJWTNXRHVLbmpjb3IzLWtyUFR6M3F1eF8xcXlpdS1FRFd6SmlTemdXalViTTNEZXRNbTZzVlIxWnYwME5UYUlvV0wzWXV3XzQ4SUdfeC1WLXBhMDFjSnd5WDJCSXNHUUNqMXJadWdueG1hZ1JuSUp2blNVTDB6ZFVRVm5JWjVKWWFRaHlPQkNoV25hWVNzeFFrYl9ScGRobkNYTW9DcHBrUU5ia2dwTWZ4dUlHWmhJa3JsM0hNUzRBbDFlQnk4cl84a0RiR194ajFWNVhuSk1TNjJpd0hmNU1WeEpfZVd3Y1dXN25kRXE3RmdYcQ?oc=5",
+     "published": "2026-11-02T11:51:27+00:00",
+     "snippet": "Romania sells 501.5 million lei of October 2036 bonds, sells 2.32 billion lei of July 2028 bonds TradingView",
+     "score": 2.95
     },
     {
      "id": "ROU-4",
-     "title": "Romania's Central Bank Approves Raiffeisen-Garanti Takeover",
-     "publisher": "The Romania Journal",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPREh1Q1pYZ0Z3MmxmQzR3ZGFudzBucmFxWFE0dDI4cmkzVjdrWnRySkpYMkdJQl9EMS1qcmFuRmVlTjRmY2Q3bVF1dHNFNHowMFF2c2tkZXlUU1RfWVdiMTZ3azJFXzJqbEZ6V29rbzA2Yy01RTVGM051eERzTzF3ZHM5enBmVUhLckd5MVNfUzNMTTczRm4wRGN3emkyNlNoaG1HSWpGZ096UlB6VjlsZ2ctNkPSAboBQVVfeXFMTnhJeEh0NnREaXBCUG11ZFJCQTJOaWVoU3JraGNORFI3ZnZNLW5ka2FvVGM3R25GQnhYekt3TUVIQUR1ODA0a3RHLXRzcEp0cWhWd0JUQzhaZmlCbDk0R0hzclhKZ2VwMkRlMDFiV3BQaXNqUy1Fel9UMFltcTE2TmhHTDRGTlBXTW9fcVNCSzlSNWVEOWNpSWFKMms2UUF4ZjJ1VV9FYjVhcmZ2WV9mVnRrTDdyb2VGaHRR?oc=5",
-     "published": "2026-10-30T08:43:07+00:00",
-     "snippet": "Romania's Central Bank Approves Raiffeisen-Garanti Takeover The Romania Journal",
-     "score": 3.43
+     "title": "Romania\u2019s public debt cost as per Fidelis issues stays steady but high in November",
+     "publisher": "Romania Insider",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNkstNVpyQnJqOFg2ZXBJM0VoallTdG51TExYYXNsR2U1QVFJWlh6emQzT3AzaEVxdzRXZVFOaEpCdTlZUS01ekphVi1zTE5nZnpZWXc4b3JmMFlPcWhISVdsdHBsZjZPSVlFcGw1NTdVajJrYzl3aW5GVWNTTVNKRDNOVkF3eTdSYmZGQ3pGc0IzWFcxYmc?oc=5",
+     "published": "2026-11-02T05:36:39+00:00",
+     "snippet": "Romania\u2019s public debt cost as per Fidelis issues stays steady but high in November Romania Insider",
+     "score": 2.78
     },
     {
      "id": "ROU-5",
-     "title": "Romania sells 715 mln lei of July 2031 bonds, 759 mln lei of July 2033 bonds and 1.11 bln lei of 7-month T-bills",
-     "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOalVoaFRhOS1YRnNOazdrOVBhQURvdXhiU20wc3A4bnhmSzFUVktGeU41SktneXF4NTJ3R1RpMEh6c1ladVJndmtqSVB0SlcxR0R1VjJQUk5ucmZBdGx3MDhPaVpOUFc4WlVaZGVuZXdpUGlKSEZPZnp1Q21HMEpMd0VXeUVybTVDem9vTzNJRTYzcnRpSWxLX0hyRjVPRFdtOUhzV2FhM3F5UzJOa21SSC1DNHkwcnh6OWtDa0pfT1E1amFfQVdySld6YnB0Mnd0cFJoaks1WWo3Y1JuTGJlOXNjcm9UY1pHMVlVZWJFZWFVSU9RRk9HSXlGa2RmM01rZlFZYmFlU1hSeEtmOHc?oc=5",
-     "published": "2026-10-29T12:22:23+00:00",
-     "snippet": "Romania sells 715 mln lei of July 2031 bonds, 759 mln lei of July 2033 bonds and 1.11 bln lei of 7-month T-bills TradingView",
-     "score": 2.36
+     "title": "Romanian minister defers talks on public sector pay law until 2027",
+     "publisher": "Romania Insider",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNV3VzblZVSnNMcEFfdjFSWjU4bU9GTW96elM3X00tc0JERUkxY3Eta3V2azVtSHpQQXVkdjRnc1o4TU5iTUJrVy1LdTlHLW1kLUJabVhyV3JlVWdmMGJ3ME9DeG5Xa1NKWUg3U09WUDA2bUtQOWk5SW5EdDFxSllCV3NIMkRMZmgxWTRHVFdyMUpndWp1SjhnUw?oc=5",
+     "published": "2026-11-02T05:32:14+00:00",
+     "snippet": "Romanian minister defers talks on public sector pay law until 2027 Romania Insider",
+     "score": 1.78
     },
     {
      "id": "ROU-6",
-     "title": "Romania revises downward growth forecasts for 2026 and 2027",
-     "publisher": "Romania Insider",
-     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRnBjcWc0LVRNYlRfc1pvcy1lYTNtOHMyUjM0S2prcVpiZE5vX24tX2lyVUFJRXNVWml0M2FKckpoQkJiVUthc2dVTkFqODV0SEs0LTJnUjVGZF8yTWVLNHNCczdJd1RIbjZTemVveGx1d1pEdFk3SVo1QXluU3pDQ2E1R295dDRBR2NSLXZ2LXlmM2dvdURz?oc=5",
-     "published": "2026-10-30T05:42:52+00:00",
-     "snippet": "Romania revises downward growth forecasts for 2026 and 2027 Romania Insider",
-     "score": 1.84
+     "title": "Romania Is Offering Eurobonds After New Government Takes Office",
+     "publisher": "Bloomberg",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWXdtU3BhTm1LaG1KbEJpR0xMMFNNV1I0UXVqNDYySXEzcV9EVGFXN21ERF9NVHNTQzVQbU1kMzhzMjFCeC1iUi11cUw4VU44VnBtXzRmTGtod1hzcjl1aGdlNUtiX0FHUlE5VG9vcVdjRjVlcVdNREJfeWpUNGMxRk1UeWlnOUl0dUt1T1JrMGZaWkpQYWMxMWladmtxYjU3WGtWRjRSX2tITTVKQ3dRZ2xHRkU?oc=5",
+     "published": "2026-11-02T11:49:08+00:00",
+     "snippet": "Romania Is Offering Eurobonds After New Government Takes Office Bloomberg",
+     "score": 0.95
     },
     {
      "id": "ROU-7",
-     "title": "Colectiv: 11 Years On, Romania's Medical Case Has No Suspects",
+     "title": "Romanian PM to Meet Unions Seeking RON 675 Minimum Wage Rise",
      "publisher": "The Romania Journal",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZHFTT2lVSTBFQzNMS1JCR3kxN3VuWWl3M1Z0ZjlaejgtRk5NQ3RURnppZzhiVlZwTXF6TFFVZ01CSnZZUDBlNXE2SWtJYWpvSEpXZmZWTlhsdmNFRVA0MkZBdzdiWTFDbDZ4NTQ2TUlUQndxR1Jvem1Od0Utcnl1WkFMcjU3YWw2NHp0OUNoUkkxcWl0QVJUM04tY3RpREZObEVTSGc3bzhIU0Vv0gGsAUFVX3lxTFBkcVNPaVVJMEVDM0xLUkJHeTE3dW5ZaXczVnRmOVp6OC1GTk1DdFRGemlnOGJWVnBNcXpMUVVnTUJKdllQMGU1cTZJa0lham9ISldmZlZOWGx2Y0VFUDQyRkF3N2JZMUNsNng1NDZNSVRCd3FHUm96bU53RS1yeXVaQUxyNTdhbDY0enQ5Q2hSSTFxaXRBUlQzTi1jdGlERk5sRVNIZzdvOEhTRW8?oc=5",
-     "published": "2026-10-30T08:22:36+00:00",
-     "snippet": "Colectiv: 11 Years On, Romania's Medical Case Has No Suspects The Romania Journal",
-     "score": 0.92
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVWk2dU1abS1DNmFzaFQwNVNzSEY1bFZOaG5XV3hvNmduNzdhbVVFcU44bFZrdXQ4ZTlyVU1OWlZSM0pVWFY0UWhwakpHQmtjZURNZktISjV0UURxbmNJS01fempRbHU0WHc3cjRmVzc0V0pNUkg2dTZEcWpObFNHVXVMX05sV25jLWtzZ0ZkM0dqalJpSnlpTmVtTDVLc1hRNE1NV1FqTdIBpwFBVV95cUxQVWk2dU1abS1DNmFzaFQwNVNzSEY1bFZOaG5XV3hvNmduNzdhbVVFcU44bFZrdXQ4ZTlyVU1OWlZSM0pVWFY0UWhwakpHQmtjZURNZktISjV0UURxbmNJS01fempRbHU0WHc3cjRmVzc0V0pNUkg2dTZEcWpObFNHVXVMX05sV25jLWtzZ0ZkM0dqalJpSnlpTmVtTDVLc1hRNE1NV1FqTQ?oc=5",
+     "published": "2026-11-02T11:31:21+00:00",
+     "snippet": "Romanian PM to Meet Unions Seeking RON 675 Minimum Wage Rise The Romania Journal",
+     "score": 0.95
     },
     {
      "id": "ROU-8",
-     "title": "October 30, 2026. TV: What was discussed last night on the news channels",
+     "title": "November 2, 2026. TV: What was discussed last night on the news channels",
      "publisher": "Informat.ro",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZjdfT0Z2cDgxVWhpTUFvcm9aNEVlSTZjcmh2eDFIdkdJdndaWnVLNFdsV3lfNVRCd2ZPV21DeEp5Z3Q4R0tDTXVGZUU3SHRyTVZsNmJidEN0Z2ZFODg4Z2U3Y3lBY21iX2dGWTh4VmYycVpJQlltcDhlTEEwWEpIVHZ3V0RuRFB3djl5cER4ZlZNdTl5LWdSNGY5em5USU8tanF4MjlHT0N5c2VhNEE?oc=5",
-     "published": "2026-10-30T07:44:15+00:00",
-     "snippet": "October 30, 2026. TV: What was discussed last night on the news channels Informat.ro",
-     "score": 0.9
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORGRIbUYwZVJFd01xMUx6OTdaMk9CbnlRWm9wTFJ1akIyN1hNcnB4aE50cm9Rbkp2dG9Yc1hIay0ybC04amhpRlM4VmRicVkzWjBic1JHa2hxb0FQdGlmUUNPaFRneTdiTFpCQmdmOXJ4bVc4TDdUVDNDTHIwdnNGWWgwczRRdDRaU2RGSGJUQUp3MEhBRUZVeUtNLTF1U08yd0d2Z0VjeU9IOHJRamc?oc=5",
+     "published": "2026-11-02T08:11:00+00:00",
+     "snippet": "November 2, 2026. TV: What was discussed last night on the news channels Informat.ro",
+     "score": 0.85
     }
    ],
    "macro": {
@@ -561,26 +570,19 @@
       "rate": 6.5,
       "change_bp": 0
      },
-     "fx": 4.801587,
+     "fx": 4.78191,
      "articles": [
-      "c2b04acd3705",
-      "09100efba13b",
-      "5f2f5f581eff",
-      "82d3f005d4eb",
-      "b9969ba1f370",
-      "caf91bb2862a",
-      "9ef09297f3f8",
-      "d1e52df364b9",
-      "820de711793b",
-      "95066d65e4e5",
-      "89bf03a3c866",
-      "e48d0d04bb19",
-      "120701b3e514",
-      "9b63a873345d",
-      "fa7ba0e35495",
-      "f5a882265301",
-      "dfbc64eab744",
-      "b83914d8f423"
+      "77c33fe6ead5",
+      "5a5e183a1e6e",
+      "b2d7097279b0",
+      "b64d543cddf9",
+      "bcc0261eff12",
+      "503917994972",
+      "b5da3205042e",
+      "cd2dc103f5ef",
+      "47b8435a2796",
+      "f325fba37ffc",
+      "8b6774f1922d"
      ]
     },
     "lines": [
@@ -595,17 +597,13 @@
      "Current account 2026 (IMF WEO forecast): -7.0% of GDP",
      "Current account 2027 (IMF WEO forecast): -6.7% of GDP",
      "Policy rate (BIS, 2026-09): 6.50%",
-     "RON per USD (open.er-api.com, Fri, 30 Oct 2026): 4.802"
+     "RON per USD (open.er-api.com, Mon, 02 Nov 2026): 4.782"
     ]
    },
    "changes": [],
-   "angle_sources": [
-    "ROU-1",
-    "ROU-6",
-    "DATA"
-   ],
+   "angle_sources": [],
    "angle_flags": [],
-   "note": ""
+   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
   },
   {
    "country": {
@@ -616,105 +614,104 @@
     "ccy": "TRY",
     "query": "Turkey (lira OR central bank OR inflation OR eurobond OR rating)"
    },
-   "headline": "Central bank cuts interest rates as Capital Economics highlights ongoing sovereign fragility",
+   "headline": "CBRT reportedly cuts interest rates as domestic lira bond default distress rises",
    "bullets": [
     {
-     "text": "Turkey's Central Bank has cut interest rates amid falling inflation, following a policy rate standing at 37.00% as of September 2026.",
+     "text": "Reports indicate Turkey's Central Bank has cut interest rates as domestic inflation falls.",
      "sources": [
-      "TUR-1",
+      "TUR-5"
+     ],
+     "flags": []
+    },
+    {
+     "text": "Mounting default distress has been observed across 60 lira bonds year-to-date.",
+     "sources": [
+      "TUR-1"
+     ],
+     "flags": []
+    },
+    {
+     "text": "The policy rate stood at 37.00% as of September 2026, with the lira trading at 49.94 per USD on November 2.",
+     "sources": [
       "DATA"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Capital Economics reported that Turkey and Egypt remain the most fragile emerging markets.",
-     "sources": [
-      "TUR-4"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Volkswagen and Dogus Otomotiv signed a car production deal for Turkey, marking a new corporate manufacturing agreement.",
-     "sources": [
-      "TUR-8"
      ],
      "flags": []
     }
    ],
-   "bond_angle": "Monetary easing amid persistent macro fragility could exert pressure on the currency and sovereign spreads, especially with the IMF projecting inflation at 31.2% for 2026 and TRY trading near 49.92 per USD.",
+   "bond_angle": "Reports of policy rate cuts amid high inflation forecasts (31.2% in 2026) and mounting distress in local lira bonds risk exacerbating currency depreciation pressures. For hard-currency sovereign debt, premature monetary easing could threaten macroeconomic stabilization despite manageable debt levels of 22.5% of GDP.",
    "method": "llm:gemini-3.8-flash",
    "articles": [
     {
      "id": "TUR-1",
-     "title": "Turkey's Central Bank cuts interest rates as Inflation Falls",
-     "publisher": "Hispanatolia",
-     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQlNmTkhkUTFRN3VKOG5mVUtMSFF3V2N2QnVHMFlDcWlYUVA3NUotczN4Rmo5T0hxVWZCeVMtOE9fbElVbXZHanNZbXliMUNHLV9HMDdPZ0xudzdJOUpnZndkRk9CVHo2LWh2SXNBWGdkak52dnlpaUtDZG9kcVlJVlRkRUNMd0V3QmtqYVNtU05sTjJxSXU4Vl9DdXdWOXJIOVdPRw?oc=5",
-     "published": "2026-10-30T06:49:02+00:00",
-     "snippet": "Turkey's Central Bank cuts interest rates as Inflation Falls Hispanatolia",
-     "score": 5.37
+     "title": "Mounting default distress in Turkey seen in 60 lira bonds in year to date",
+     "publisher": "IntelliNews",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOWFF6UEo0QmNsQ1NZYnd5ZmdPMlgzMlQ3dDg2cWxDYmRxNmZyaGwyUGh0Zm1ZNGxvU1RTc3AxeHlRUWVqOEpEWWJDbjF4MkhYd0JUTWwzQktIc3VFeWJsalpXSXpZaXVfQ3k3UlBHZ013UktzMXF2dWYxM3E0NWZ5LUpGeU5hdzU2ZE03VGV6czVTSDZVY09YNzRhVm5UTHVCT1laVWFnOGFjRDJjbDNZckVzQUs3bWdabExWa2ZlY0g?oc=5",
+     "published": "2026-11-01T17:32:50+00:00",
+     "snippet": "Mounting default distress in Turkey seen in 60 lira bonds in year to date IntelliNews",
+     "score": 5.45
     },
     {
      "id": "TUR-2",
-     "title": "Russia's central bank sees 14-16% rates in 2027 if inflation risks bite",
+     "title": "Ukraine's bank profits fall by a third as central bank fights 50% tax extension",
      "publisher": "IntelliNews",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM1J3aU5Wb1p0QTN1ejdOOFROcUNtZmtzYzhMZmlqbTdPRlVSZmlxbUpLSmhfa3k5b1FiR3luNGhCdDJESy1oa2owc3V2QThRQmptT3B6T2pGczF4UFJLRVJ1Nng1OGxWVDI5Wl8wT1RUb0Z0Q0pjNTJCQnhBZG9qQ1F4eDZOQmoyckc1WTNkZG1fMzVpbG1pX0YzczJaWWRhOC1zclcwbGxON1JLTUtoN2F2NlBhMkY4aWxrRw?oc=5",
-     "published": "2026-10-29T14:12:49+00:00",
-     "snippet": "Russia's central bank sees 14-16% rates in 2027 if inflation risks bite IntelliNews",
-     "score": 4.91
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUURyTVgtUzVxeFpPNWgtNlpnWXRJN1I5cVVXR3cydWVMNFg1d0dmQ2wxNzFMckhzYmZBU1B6UHhVbFNXNm5zSVdSRDN5aEVqMFJ3cUw0c1pGRDJoS2xJX1kwVjhIUnFIQnROLUpBZDJUM012WDNleWhWejB5ZmFuT3FJYlozOTdqODdwdDB5eHZqZTM5VW5iLXl0dzJ0VEc4UmlHa0RDZmtUUVl1WnJ3WFVURTJIRTlVUTlLSFBxU0xXU2c0TEZ1UQ?oc=5",
+     "published": "2026-11-02T13:08:41+00:00",
+     "snippet": "Ukraine's bank profits fall by a third as central bank fights 50% tax extension IntelliNews",
+     "score": 4.49
     },
     {
      "id": "TUR-3",
-     "title": "Ukraine raises key rate to 16.5% as central bank forecasts contraction",
-     "publisher": "IntelliNews",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWW95M1hDWkduLUtSQXZDNXpVNmpEMm9IUkJMZkw0aDF2LTVtdVM1c0s2cHVqaFhRV1hqN1lERWVlazFYV0JWMTRWdlRZNVlPWF9YMXo1UkttT3ZoX1kwTjI1bGhiSXRSMExTamtycjJHblc5WkxPV09iTWZrdkdpYzlXajdpN2huSURmRTJEZ0pFWmpQQzVFaXRxWVcyNERFWVBHSzgwMUhxY3RjT2Vfb2ZqZjUwVXY3S0Rnbg?oc=5",
-     "published": "2026-10-29T17:40:59+00:00",
-     "snippet": "Ukraine raises key rate to 16.5% as central bank forecasts contraction IntelliNews",
-     "score": 3.01
+     "title": "Syria\u2019s central bank relaunches training center as regional banking academy",
+     "publisher": "\u0633\u0627\u0646\u0627",
+     "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1OdFdrLWZIMGFwcUp2QUhyU1Z4MzR4Vkgyc0JJVm5Ob3dWaDZZd1Q0MTJSemVZOC13ZnlzNDNwQk80RUt2cHA4YmQyYlU?oc=5",
+     "published": "2026-11-02T09:57:02+00:00",
+     "snippet": "Syria\u2019s central bank relaunches training center as regional banking academy \u0633\u0627\u0646\u0627",
+     "score": 3.4
     },
     {
      "id": "TUR-4",
-     "title": "Turkey, Egypt remain most fragile emerging markets as Poland's debt risk hits decade high - Capital Economics",
-     "publisher": "IntelliNews",
-     "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxONlVMUktMdDFSeExWWTV6bFVCV2JUS09uWE5yQXVSZ0xxVVRfMzVJWjdVckdDR3FPZFlfeTZRYV9CcXlSWTJ3bFBVVVBRLTZZTEpBWGRCbkRaLV9iRzhFTG1lMERfNFl1TFgzcldRWDJpWHJWWVVjZzBpSkJEMnNnbHpHNFNka0ZlNnVWZFZ1T0RsWDVhMWZRTVNoRWlvZ0pNQ2p3cWhGQ2VLZ0RDV19mdFNxNjIwSG85RFBrRzU3UXdsVm4zVnFRUTZYTEwxczVRcU1JanBmQXdXdXNyclA0ZEZWYllTNVgweW1OUGJB?oc=5",
-     "published": "2026-10-30T09:09:11+00:00",
-     "snippet": "Turkey, Egypt remain most fragile emerging markets as Poland's debt risk hits decade high - Capital Economics IntelliNews",
-     "score": 2.94
+     "title": "Central Bank of Syria reopens banking training center after two-year pause",
+     "publisher": "\u0633\u0627\u0646\u0627",
+     "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB1WXktMElTOFNFT1RBbF9JRTFJVzlVOEdEZ29zb0lBQWhReWJoNkRfOHVrdlZGSVB2NUU4M2lBZFVMWGtjQnNpeg?oc=5",
+     "published": "2026-11-02T08:50:04+00:00",
+     "snippet": "Central Bank of Syria reopens banking training center after two-year pause \u0633\u0627\u0646\u0627",
+     "score": 3.37
     },
     {
      "id": "TUR-5",
-     "title": "Kamran Soltani Says Central Bank Waited Until Dollar Hit 270,000 Tomans: 5 outlets compared",
-     "publisher": "NewsCord",
-     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbG9aWktJMk9iRjNTM1FpWXZhSGU2TlVvQzZrV3BMdWtabGxGczk5REJMNmRYYk5KLUpMalU5VHJ2a0RjRjJDekg5alN2eGtmTDlpVUhpNGJxTWxLa19rNDRQUjVtVzhfdWFkX0VSSnhhVVBGcVRWeWYzcHNMLWtHSE5nbW9Qdllkd2FRUWNDU3h5TmNlV2VTNXI1dFV4UDNZZ2dOUlBBc0VYZC0tX1VPT0pGS3phNFFBdGVvQkZrdjRRM1htVGNlUnA5R282UmNvSnJDMUc4cDhhWm1jSWpNeg?oc=5",
-     "published": "2026-10-29T11:20:01+00:00",
-     "snippet": "Kamran Soltani Says Central Bank Waited Until Dollar Hit 270,000 Tomans: 5 outlets compared NewsCord",
-     "score": 2.83
+     "title": "Turkey's Central Bank cuts interest rates as Inflation Falls",
+     "publisher": "Hispanatolia",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOQlNmTkhkUTFRN3VKOG5mVUtMSFF3V2N2QnVHMFlDcWlYUVA3NUotczN4Rmo5T0hxVWZCeVMtOE9fbElVbXZHanNZbXliMUNHLV9HMDdPZ0xudzdJOUpnZndkRk9CVHo2LWh2SXNBWGdkak52dnlpaUtDZG9kcVlJVlRkRUNMd0V3QmtqYVNtU05sTjJxSXU4Vl9DdXdWOXJIOVdPRw?oc=5",
+     "published": "2026-11-02T07:34:23+00:00",
+     "snippet": "Turkey's Central Bank cuts interest rates as Inflation Falls Hispanatolia",
+     "score": 3.34
     },
     {
      "id": "TUR-6",
-     "title": "Inflation was negative during Atat\u00fcrk's era! Prof. Dr. Uysal: Prices declined by an average of 1.9 percent each year",
-     "publisher": "Haberler.com",
-     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPWUwxbW9lQzNEN0swRjBESkhMYWtyczdrNDdHYUIxdnpxWU9PWmRpcnlKS1Bwd3Q1OEJjNTNPZGlpUVVzQkNSdHpyZkZMTnNYcUNiSFl2aGRmeUg0TXRYUVVFdHJENGEyRjVYNDd2T2VUbmozZGtGTUJ0QVBYdXZ4Y3ZnQkxoX0U?oc=5",
-     "published": "2026-10-30T00:27:15+00:00",
-     "snippet": "Inflation was negative during Atat\u00fcrk's era! Prof. Dr. Uysal: Prices declined by an average of 1.9 percent each year Haberler.com",
-     "score": 2.7
+     "title": "Iran\u2019s Central Bank updates foreign exchange rates for November 2",
+     "publisher": "Trend News Agency",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8yTnpsYmdyZVlod1JZQXZ1LXF5a1R4dmFDVnh2Xy1oR3pybi1rUDFLQi1Yb0FtOXFGYlRzZUo0VDl1VlZScW1IcDJMN24zZmc?oc=5",
+     "published": "2026-11-02T06:42:43+00:00",
+     "snippet": "Iran\u2019s Central Bank updates foreign exchange rates for November 2 Trend News Agency",
+     "score": 3.31
     },
     {
      "id": "TUR-7",
-     "title": "World Bank: Central Asia Private Sector Needs Room to Grow",
-     "publisher": "The Times Of Central Asia",
-     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE95NFp4M0tScC1oU3FTeU1OeGp2RVhSLWxRcTZFR3hiMnRSQ2ltbjR4QkZOQWFVb3hFblM4d014MXo0NEw0b3lCNExhUmp4SDM2ckJ1b1poMktMNjVsS2RjMy1IOWVvdjBoWFp1NzRMenBwTHBf?oc=5",
-     "published": "2026-10-29T12:28:49+00:00",
-     "snippet": "World Bank: Central Asia Private Sector Needs Room to Grow The Times Of Central Asia",
-     "score": 2.36
+     "title": "Central Bank of Azerbaijan Announces Exchange Rates: Euro Eases, Ruble Gains",
+     "publisher": "Anews.az",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX2FSQTh5UFNoeWktTjZqTjU2Y1JkckQtbEZsenRJamJXV2JRNXdER0RxcHlMaUJ1aDRiWHVfSTJsaVZrWkp2U3l2aUtRa2FNU21UWU40N2pDWHBIU01NU2oxY0pCdEdXQnNGQ0hDeWhSelJZQ3pzNVlzWjJHTExPbjEtcld3eXp3OVZod05Zb0RLT1dkaG0zWFg1dUpYUEp6MHowaGZNanN2RGY1UVVlWlRR?oc=5",
+     "published": "2026-11-02T06:24:58+00:00",
+     "snippet": "Central Bank of Azerbaijan Announces Exchange Rates: Euro Eases, Ruble Gains Anews.az",
+     "score": 3.3
     },
     {
      "id": "TUR-8",
-     "title": "Volkswagen & Dogus Otomotiv Sign Car Production Deal for Turkey",
-     "publisher": "Global Banking & Finance Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNazN1QW5kckVKLXZOcnZUenNCbjBCX0ZYQUotcnRyWm9zTFRFV09SSEJKRENsa0FkcVJzNlJYNUtrOFpTLVNQTzNBd3N4dzI4d1ZzZzE3S3ZqUVE3OUI1ZXJIYUFOTy1ScUEtWnRMT2dVRGtjR2NCa252SUpIeDlGYUJaTVdCZDZZRlVaWmRkRk9jUmlTTVZxakxJbXlOUQ?oc=5",
-     "published": "2026-10-30T09:27:30+00:00",
-     "snippet": "Volkswagen & Dogus Otomotiv Sign Car Production Deal for Turkey Global Banking & Finance Review",
-     "score": 1.95
+     "title": "European Central Bank holds interest rates steady",
+     "publisher": "The Portugal News",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZnhNeXBBLTZXb3lYODRXdG5KeDloaXY0NmdDeVRwUnEydksxMllLTVlYeWlobTBlc2paVkhfMXpVUVRnY1BaNXp0X0ZLSTVqU3YtUTRIV0JRcklSQmk4S3g3bWlsSk45UTlBZ3ItNmdtSXRSQlprMkJjeTUycTlIeW9hNFhJV2o2SG5Yd0lpX3d2WTl0WVBobzk2OHRxaGpPeTdCOURXNWw?oc=5",
+     "published": "2026-11-01T19:13:02+00:00",
+     "snippet": "European Central Bank holds interest rates steady The Portugal News",
+     "score": 2.99
     }
    ],
    "macro": {
@@ -746,50 +743,45 @@
       "rate": 37.0,
       "change_bp": 0
      },
-     "fx": 49.917487,
+     "fx": 49.939434,
      "articles": [
-      "3149fee54e73",
-      "0ece8d1b4e6c",
-      "9b4d984af713",
-      "c4e61d3b79bd",
-      "5c15304d342b",
-      "77c4ea4ac3d0",
-      "9c49512eb3fa",
-      "44a5e0d3abad",
-      "89a6dc6af245",
-      "fe4b3fb4e513",
-      "c792cc81813d",
-      "d1808cd58bac",
+      "70ff9774d11e",
+      "b0d473adcda9",
+      "774cb72bcb8d",
+      "328d87595e51",
+      "1b3861641d78",
+      "05625e4d029a",
+      "9e77954c31c6",
+      "376022fe8e90",
+      "08b7d25e0b3f",
+      "aeece99a456a",
+      "7c3b22fee90b",
       "206875a40052",
-      "4dd013db0f2c",
-      "63a46bac05d8",
-      "03bb6a4f7743",
-      "a6ac51207c0f",
-      "ab28ef5c6118",
-      "0a18b5e71307",
-      "6f7ce92a9eba",
-      "87711df107de",
-      "7893c13c7577",
-      "731bc8051e1c",
-      "a6d810c52252",
-      "d5c7807050ef",
-      "53eaab1d94a5",
-      "08f6270d885a",
-      "1f1a6bd203c0",
-      "77f906822249",
-      "493f1b0cd0b5",
-      "bb9c49e34839",
-      "6d1effba7bb1",
-      "a6a059eacd7e",
-      "ef2ef8c3b4f4",
-      "6a7b4d8c7c3f",
+      "3ddba1f4a0e0",
+      "98a076e423f1",
+      "1b6e6cd44efe",
+      "74182fe0885c",
+      "3205eb10f30f",
+      "375fc387c41a",
+      "035ec713b706",
+      "9c3616bb151c",
+      "04059f17d92e",
+      "bdf2f4b71fd2",
+      "b1a8afe6eded",
+      "e236a60f8431",
+      "c7fccaeffa12",
+      "449badca0725",
+      "d268e65ee946",
+      "8d5d72a685d8",
+      "c5ea4e7055f5",
+      "d90421664a27",
+      "4aabb60ed40a",
+      "8999e031968b",
       "10a5c84343f2",
-      "4cf2f671ed6b",
-      "251aa088d6c9",
+      "83aca77bbac9",
+      "c35071527f74",
       "83eb4e7b4514",
-      "d49edb76aa5d",
-      "3dc8dffa49c1",
-      "b6323179f6f4"
+      "251aa088d6c9"
      ]
     },
     "lines": [
@@ -804,13 +796,13 @@
      "Current account 2026 (IMF WEO forecast): -2.9% of GDP",
      "Current account 2027 (IMF WEO forecast): -2.4% of GDP",
      "Policy rate (BIS, 2026-09): 37.00%",
-     "TRY per USD (open.er-api.com, Fri, 30 Oct 2026): 49.92"
+     "TRY per USD (open.er-api.com, Mon, 02 Nov 2026): 49.94"
     ]
    },
    "changes": [],
    "angle_sources": [
     "TUR-1",
-    "TUR-4",
+    "TUR-5",
     "DATA"
    ],
    "angle_flags": [],
@@ -825,111 +817,112 @@
     "ccy": "KZT",
     "query": "Kazakhstan (tenge OR National Bank OR oil OR budget OR rating)"
    },
-   "headline": "Kazakhstan outlines budget and tax measures as macroeconomic forecasts project steady growth",
+   "headline": "Kazakhstan annual inflation eased to 9.2% in October as central bank bought National Fund FX",
    "bullets": [
     {
-     "text": "The Kazakh government outlined budget and tax measures following President Tokayev's address, though detailed fiscal parameters were not specified.",
+     "text": "Kazakhstan's annual inflation rate eased to 9.2% in October.",
+     "sources": [
+      "KAZ-4"
+     ],
+     "flags": []
+    },
+    {
+     "text": "The central bank purchased $910 million from the National Fund in October.",
+     "sources": [
+      "KAZ-1"
+     ],
+     "flags": []
+    },
+    {
+     "text": "President Tokayev stated that Kazakhstan's GDP is projected to reach $398 billion in 2026.",
      "sources": [
       "KAZ-3"
      ],
      "flags": []
     },
     {
-     "text": "IMF forecasts project real GDP growth at 4.4% in 2026 and 4.9% in 2027, with inflation declining from 10.3% to 8.2%.",
+     "text": "OPEC+ is reportedly keeping December oil output targets unchanged amid ongoing disruptions, with attention turning to 2027 quotas.",
      "sources": [
-      "DATA"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Government debt is projected at 23.8% of GDP in 2026, alongside a fiscal deficit of -1.0% of GDP.",
-     "sources": [
-      "DATA"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Fitch downgraded ForteLeasing to 'B+' following a stake sale by ForteBank.",
-     "sources": [
-      "KAZ-2"
+      "KAZ-5",
+      "KAZ-6"
      ],
      "flags": []
     }
    ],
-   "bond_angle": "Upcoming budget and tax reforms warrant monitoring for fiscal trajectory, though sovereign credit fundamentals remain anchored by low government debt of 23.8% of GDP in 2026.",
+   "bond_angle": "Easing inflation alongside large FX operations from the sovereign wealth fund provides near-term macro and currency stability for Kazakhstan's external debt, supported by low government debt of 23.8% of GDP.",
    "method": "llm:gemini-3.8-flash",
    "articles": [
     {
      "id": "KAZ-1",
-     "title": "How central bank\u2019s language out-complicates a Nobel laureate in physics",
-     "publisher": "Kursiv Media",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSHA4TzdGRklDUEEzRFVtV3Y0d2VmV2gtVW9KOTJadF9hbF80YjhLRU5MQUl2LUxReXllbUJNQl9HUzlnbl93OFRadUtOU1dfUE9sVzhHaVBxWng3RktfanAzWml6Z2xGdERPQndPSThFbU9zcEVuU0x3eTE4VG5nVHk0bVJYTTdoOFliSGFzS2ZPTThjSkpPa0Y4QzYxWFhfUEZhbjZFeFFpdGU3aE9rSGxqWVc0Y013VEFv?oc=5",
-     "published": "2026-10-30T01:04:00+00:00",
-     "snippet": "How central bank\u2019s language out-complicates a Nobel laureate in physics Kursiv Media",
-     "score": 3.21
+     "title": "Kazakhstan central bank purchased $910 mln from National Fund in Oct",
+     "publisher": "TradingView",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQcjhKTE9OMy1teTRpVi1VdXcxRTNUTndWNThTM1dIalFYQnJNYWhSdS1tYWQtbHpnRHJIYU1LLXIzLXBtaFJxbDlXeUxiZVIzVTVVc2xvSHZNX0lWRkNQanZCZTgyeTZiNG9UTl94YXBxMzJ0SThFMVFmVEdMOWx4TDVEb2VGVFBmV2I1UXZEeDJRVXBoVnV1X0Y3M0NNMlRVeXdxa29NaE1ZSXV1SVhpb3E3cUN1Xy1sRjlJVWxEVlZnY1ZlY1BEM1UyWS0zYXlMWTNF?oc=5",
+     "published": "2026-11-02T10:51:14+00:00",
+     "snippet": "Kazakhstan central bank purchased $910 mln from National Fund in Oct TradingView",
+     "score": 3.43
     },
     {
      "id": "KAZ-2",
-     "title": "Fitch downgrades Kazakhstan's ForteLeasing to 'B+' following ForteBank stake sale",
+     "title": "Iran\u2019s Central Bank updates foreign exchange rates for November 2",
      "publisher": "Trend News Agency",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9zWExUbzFsOHNOajY4RE14bEVQdGZQREFLdm5tcGROOWtrWTJ3cUNlTS10MjdmWThVM1NCanVZcjZKRHF5RGpHMkd2RDhLT3ZESHhhRkF2cW1hY3EyU0w4?oc=5",
-     "published": "2026-10-29T10:28:00+00:00",
-     "snippet": "Fitch downgrades Kazakhstan's ForteLeasing to 'B+' following ForteBank stake sale Trend News Agency",
-     "score": 1.31
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8yTnpsYmdyZVlod1JZQXZ1LXF5a1R4dmFDVnh2Xy1oR3pybi1rUDFLQi1Yb0FtOXFGYlRzZUo0VDl1VlZScW1IcDJMN24zZmc?oc=5",
+     "published": "2026-11-02T06:42:43+00:00",
+     "snippet": "Iran\u2019s Central Bank updates foreign exchange rates for November 2 Trend News Agency",
+     "score": 3.31
     },
     {
      "id": "KAZ-3",
-     "title": "Kazakh Government Outlines Budget and Tax Measures After Tokayev\u2019s Address",
-     "publisher": "The Astana Times",
-     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZzJFdHRaQ3BwdEI3NGI0TUszX2FzNHVmRGtCb2o2V19YRTJTQXNGUUdNTV92ZVVCVUZlQ2hvVW9vNlBkNUNSZ29PZ2FaVFRZWlVMWENzTTVQeVdXTHNIbG5SbFd5YVhfTnBOZzlic1dWVW1XWlVNZVdSd05EU1ZjSHM1Wnd0QnNBUlpmZzBkc0xDRU9wQ2NqeVRYYktjaENzbmFzVlRIdXpadw?oc=5",
-     "published": "2026-10-29T10:01:29+00:00",
-     "snippet": "Kazakh Government Outlines Budget and Tax Measures After Tokayev\u2019s Address The Astana Times",
-     "score": 1.29
+     "title": "Kazakhstan's GDP to reach $398 billion in 2026, Tokayev says",
+     "publisher": "Trend News Agency",
+     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB6T1Zhak85SDdjMmo1SlVYd18za2dxdjBZSFh5Nk5KZ0RIdWx5ckVUNTE5bm1CcjA4OW9paDhkTUxUWXFrNUQ1YmlyX2t0Slc2YU05Wmgzd2VCczQ3bC1F?oc=5",
+     "published": "2026-11-02T13:15:46+00:00",
+     "snippet": "Kazakhstan's GDP to reach $398 billion in 2026, Tokayev says Trend News Agency",
+     "score": 2.99
     },
     {
      "id": "KAZ-4",
-     "title": "Russian exporters shift to sunflower oil and meal supplies to Kazakhstan after sunseed import ban",
-     "publisher": "UkrAgroConsult",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOUhINDlLeF8yZHpaVjNCVmpmajFjTVZsLTBBdU5mOExzSTBsMUtwNkcxVHQzSGxPcmVuRHBXWUtaZHFPb1Rxek0tYm5rVnNTTzh3M3ZVNDdGZU9IeFdmYjN2VENBVm5FNjVRckVwR0dDaVRPeGZwWnQ3T3drQ1ZuSzB0aGhJQUNIVkRfZ1d2LVN0OFZMd3ktdE5oWXBUQkFBZTJOVlVCaVIzT05fVk1LTUNfeldBRVUzanJPWXVUY1BMYzdCRWJfMEJSajMzUQ?oc=5",
-     "published": "2026-10-29T06:06:58+00:00",
-     "snippet": "Russian exporters shift to sunflower oil and meal supplies to Kazakhstan after sunseed import ban UkrAgroConsult",
-     "score": 1.19
+     "title": "Kazakhstan\u2019s annual inflation eases to 9.2% in October",
+     "publisher": "Trend News Agency",
+     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB1SjlxX0ZTUUh4M2NJTHplTHRDNTRUWURFQ1BjMGtpeTNVVTE2WGJqYWY0OGRmRmFkc0w4a3dHc2FseUgtVWpDOU1PV241RlAyZXRMNmZDZzdZNUlmY2p3?oc=5",
+     "published": "2026-11-02T08:32:01+00:00",
+     "snippet": "Kazakhstan\u2019s annual inflation eases to 9.2% in October Trend News Agency",
+     "score": 2.86
     },
     {
      "id": "KAZ-5",
-     "title": "European Parliament delegation visits Kazakhstan's Kuryk port",
-     "publisher": "Trend News Agency",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0xaU5QU2dXSGk4V3Nla2dSNmRCM2VnV3NrQmRvaUdWT1RFazBYa2pOZmRabWlidWVuRjJjZTB0RkVvMG9VSFRMcFRQTjAxZ1ZkTl9fczBEWWZwUFl4bVMw?oc=5",
-     "published": "2026-10-30T08:15:33+00:00",
-     "snippet": "European Parliament delegation visits Kazakhstan's Kuryk port Trend News Agency",
-     "score": 0.91
+     "title": "OPEC+ set to keep December oil output targets unchanged, focus shifts to 2027 quotas",
+     "publisher": "India's News.Net",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQ1c5ZkxVeXhRR0REcHRpeU5CTmdfamNzTDlYcGdRRFRmQ0Y3MThCdDFGdkFBOTViMVdCTjRzLTJyWUluTmZlZU5JWkJxYS10R3NLemdiaklIaGxTTS12Wk5CWHRBTndrUGlCdnFqQ2ZLZmZONmxSLTYtdEF6YmozRzItOHlMWnBJanBURGZDemJHRjJkNVk2LXVzdVBuUTRleVlEX3hia3JNMlM3SkV1RDYwSDh3SERvTmM4Ng?oc=5",
+     "published": "2026-11-01T09:01:00+00:00",
+     "snippet": "OPEC+ set to keep December oil output targets unchanged, focus shifts to 2027 quotas India's News.Net",
+     "score": 2.71
     },
     {
      "id": "KAZ-6",
-     "title": "Germany-to-Kazakhstan money transfers rise 1.92% to $2.68M in August",
-     "publisher": "Trend News Agency",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vWGw3cFh5b3NiM0pya1pqZU9vSmFCcF9HWVNOenluZFZSM3ZwNTJscktyVVRRXzJMblpuZWVfRUtBemY0RDVCYW9PY1lxSWFTbFRrY1BJdlNQWnllaHpn?oc=5",
-     "published": "2026-10-29T23:12:00+00:00",
-     "snippet": "Germany-to-Kazakhstan money transfers rise 1.92% to $2.68M in August Trend News Agency",
-     "score": 0.66
+     "title": "OPEC+ keeps December oil output targets steady as Iran war continues to disrupt flows",
+     "publisher": "Durham Herald Sun",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1IdFNBRzFtTDJubmhHRmcyNlJ0dnEtQlhmOHVPTXJoQ1UxNHRMc3A4bzJrdHJHeWFnOUtnLUlwT0NEMkwzaU1VQkNtbGhkZXgyTXE3MXRJV0ZEVWRSQ1NIckdVVnRoZG5wVVNWcWdkWWNBNHBhNTFLdTVKanRJOGM?oc=5",
+     "published": "2026-11-01T08:41:00+00:00",
+     "snippet": "OPEC+ keeps December oil output targets steady as Iran war continues to disrupt flows Durham Herald Sun",
+     "score": 2.7
     },
     {
      "id": "KAZ-7",
-     "title": "Kazakhstan and four other countries to work on QR payment integration by year-end",
-     "publisher": "Qazinform",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYlRpRkR1Z0IzdGRrWDdUN280WmI2OWwxNFgxV3VMWGwwZWFmTFdPRm5idTRSMTBlbzYxbTUtbmlXcHRoZk5GdkRObndLUlp6SnA3NFJJM0lkaEp4a0wtdnQtb3gtcVBRUUkzbk9DckNQM3J1eUJ1Ukk5Qmd4Wlh0WHNrSklscWhzdXNHbFZEWFAzYWtmQk9QY09RbmdteEtDcWpMd0s2QnlTbWI3YkFISFpST0FGQdIBtgFBVV95cUxQYlRpRkR1Z0IzdGRrWDdUN280WmI2OWwxNFgxV3VMWGwwZWFmTFdPRm5idTRSMTBlbzYxbTUtbmlXcHRoZk5GdkRObndLUlp6SnA3NFJJM0lkaEp4a0wtdnQtb3gtcVBRUUkzbk9DckNQM3J1eUJ1Ukk5Qmd4Wlh0WHNrSklscWhzdXNHbFZEWFAzYWtmQk9QY09RbmdteEtDcWpMd0s2QnlTbWI3YkFISFpST0FGQQ?oc=5",
-     "published": "2026-10-29T19:37:28+00:00",
-     "snippet": "Kazakhstan and four other countries to work on QR payment integration by year-end Qazinform",
-     "score": 0.56
+     "title": "The countries with the largest gold reserves, ranked | lovemoney.com",
+     "publisher": "lovemoney.com",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSV93OV9mN1R5amxMejBjcXptT2FNYml1Q1ZCa2IzYUtsd2lhYjFOWjBuS3ZxTU4xUFBBaEFZNGplMzV2RExnNmZ3TWFVZXlfUHZCNlhpb2lQZ2pmTVdmRXhXb0hYbHg3NGYtMl9pN0FHeTEzNldoSWxPRll2aGhIQ0FLN2VvR3huM29vNXNtV1RvQV9Qc1d5ZWtMRTdrM1nSAZ8BQVVfeXFMTklfdzlfZjdUeWpsTHowY3F6bU9hTWJpdUNWQmtiM2FLbHdpYWIxTlowbkt2cU1OMVBQQWhBWTRqZTM1dkRMZzZmd01hVWV5X1B2QjZYaW9pUGdqZk1XZkV4V29IWGx4NzRmLTJfaTdBR3kxMzZXaElsT0ZZdmhoSENBSzdlb0d4bjNvbzVzbVdUb0FfUHNXeWVrTEU3azNZ?oc=5",
+     "published": "2026-11-01T22:33:34+00:00",
+     "snippet": "The countries with the largest gold reserves, ranked | lovemoney.com lovemoney.com",
+     "score": 2.59
     },
     {
      "id": "KAZ-8",
-     "title": "Kazakhstan's ferroalloy exports to Uzbekistan fall 7% in Jan-Aug",
-     "publisher": "Trend News Agency",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBrcnR3ejg0bk02REtIVTd4QU0tUTFFMXVFcG5pLVY0a2M1OFFvX1U3cWcyU055SkVXcTI4Y0ZzcHIyMkEwanRKZTV5OGRGaU91ajRzeC1mN0RzZ0V5OEhJ?oc=5",
-     "published": "2026-10-29T19:09:00+00:00",
-     "snippet": "Kazakhstan's ferroalloy exports to Uzbekistan fall 7% in Jan-Aug Trend News Agency",
-     "score": 0.55
+     "title": "The ruble has noticeably depreciated, the yuan has set a new record again: currency rates as of November 2",
+     "publisher": "open.kg",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPaGlCMTJacV9FV3Z3RFI3WGxVdENtR0pUdER1ekdvNFFONDFwWHJxbjFlc0w4ZlZyWHpPQmlLR00tcW11ZzNMS0NRaXZrZ0d0TGthVHJ6V3NyZlpGMEdMOXZGQVpybW1IUUxDZEhFWEZHOVhXTlAwVXJZaVoyS2JZZzlxekpUcXg3OE9LRTk4ME9NcDVLT1hyVzllaktZNWl0aGE3QWRjNDVZQ3VlWW5EMXBoVy0wR0d5RlE?oc=5",
+     "published": "2026-11-02T02:59:40+00:00",
+     "snippet": "The ruble has noticeably depreciated, the yuan has set a new record again: currency rates as of November 2 open.kg",
+     "score": 2.21
     }
    ],
    "macro": {
@@ -957,32 +950,61 @@
       }
      },
      "policy_rate": null,
-     "fx": 452.944731,
+     "fx": 453.438742,
      "articles": [
-      "760f39d8279e",
-      "18fc1d23b389",
-      "359f39ae6d23",
-      "fa69adfb4e74",
-      "37a26d2d4626",
-      "61f8fa72109e",
-      "4cc6e9e53e69",
-      "e356cd2b2fa1",
-      "0b8d83b78b1e",
-      "dac60c2ec161",
-      "b35c3cfe1435",
-      "5fa955836617",
-      "03fc89d9bb98",
-      "d70b09a90de6",
-      "481fdf37202b",
-      "23a506afb336",
-      "14c82f232cda",
-      "6d2799b00b65",
-      "a1bd142738b8",
-      "442d732b4ea4",
-      "6e6c571cab9a",
-      "4e38a8daec25",
-      "e9b90d170582",
-      "fe9117bb33df"
+      "cedcaef18fc5",
+      "4839328c8e4b",
+      "b1a8afe6eded",
+      "b3bf4c609c8b",
+      "31e561f7b98f",
+      "8828252c2f7e",
+      "af45461689c6",
+      "f7ae7d67cbe4",
+      "57168ade9b55",
+      "2418d63762ac",
+      "a8067f054ff4",
+      "328d87595e51",
+      "63012c24b419",
+      "d16f3da7cad1",
+      "f59b8b5aec82",
+      "089a52bc176c",
+      "d415fc346b73",
+      "ac2d525554ac",
+      "8e0abb5c2ffd",
+      "0fd59d2820e0",
+      "7cb8f459fab1",
+      "4ae3e63fb0b2",
+      "0b6a0b9a29a8",
+      "99de76b1eedd",
+      "2f8b0b4027cc",
+      "9c8049101655",
+      "2c03c719320a",
+      "8f589300949c",
+      "38301925d8a3",
+      "01dcb7f0fd95",
+      "562bad280afb",
+      "6aa70ff8c517",
+      "db1ea32a72eb",
+      "a086590c0f5a",
+      "ce2b81d79997",
+      "da9546c3c9a6",
+      "cf69a108f31b",
+      "1dc2f5b9c1db",
+      "5f5e6a39baaf",
+      "0e9de4d8ae92",
+      "e3640e9d8ede",
+      "c2e8c147dc14",
+      "fc3123d687d2",
+      "98162c9d45a6",
+      "7cafe7559e5d",
+      "7ab7d15e4889",
+      "a96533f045db",
+      "e9b532b5096b",
+      "e7607145dfdc",
+      "d9695a0b2623",
+      "e86f702002c0",
+      "615947abf48d",
+      "17e852d7cb89"
      ]
     },
     "lines": [
@@ -997,12 +1019,13 @@
      "Current account 2026 (IMF WEO forecast): 0.5% of GDP",
      "Current account 2027 (IMF WEO forecast): -0.7% of GDP",
      "Policy rate: not published by BIS for this country",
-     "KZT per USD (open.er-api.com, Fri, 30 Oct 2026): 452.9"
+     "KZT per USD (open.er-api.com, Mon, 02 Nov 2026): 453.4"
     ]
    },
    "changes": [],
    "angle_sources": [
-    "KAZ-3",
+    "KAZ-1",
+    "KAZ-4",
     "DATA"
    ],
    "angle_flags": [],
@@ -1017,31 +1040,31 @@
     "ccy": "EGP",
     "query": "Egypt (IMF OR pound OR central bank OR eurobond OR inflation)"
    },
-   "headline": "Egypt's central bank makes first rate hike since March 2024",
+   "headline": "Analysis| Egypt rate hike prioritizes currency stability over economic growth - Economy - Business",
    "bullets": [
     {
-     "text": "Egypt's central bank makes first rate hike since March 2024 (Reuters).",
+     "text": "Analysis| Egypt rate hike prioritizes currency stability over economic growth - Economy - Business (Ahram Online).",
      "sources": [
       "EGY-1"
      ],
      "flags": []
     },
     {
-     "text": "Egypt\u2019s Central Bank Surprised Markets With A Rate Hike (Finimize).",
+     "text": "INTERVIEW: Africa Must Turn IMF Support into Sustainable Growth as External Shocks Deepen, Economist Says (DNE Africa).",
      "sources": [
       "EGY-2"
      ],
      "flags": []
     },
     {
-     "text": "Central Bank of Egypt Delivers Surprise Rate Hike (TradingView).",
+     "text": "Prime Minister inaugurates the trading session for \"Banque du Caire\" shares, with the participation of the Central Bank Governor (\u0627\u0644\u0647\u064a\u0626\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0627\u0633\u062a\u0639\u0644\u0627\u0645\u0627\u062a).",
      "sources": [
       "EGY-3"
      ],
      "flags": []
     },
     {
-     "text": "IMF ties Egypt\u2019s final loan review to state divestment, private-sector growth - Economy - Business (Ahram Online).",
+     "text": "Egypt signs $1 bn World Bank financing agreement for 2nd phase of development policy programme (https://www.irishsun.com/).",
      "sources": [
       "EGY-4"
      ],
@@ -1053,75 +1076,75 @@
    "articles": [
     {
      "id": "EGY-1",
-     "title": "Egypt's central bank makes first rate hike since March 2024",
-     "publisher": "Reuters",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaWs3LWxWaXNJdzQ2aGROTlV4a1JtdjBpX21DZmxsYWQ0MF82eWk4b0VxeUVoamFGb3Y4SVBCQlY5ZTltM2t5ajYwYUJ0WlJpeDEtSkY2VFFUN3ZvQ2U1MEQyeWRfMHluY2NMNHlmaTFhWVN5cE1xYWFaazdPeDB0M1ptTEFQNTYxbG9hXzg4dG5lWDVINEJwWWFmbVdEcjdqcTVXOXl0UTVRR1U?oc=5",
-     "published": "2026-10-29T19:18:49+00:00",
-     "snippet": "Egypt's central bank makes first rate hike since March 2024 Reuters",
-     "score": 6.05
+     "title": "Analysis| Egypt rate hike prioritizes currency stability over economic growth - Economy - Business",
+     "publisher": "Ahram Online",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSnp0SmtpeXdsYWhDZDFOQW84YWV6b2xqYmZvT3VOWVhoZTVkTm1Nb1F5T196QV9adDhMWTZpTEZNYUhHMWhwYm9xZG5JOExfUTdEWnRLeTEwYTl6a3NnS2tLcTFWWWI5MFluMTN5UlFMcV92aEUtYTUzLU5jUkYyckV2WEx4bmRSNGpiX3FZbXRZcFBQTldGUEN6alMtRE9WWlh2YlF2cHNlSXRSaWlGZWdjaDU3a1Fo?oc=5",
+     "published": "2026-11-01T11:24:57+00:00",
+     "snippet": "Analysis| Egypt rate hike prioritizes currency stability over economic growth - Economy - Business Ahram Online",
+     "score": 5.78
     },
     {
      "id": "EGY-2",
-     "title": "Egypt\u2019s Central Bank Surprised Markets With A Rate Hike",
-     "publisher": "Finimize",
-     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOUlfVFFVSGo1MmZ0Q2dHZ0JMZFBZOUYxUmhSWW10YldoX0JtMDlGVl9FLUhWVFI0REg4Q054WVRzVkdjbzZOX19XWUJXUE1TLTBmY2xKblQ1LXpaNGRRRzJtY0ZuZXpLMEV0UWFJc3NWNFZ2SGs3eE5iMUdPRjZVMk1lcGRwQWlHNXFyNA?oc=5",
-     "published": "2026-10-29T17:24:16+00:00",
-     "snippet": "Egypt\u2019s Central Bank Surprised Markets With A Rate Hike Finimize",
-     "score": 6.0
+     "title": "INTERVIEW: Africa Must Turn IMF Support into Sustainable Growth as External Shocks Deepen, Economist Says",
+     "publisher": "DNE Africa",
+     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOR29PSTRISmVsMDE4bGY2Ym52T2hNdkcta2JVWUw3Z3d5Z0JSZUhEMDM5ZjdHWDY1RHJSTDZ4V2pNLTFSd1dKUDhSaVNxQVVGVGw2Z1VOWDlQa2tRMmN6dDBtVkJqdXlEaWRDVU1PM1VzdXFGV0ZtSGZiYmItSTVTdVZzREEzQnI2VkUyLURJQmpZNFBUVVF4TGlzMXVIejZLc0lxell3T01xR0ZLeVRuQ3lCOW1kSnUzb0g5cDI2bGZFRkxnYm1nOWhYdE9sUk5tajVXNA?oc=5",
+     "published": "2026-11-01T18:53:43+00:00",
+     "snippet": "INTERVIEW: Africa Must Turn IMF Support into Sustainable Growth as External Shocks Deepen, Economist Says DNE Africa",
+     "score": 4.48
     },
     {
      "id": "EGY-3",
-     "title": "Central Bank of Egypt Delivers Surprise Rate Hike",
-     "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYVdNbEVyT25iczZNeTRuckhvRXFqUUYzanprR3djRGV3RDlKNFhQc1VSdFR6NXdTUXVNVWdyZ01oLWU5Z016VEZUS1k1M2NMQUhMYUhzMnBqWXJyYVFxSmVPUDdPMERqWHNpdE5xTXR4N1BtLXAzSFBiYzVDa2JScUxoajZsUzRrT1UxQnM4S21jRktabENZYTBRQUpqRGpEbGc?oc=5",
-     "published": "2026-10-29T15:12:37+00:00",
-     "snippet": "Central Bank of Egypt Delivers Surprise Rate Hike TradingView",
-     "score": 5.94
+     "title": "Prime Minister inaugurates the trading session for \"Banque du Caire\" shares, with the participation of the Central Bank Governor",
+     "publisher": "\u0627\u0644\u0647\u064a\u0626\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0627\u0633\u062a\u0639\u0644\u0627\u0645\u0627\u062a",
+     "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPTzlFLXZXa0EyZm1KaU9EUTVqS0I1OEY2eUtwcUpwRTdmQnZHTTdnMXNER3ZodFd3TkM2ODFtUjNYWGdGYVBnMmdNbEFYb2ozdGZGSGtFUFVnSTkyYWVSNHdMd2dLVTR5WHRXVmI1ZFdYVWo0YzFPR2FHLWJrQUZodmNjRXdNUWZFNzhyX0k3OVZVSUY3WGI0dl84U1RGU0lwaHdvRUlYVmxpVjExaTA5SDJTcG5UeHVyZXg3T1VLTmM3N2xiZXAxUHFqM3RscGdTc2c3YWVnRnMxdjV0MDBRVnA1ZVNKbzZZeGViWm03bjVDRk1UZWs2YjJB?oc=5",
+     "published": "2026-11-02T10:29:51+00:00",
+     "snippet": "Prime Minister inaugurates the trading session for \"Banque du Caire\" shares, with the participation of the Central Bank Governor \u0627\u0644\u0647\u064a\u0626\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0627\u0633\u062a\u0639\u0644\u0627\u0645\u0627\u062a",
+     "score": 4.42
     },
     {
      "id": "EGY-4",
-     "title": "IMF ties Egypt\u2019s final loan review to state divestment, private-sector growth - Economy - Business",
-     "publisher": "Ahram Online",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMXVBSjdCbmNHdGlPXzFZWW8wMVlPWmc3Y0JKbm9TYUxBLTJrWEpOYTJuNXAzUVhlTGJwZlVTSlFSWDJuSTNrelFQaHk5LUNyUEVfc0F4M2VqYVJjM3d5Z1dtekV5a2FHejdWQmlKMVN6OFVTSjJGRExrYUFRdWE3Z1pxb3dmZ0N1eUx2b1c0OUxETXZYSEhQQm1sUXVNUE9HVHZlck5nX3hOWFBWeXZMMVY2WFVzTEVTcjhLZUxKaVk?oc=5",
-     "published": "2026-10-29T17:14:31+00:00",
-     "snippet": "IMF ties Egypt\u2019s final loan review to state divestment, private-sector growth - Economy - Business Ahram Online",
-     "score": 5.5
+     "title": "Egypt signs $1 bn World Bank financing agreement for 2nd phase of development policy programme",
+     "publisher": "https://www.irishsun.com/",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQQm1IT1JoUHdUWGw5U1FVd216enBBZmpKdlVUZl8wNloyaWxEcGVrYjRTZlRTRzRtZmhsQ2dTSVlZazF3bWN5NE9sOFNtMzZKc3hMTHZzNUhnQkgzaWVuZDlLNXdPRFFhdzF5WWRJQXBqS2l0OGtBSm1GaVQ4XzByV3RuMjFxUk1ObVlOTmZFRHItOENNMURIVUVjazFtUy01dlBvMFdKUm5YZlBWWE80QjE1SWNQR3EwOXBYM1hZS2d0Q3ViMmNFU1Q2aXhpZw?oc=5",
+     "published": "2026-11-01T12:25:00+00:00",
+     "snippet": "Egypt signs $1 bn World Bank financing agreement for 2nd phase of development policy programme https://www.irishsun.com/",
+     "score": 3.8
     },
     {
      "id": "EGY-5",
-     "title": "ZAWYA: The Central Bank of Egypt raises key interest rates by 100 bps",
+     "title": "Central Bank of Egypt raises key rates by 100 bps in first hike since March 2024",
      "publisher": "TradingView",
-     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQVBULW9MbUpvcHREc0pkaWo3aUN3MUh2aHhGdWllQ3JFTmJZRGhXQnJyOURQeWJPdG9aWThqR0FDMFpMR3Rhd3N4aFkza3pIakNDbGc0bC1MV19yU2pYMTFyTDZETUFiQWtFNEtnZjZ3cDh1S1J0NlJSTkxvT3RVenlkVjV3QlBKd2JVSGJpY2tvZTVBVXBvTG9oUnNpSlp4NEY4c0hsSmdBTDNYT2VGdWpFVlJwUEtjNTI5clMtWGJzbXRYMGh3aFNFR0FkZWFpZ252Y3VXTQ?oc=5",
-     "published": "2026-10-30T07:23:55+00:00",
-     "snippet": "ZAWYA: The Central Bank of Egypt raises key interest rates by 100 bps TradingView",
-     "score": 3.39
+     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNV2ZCWDhTekZjQlltdW9CekhPbV9PQXNCRTA3OXR0UVBMNzByREpYcjA5UTdLc01jVHBNUE1RQWo0V2lVYVh2Z0F2UHIybzJWN1FTekdvMEdnajM3WWdZQXFOemZpT0poOVZfemJJZHNtME5aX3JaZVZFbEFQMzRJWUNDbXRMU3BVUHNKaU1kRGFCOEw5aUhKU0FBTFZBQml0Rjk0cUZfUmZicDFQSnY5REh5VU1XcS01VmY5M1JDb2hLMU9yRDJZbW83aGdTRmN1NzRGV1NwRmhhWVF5U0pRNkJMcW1PRXk2ZWRRRQ?oc=5",
+     "published": "2026-11-02T04:17:00+00:00",
+     "snippet": "Central Bank of Egypt raises key rates by 100 bps in first hike since March 2024 TradingView",
+     "score": 3.24
     },
     {
      "id": "EGY-6",
-     "title": "Egypt's central bank raises key interest rates by 100 bps in first hike since March 2024",
-     "publisher": "marketscreener.com",
-     "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVnFaS2pFM3ppN0tBaGtPX0VRMG00eVVXVUZMMllwTHdMUlhEYjJCLTFXY3B1N0xiWUNMREdKZ1VEb1VwQ2pnNXJDMGFJZGJCNHc3NEZTNjdCbEpoMEtLXzdMUzNtSk1LM1MzeUhNWG0xODllbEw1V09yYUFPTG13TktwMTRZN2VXV2NXT2VvMktqTjhpYU9ZTXlDRWRCTHpibU9OcWVONEJyeENfZm10d2MwZmpfb3FnX2FnZ1lWMW43LUVwekxYeTBDWVVEUU9GZ3U2Q1VOeXM?oc=5",
-     "published": "2026-10-29T21:54:58+00:00",
-     "snippet": "Egypt's central bank raises key interest rates by 100 bps in first hike since March 2024 marketscreener.com",
-     "score": 3.13
+     "title": "Egypt signs $1 billion World Bank deal as war compounds economic pressures",
+     "publisher": "The National",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQTTJIUjhnNFhWdkpJaWhjTG9rS0llZl9wTmgyMW1QTTZXRzQxUXB3ankzZjlIa0Q1NTFMbnJ4ZWFaMlZjWXpTcHdkZjJheUZ3OE5ObGlNRkRIQ0ZOU1Vwb2tNRkthQkFYajhhemVyQ0IzT3pJUUZ1WjVzS083dzBOZzZPUXRxdi0yUDh1RDBydGZ1NS12Mld4eUZLRm13WERIV3JpS01wS1ZOTWZFalM3SHRvN1FrcnRNUllpWDNvMWVVUWFiR3c?oc=5",
+     "published": "2026-11-02T10:30:00+00:00",
+     "snippet": "Egypt signs $1 billion World Bank deal as war compounds economic pressures The National",
+     "score": 2.92
     },
     {
      "id": "EGY-7",
-     "title": "Egypt\u2019s central bank raises key interest rates by 100 basis points",
-     "publisher": "Investing.com",
-     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMjlYRm9XQnpnQzh4NDBSRnRHLW1OYkRSRUVoNnlMbnlmV1RjZnhuMGo2azd4V0FQOElQZ1k0NmlwQVhOSGJra3gwUmhqUnhIejdpLUtLZDdmXzFCVDkwTGFOanRiajVSVC1WeVFLY1d2R1FXaVBzVUFKdy1mbFA5aEJWcDVUa2FRTUw2bTVueHFuU3hnZ0FXcnh2b012c2FDWG9oRkNJZy0zQWFmaUFicE5fOEZRYU1qSE9KZ1BvVQ?oc=5",
-     "published": "2026-10-29T17:59:57+00:00",
-     "snippet": "Egypt\u2019s central bank raises key interest rates by 100 basis points Investing.com",
-     "score": 3.02
+     "title": "Egypt's $1 Billion World Bank Deal: What It Means For The Economy",
+     "publisher": "Sada Elbalad English",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOYU93WkduSlhDOWRmUi1pSmc2SUNRNjg2Uld1TmFIX3o0OTFtd2ZyNFBpdTVWNXdKOEFnTUl1WWJ0NG9ubFU0NmwwSEo0Q3RKRVhMTzVyTXBSaWtTQ05BV3FEbFBqalhHaXBBYmIzVXg4YjdPN19yWW9Mbm55NzBaM1FYekhDQQ?oc=5",
+     "published": "2026-11-01T20:40:48+00:00",
+     "snippet": "Egypt's $1 Billion World Bank Deal: What It Means For The Economy Sada Elbalad English",
+     "score": 2.53
     },
     {
      "id": "EGY-8",
-     "title": "UPDATED: Egypt\u2019s central bank raises key interest rates by 1% - Economy - Business",
-     "publisher": "Ahram Online",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdDJlR3ZTUTk5S3JIS0E0dzZSVkg0U2lDcHh5ZHJpYTE4RzR2c3RPa2NGR2Q5ZTZYVGtEanlEelBoRFJST1A0ZnZRbFJsczU4eS1xYWNUS3ZGd2tmM0d6SzU3S1FyOTFSVHItb21rNHZRRE55R3NkRDlwa1poNDNHVUk4djFZYkNLVkVZUDZ1THNTOEw5X1Y4SW1uQUFySDUyZDU0SDBoTUJDNXEzc2l2NG5veVRUbEt4VEJfWHNTcGw?oc=5",
-     "published": "2026-10-29T17:14:31+00:00",
-     "snippet": "UPDATED: Egypt\u2019s central bank raises key interest rates by 1% - Economy - Business Ahram Online",
-     "score": 3.0
+     "title": "Banque Du Caire Shares Jump 6.3% On EGX Debut After $658M IPO",
+     "publisher": "Forbes Middle East",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYk9rUk1fdDVzSE5zZzZNWkEtZGwzRG1EbzRYeGw1aUdmNlNoWVpCTzZ1QlZER3JUQi1sY29JZExnLTRWZUp3bWREQU1MOS1pdDBvaDkwSHp6Q3JfU2dtd1FzS0N0cjV5WEZnaldLQXJ6aE9GM1pwV0VOSEtTeGQzTUxuRzhFYlVVNExUaGxGMkhmNnU3SVdfcFRTUXR5N25NVlVSOWJGV1pvRTYxSy1R?oc=5",
+     "published": "2026-11-02T12:40:33+00:00",
+     "snippet": "Banque Du Caire Shares Jump 6.3% On EGX Debut After $658M IPO Forbes Middle East",
+     "score": 0.98
     }
    ],
    "macro": {
@@ -1149,29 +1172,24 @@
       }
      },
      "policy_rate": null,
-     "fx": 56.042101,
+     "fx": 55.960696,
      "articles": [
-      "3149fee54e73",
-      "c1cd1f6c7cfd",
-      "0197ca13291b",
-      "76b4fdfeab69",
-      "2af95b8fe582",
-      "4cb8870f142a",
-      "1d35667106c2",
-      "4e8914de9160",
-      "8cc81cee2a7d",
-      "ef9b8cb49491",
-      "417ea4249436",
-      "9137d5c465dd",
-      "bc21216e043d",
-      "3fa9279d549d",
-      "fb71fdcbccdf",
-      "d36e6cb5ba82",
-      "0cf69230f3a5",
-      "e0547e7b258e",
-      "3fd943711ecc",
-      "796accb0707d",
-      "be4d80d52f68"
+      "4ecb2caab1a2",
+      "32c7c6032462",
+      "b029037be2b3",
+      "38c3a1d7428b",
+      "6fb2fa3d47b7",
+      "9040800beafd",
+      "bb73587b9efb",
+      "225e5972cdd2",
+      "c4cf549ed211",
+      "16b3685bf070",
+      "74420eeba83a",
+      "33da3b790308",
+      "0c0d0fb92f7f",
+      "6f299273a25d",
+      "12a3400121ef",
+      "e00da191a52a"
      ]
     },
     "lines": [
@@ -1186,13 +1204,13 @@
      "Current account 2026 (IMF WEO forecast): -4.4% of GDP",
      "Current account 2027 (IMF WEO forecast): -4.9% of GDP",
      "Policy rate: not published by BIS for this country",
-     "EGP per USD (open.er-api.com, Fri, 30 Oct 2026): 56.04"
+     "EGP per USD (open.er-api.com, Mon, 02 Nov 2026): 55.96"
     ]
    },
    "changes": [],
    "angle_sources": [],
    "angle_flags": [],
-   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
+   "note": "LLM step failed (ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)); fell back to extractive."
   },
   {
    "country": {
@@ -1203,31 +1221,31 @@
     "ccy": "SAR",
     "query": "Saudi Arabia (budget OR deficit OR bond issue OR oil OR SAMA)"
    },
-   "headline": "India's April-September fiscal deficit at 42.1% of 2026/27 target",
+   "headline": "Rising Oil Prices and Fuel Shortages Push Up Indonesia\u2019s State Budget Subsidy Bill",
    "bullets": [
     {
-     "text": "India's April-September fiscal deficit at 42.1% of 2026/27 target (Business Recorder).",
+     "text": "Rising Oil Prices and Fuel Shortages Push Up Indonesia\u2019s State Budget Subsidy Bill (Magz TEMPO).",
      "sources": [
       "SAU-1"
      ],
      "flags": []
     },
     {
-     "text": "Oil Jump Sends 30-Year Yields to Two-Decade High (EnergyNow.com).",
+     "text": "OPEC+ To Maintain Oil Output For 3rd Consecutive Month In December (Bernama).",
      "sources": [
       "SAU-2"
      ],
      "flags": []
     },
     {
-     "text": "Global gold prices fell due to pressure from oil prices and US bond yields. (Vietnam.vn).",
+     "text": "Could the oil shock become a global debt shock? (DW.com).",
      "sources": [
       "SAU-3"
      ],
      "flags": []
     },
     {
-     "text": "Govt extracts Rs4.4 trillion in fuel levy, puts relief on hold until next budget (Investify).",
+     "text": "OPEC+ keeps December oil output targets steady ahead of tougher call for 2027 (Aaj English TV).",
      "sources": [
       "SAU-4"
      ],
@@ -1239,75 +1257,75 @@
    "articles": [
     {
      "id": "SAU-1",
-     "title": "India's April-September fiscal deficit at 42.1% of 2026/27 target",
-     "publisher": "Business Recorder",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWWVsdllUWldRaGZzTzRHWVhmQXJXWWxiLVh0MlBzV2RwTU5jVm1zNVZuU1JRWmU3WHNGeWRSb0FfZkMwZm1keTk0am1pZTkwZmxPa1RwZVZSWUFRSTdyLUNzMndRSFlmQUpYQzBIN0ZLNWdPY0hDSWsxMUs5NkhkLVV3eVVMRXdQeERfWnJpTllDTmRHTmxwRVhoM2xFelltaGcw0gFWQVVfeXFMTnZNNEoxd0lsbW5DaDhSQ1hlUVRncjJLZjV3SFh1U0djeVBROVpDZVBta083a0tXR1lEcFlRd3ZmWlN1NVRrdmxtUzhNTWs2MXlxYVpJeFE?oc=5",
-     "published": "2026-10-30T10:53:16+00:00",
-     "snippet": "India's April-September fiscal deficit at 42.1% of 2026/27 target Business Recorder",
-     "score": 5.49
+     "title": "Rising Oil Prices and Fuel Shortages Push Up Indonesia\u2019s State Budget Subsidy Bill",
+     "publisher": "Magz TEMPO",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWG1vTW5mN25YWHRlckxRbGhhRTMxNHdyNnNoQ3VZbnBoQmlCenJ3eEZ6a2pZSWxZNXpoQm55ajhfMmZfQUlIXzFOLUZlMHllcXl1SlpFN0hsSkhoZEZpS3k5YlRKSmlrYzY4MFY3ZUJKU1U2aUlZMEVpZjNkRWRnSDVPNlU4YV8ta2dqSWJzZUwtNE5LN2FDUTFCd0dlbDF2Q2dWTXQ5RVR1ZmNHSmZqMkJtbzBzNnhVYktISV80alpFSzg?oc=5",
+     "published": "2026-11-02T08:14:04+00:00",
+     "snippet": "Rising Oil Prices and Fuel Shortages Push Up Indonesia\u2019s State Budget Subsidy Bill Magz TEMPO",
+     "score": 3.85
     },
     {
      "id": "SAU-2",
-     "title": "Oil Jump Sends 30-Year Yields to Two-Decade High",
-     "publisher": "EnergyNow.com",
-     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUWk2WC1hN18wT1RfM3dHUFA4N1RoVkNJSVNtdVJYaTZWQzhJbXlLV2RHcTlNVTRRa3dFcWJWMXkwQWI5QS1FdnFsTGg3ZjVQVE8xbjE3QjBuYUQyZEpzMHZzZGd2UzFfNlZqUnRXc1ljRGVWV25OUERiQnRiU0ZRMThjS1hWdw?oc=5",
-     "published": "2026-10-29T22:12:15+00:00",
-     "snippet": "Oil Jump Sends 30-Year Yields to Two-Decade High EnergyNow.com",
-     "score": 3.63
+     "title": "OPEC+ To Maintain Oil Output For 3rd Consecutive Month In December",
+     "publisher": "Bernama",
+     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE03Z2YtRWN5Z1pRc1dUWnZsZU5nTXZKYS1RMWFHRmxBZGRRUnZ4aF9xTTRyMk5FS0dfRWpCOGI1QjBLYWU4T0dTR1pHQ2wwWGV1UzJNUGdjaDgtS25VLXV5U0Jn?oc=5",
+     "published": "2026-11-02T03:40:05+00:00",
+     "snippet": "OPEC+ To Maintain Oil Output For 3rd Consecutive Month In December Bernama",
+     "score": 3.23
     },
     {
      "id": "SAU-3",
-     "title": "Global gold prices fell due to pressure from oil prices and US bond yields.",
-     "publisher": "Vietnam.vn",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbDV0OHd5UVNXVUsyWlZUdm9KcmdaX1I1dW96alVmQ254NEcxV1FfMl9JNERLdEhmRi1Ub09Gajk5M1NUODkzemoyUUtVM05oZUtKejFzbUdJbVJKTy1nTWVWcndXTnUxY0R4RUVXV2RNN3RmS0FNRG5wUnB4MGV4RGtHVFB4YnpBYnpaWWJrZklmNDdFalY1V2FIcw?oc=5",
-     "published": "2026-10-29T19:12:00+00:00",
-     "snippet": "Global gold prices fell due to pressure from oil prices and US bond yields. Vietnam.vn",
-     "score": 3.55
+     "title": "Could the oil shock become a global debt shock?",
+     "publisher": "DW.com",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOakZ1dWN1UkVxdWtEYm5XSy11NDRNdzB6clZhdFJJV0NBWTUwTkJGMHNxejNwTDAwQmhiTWVMOERiejVJa2ZGTk55T0lUbjR3bUlSUUtZaEtsbG5xdE1uYnFBalJDQkw3RU4xdUlpNVBQSHVkU3IzNWJaRXoxV3FBM0xZTWZxQ1NDLUZJ?oc=5",
+     "published": "2026-11-01T05:23:46+00:00",
+     "snippet": "Could the oil shock become a global debt shock? DW.com",
+     "score": 3.11
     },
     {
      "id": "SAU-4",
-     "title": "Govt extracts Rs4.4 trillion in fuel levy, puts relief on hold until next budget",
-     "publisher": "Investify",
-     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRkdmbm9BS2k2Zl92SldGMnptM1F0WHZQSDFzZXdLeWpLVWM5VzdkYUdTNnB4UGY3aXFuWEVRNzBsaEFEYW1HMk9XUTFMTUdaenN2alhkdDc3bDFZNUNLWk8zMFExb1dNTFc3OTViLVdqQ1hXWUpMdUdVckNuWTYyLXZqSFhIVWY0bDdiVW1PdHVHelhMODE5M3BIbThUcElXaEwxbFR4WGdhLUMweEVCVEhCeTNhZjRtNUxCa2dkMA?oc=5",
-     "published": "2026-10-30T03:48:24+00:00",
-     "snippet": "Govt extracts Rs4.4 trillion in fuel levy, puts relief on hold until next budget Investify",
-     "score": 2.79
+     "title": "OPEC+ keeps December oil output targets steady ahead of tougher call for 2027",
+     "publisher": "Aaj English TV",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMjhXU2pXSF9NYkRZZHlxOVBQZVUxTnpnTkNIX3BPMXRhUl9GRGNZYUozd3JQWHhNMFNoQ2tqTXo1eFZmR0RxVkNwdlMyNG9wOElobDl6Y2FpQlNQLWpmOTVpSHk5ZE9wQlFFQmdKaVhLRnBacHZxSWdkaldoeDFZVU5FVXZ5bUJ0X2F5cTJ3WjVnZTRxUldRNGN3ejhDT00zcEZFd2FwOXZoV2cyN0JPS180SXI?oc=5",
+     "published": "2026-11-01T17:50:30+00:00",
+     "snippet": "OPEC+ keeps December oil output targets steady ahead of tougher call for 2027 Aaj English TV",
+     "score": 2.95
     },
     {
      "id": "SAU-5",
-     "title": "Rising interest payments, uplift spending strained Pakistan's fiscal position in FY27's 1st quarter: ministry",
-     "publisher": "Investify",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNnJaTVBiZUZlUGNBTnNqaERKNThaOXRmUzJsT2RlMFRZWVlzVl9zNGtiSUxqUWJBbmVpZFM1V3k1RUt3YUpEc2YwYVRLREY2MWxXRmZTZFZVam1QeHM2bnljMWZScUZublNqc1lzcU9Remdxbk03YWpZQlVrdmxtZjF6ZUVqMHRCTV9QbmxEekY1RWQzeGhneVVTN3B1OW93Z3VHU1ZSOUh0Y1ZmbjBlTWlZWEJoSXFvNUtlZEtNMUxlbnpVSnNhNk1VdFU0QQ?oc=5",
-     "published": "2026-10-29T16:35:18+00:00",
-     "snippet": "Rising interest payments, uplift spending strained Pakistan's fiscal position in FY27's 1st quarter: ministry Investify",
-     "score": 2.48
+     "title": "Saudi Arabia\u2019s GDP fell 3.8% in third quarter \u2014 Asharq Al-Awsat",
+     "publisher": "UA.NEWS",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWWdBaDZjWllKalJFUmxyR2dzdzVGZ192MEtieG5mVjl6WERMcjlGNUlubUY0bzNPSlBqOE1Hd0M2N1paUkstVi10eTE5TXlSUTg4aERhbTBrdy1QUTRLb1FQTENNV0ZqQVhhYkhFeWticktWV1FCNDBEUDZsS3VWRnkwelcwdHVicWlfYVhKU2kyLXNIbTVZVTdsb21aZw?oc=5",
+     "published": "2026-11-02T06:15:39+00:00",
+     "snippet": "Saudi Arabia\u2019s GDP fell 3.8% in third quarter \u2014 Asharq Al-Awsat UA.NEWS",
+     "score": 2.8
     },
     {
      "id": "SAU-6",
-     "title": "Microsoft to raise $25 billion in US bond sale, reports",
-     "publisher": "Business Recorder",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWV8weXYtaVVGZ25oZVFUUTVOU0tTV2lUbE15aEwxOUJUM0dWdXlwX0ZGREZfMldDdkM5RmZHcW9MRjZxenBTblhDNFVSaFdNSk5nbGNDUnpRSVl3VnNUUHd3SUw2Z1J1SWRMZHJleVJnQ1UwNHc1b3NzNV9LaFhTUWhZUWFFZlNjRURxREJQUTF5dEhHNUFUU9IBVkFVX3lxTE0xT0FDa2ZmY3FwNW5VMFk5ZExxM1cxdjhJdzBIMnQ5bmlMYTFCM3pWLUdhbzZHdG83NHc2elU4YTJmN0JWclZPUkliZUVkN2JJaGZhNjV3?oc=5",
-     "published": "2026-10-29T12:18:38+00:00",
-     "snippet": "Microsoft to raise $25 billion in US bond sale, reports Business Recorder",
-     "score": 2.36
+     "title": "Saudi GDP contraction slows despite war disruption",
+     "publisher": "Arabian Gulf Business Insight | AGBI",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUXRoUUc2VXZTNnhzNGtUZVZoUzlVSEdibGJ0elpzRmhGRTM1X1lhN1F6bFJBNVl3eE5KTmMwcDRaUkp5SUltUjhDcnFNZWZpcDE3THN5RlUxWGZLdWQ0SGU5OXowdFNvTm9pUV81M0FlcWlDZjFzTXlpaWJVa0hpOC1tR0pNU2F3LWNGLU5QLWNaZw?oc=5",
+     "published": "2026-11-02T06:14:00+00:00",
+     "snippet": "Saudi GDP contraction slows despite war disruption Arabian Gulf Business Insight | AGBI",
+     "score": 2.8
     },
     {
      "id": "SAU-7",
-     "title": "Saudi Arabia aims to raise $12 billion from international debt markets in the next two months",
-     "publisher": "\u0648\u0643\u0627\u0644\u0629 \u0635\u062f\u0649 \u0646\u064a\u0648\u0632",
-     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5qUkEwa1FxSGdKQ0Y0a1FCbG05R2dnQVV6aml0dFNfeVQ1bnBkN05abGRudzc1OHRPSmRkdGVQN2NkeFh3Z0pMMXNCRVpYR1dMQ0NaSVJB?oc=5",
-     "published": "2026-10-29T10:08:29+00:00",
-     "snippet": "Saudi Arabia aims to raise $12 billion from international debt markets in the next two months \u0648\u0643\u0627\u0644\u0629 \u0635\u062f\u0649 \u0646\u064a\u0648\u0632",
-     "score": 2.3
+     "title": "Pakistan offers tax-free oil storage to Saudi companies",
+     "publisher": "Aaj English TV",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNd3VfR2ZYenh2RTBhLU80S1psVjRwNXZTdmZnVnZDNE9OWlhWMGsyOUlnMnBPWWU1ZzMtT0liOHhOM0Nqb1NzaHpKUUxrMmhVaXBhcVJzb0xFc3c1Y1pVRWwybWxiMW95SDdEUXV6a3BHU3VOXzUwR2FIRDlWLXdERTVWVEJrcTY2VDhzcXNkclZadU1Ld2JnLUZaTQ?oc=5",
+     "published": "2026-11-01T17:05:50+00:00",
+     "snippet": "Pakistan offers tax-free oil storage to Saudi companies Aaj English TV",
+     "score": 2.43
     },
     {
      "id": "SAU-8",
-     "title": "India bonds may firm with Treasuries; crude, supply could cap gains",
-     "publisher": "Business Recorder",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOUdyNldpTmlheFlLdlo5RWhPclJvOHFNMXc1YmoyVjN1dkZndHRaeTR1Mk9nWFdNS1JIMUJFalpERGE4TDJreDg5V1pBMXJPeUw3WFJrcE5qOFdtRUZvNTFkemdNUURuMkhYbi1aV25RVXN1MV85UDR0YmxWVjRyTW5hcUxUY0FvQzRYQ081OUdWeEhvaVNPakRrVlhQNk4xUlpZR2cya2XSAVZBVV95cUxOb1RtOGZXVGVfWmVqSjBJb2MzNENicjZoMWliVXZjX052ZzJwcFZ2UTZRLWkyYnpMek5CanV0cVA1eDVBQ0RpZzVGRkRvaUhhOExSSjBKdw?oc=5",
-     "published": "2026-10-29T06:28:24+00:00",
-     "snippet": "India bonds may firm with Treasuries; crude, supply could cap gains Business Recorder",
-     "score": 2.2
+     "title": "Saudi Economy Relies on Non-Oil Growth Engines to Absorb External Shocks",
+     "publisher": "ASHARQ AL-AWSAT English",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdXRNeTdaT3JOVV95VVZDbS1vcG9STWlKS0R2NHJoaEkxWGhRdGNTM3FadEhrb25qcE1GMjJCXzhUYlQxS3hSc1Q4LXMtMlc5SE50ZGphVTlXU1BsWldDZEZfM25PdUFBeE1jRGd3cG1DajdzZlpia0MtU3AyZDFmQ0pZRG9oZC1ma3pPYkpJWXUxNnc5MHcybVlqT2psSU5ub2ZudndET1hza0dJQkJB?oc=5",
+     "published": "2026-11-01T15:16:53+00:00",
+     "snippet": "Saudi Economy Relies on Non-Oil Growth Engines to Absorb External Shocks ASHARQ AL-AWSAT English",
+     "score": 2.38
     }
    ],
    "macro": {
@@ -1341,42 +1359,27 @@
      },
      "fx": 3.75,
      "articles": [
-      "a2aacf7c7320",
-      "19923092d6c2",
-      "116168821380",
-      "4c5cb8141c2a",
-      "de7d14b06532",
-      "1bcd7504364d",
-      "e4e30c329736",
-      "51af6e0a0d0c",
-      "ec4a3e686402",
-      "ea34075f3cd0",
-      "9a2626f62509",
-      "743ef79d5c0a",
-      "b77b7da61dbe",
-      "72db1493eb60",
-      "bcf18e8f20ad",
-      "5d10b4b01ffe",
-      "60582d76d252",
-      "1531debad6e9",
-      "777c636a5691",
-      "6d9010f87b91",
-      "f44131acdcd6",
-      "b422c56050d0",
-      "07df592ffa84",
-      "957ac5eacd02",
-      "4ab7724a4feb",
-      "feea93ec35d4",
-      "d36d94120cb9",
-      "52838b027d03",
-      "864424a004ae",
-      "a7b955f7da3e",
-      "a87ae795a920",
-      "bdf999f51a95",
-      "bcb5608d8497",
-      "29519354ada4",
-      "5765fa93e144",
-      "636d388ae43d"
+      "aaf34a5c6044",
+      "f81263ed3f15",
+      "848b744991e6",
+      "c674e83de191",
+      "27ebbb7e9e46",
+      "4c5d27145e6a",
+      "8b339b35765e",
+      "29492916d0b7",
+      "b27b337e5642",
+      "8a0533278a74",
+      "5caff0476e1d",
+      "1205127c089b",
+      "2181b7a4680e",
+      "aea61d81f562",
+      "482f24a7d108",
+      "c127275f2200",
+      "1ceca70bf611",
+      "67db60630f23",
+      "e1e3c52f6ae0",
+      "94eb44fa82b5",
+      "44b86159e1b8"
      ]
     },
     "lines": [
@@ -1391,13 +1394,13 @@
      "Current account 2026 (IMF WEO forecast): -3.5% of GDP",
      "Current account 2027 (IMF WEO forecast): -1.3% of GDP",
      "Policy rate (BIS, 2026-09): 4.50%",
-     "SAR per USD (open.er-api.com, Fri, 30 Oct 2026): 3.75"
+     "SAR per USD (open.er-api.com, Mon, 02 Nov 2026): 3.75"
     ]
    },
    "changes": [],
    "angle_sources": [],
    "angle_flags": [],
-   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
+   "note": "LLM step failed (ReadTimeout: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=120)); fell back to extractive."
   },
   {
    "country": {
@@ -1408,112 +1411,111 @@
     "ccy": "NGN",
     "query": "Nigeria (naira OR CBN OR eurobond OR inflation OR budget)"
    },
-   "headline": "Nigeria 20-year Eurobond yield drops to 8.50% alongside lower domestic T-bill rates",
+   "headline": "Nigeria\u2019s Eurobond yields hit 8.48% as 2046 bond records highest return",
    "bullets": [
     {
-     "text": "Nigeria's 20-year US dollar bond yield declined to 8.50%.",
-     "sources": [
-      "NGA-8"
-     ],
-     "flags": []
-    },
-    {
-     "text": "The Debt Management Office rejected N1.84trn in Treasury Bills bids as the one-year yield dropped to 15.8%.",
-     "sources": [
-      "NGA-6"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Diaspora remittances reached a record $1.57 billion in Q2 2026, while the Finance Minister noted economic growth and declining inflation.",
-     "sources": [
-      "NGA-2",
-      "NGA-7"
-     ],
-     "flags": []
-    },
-    {
-     "text": "Fidelity Bank redeemed its 5-year $400m Eurobond.",
+     "text": "Nigeria\u2019s Eurobond yields hit 8.48% as 2046 bond records highest return (PM News Nigeria).",
      "sources": [
       "NGA-1"
      ],
      "flags": []
+    },
+    {
+     "text": "Naira Outlook Improves as Oil Prices Hit $115 and Foreign Reserves Reach $55bn (https://www.nigeriahousingmarket.com/).",
+     "sources": [
+      "NGA-2"
+     ],
+     "flags": []
+    },
+    {
+     "text": "Nigeria Budget Overlap Creates Fiscal Indiscipline and Transparency Crisis (Head Topics).",
+     "sources": [
+      "NGA-3"
+     ],
+     "flags": []
+    },
+    {
+     "text": "BOI eyes cheaper loans, $200m AfDB facility to avoid costly Eurobond (The Sun Nigeria).",
+     "sources": [
+      "NGA-4"
+     ],
+     "flags": []
     }
    ],
-   "bond_angle": "Compression in sovereign Eurobond yields to 8.50% and lower domestic yields reflect improving sentiment, supported by solid external inflows with Q2 remittances hitting $1.57 billion. A successful commercial bank Eurobond redemption also confirms functional market access and external liquidity.",
-   "method": "llm:gemini-3.8-flash",
+   "bond_angle": "",
+   "method": "extractive",
    "articles": [
     {
      "id": "NGA-1",
-     "title": "Fidelity Bank Redeems 5-Year $400m Eurobond",
-     "publisher": "Business Post Nigeria",
-     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNY0lucER0XzBOMThQV3MtQVFsbEFKRFJHbWZaczl6U2YweFZNd0FZUlplRnNzWUZLT2JWUTZQMEF3N2tNMFNWaHVDeVBHX2tPUkg2WW9vd2tydEFFSV9SNXptZHN5LTNrRVNfTlBETnp5eTByM0ZTNF9HWDU5ZEt1aA?oc=5",
-     "published": "2026-10-29T15:59:00+00:00",
-     "snippet": "Fidelity Bank Redeems 5-Year $400m Eurobond Business Post Nigeria",
-     "score": 3.96
+     "title": "Nigeria\u2019s Eurobond yields hit 8.48% as 2046 bond records highest return",
+     "publisher": "PM News Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNY3VHU0xuVlJoNkJfVDRUVUVvdk8zR2Q2NmRqcDAtNkxqRW11TmFKaWxwajI3Ym5fa2xGNmlwdHVyQVlxZGdQVURkZkdNVEFRbmdzSE5qYWVGdElQUnVhSXRWTkVjVFU2WkFxRUNuc044bzBHbnlHbmo3TmdYVnFCc0RCTkhpcjQ1VTFWWUpKWlh5RXhwdE5ocW11ODBUVkRMRXI2VS13aERfSk0?oc=5",
+     "published": "2026-11-02T10:14:54+00:00",
+     "snippet": "Nigeria\u2019s Eurobond yields hit 8.48% as 2046 bond records highest return PM News Nigeria",
+     "score": 8.41
     },
     {
      "id": "NGA-2",
-     "title": "Nigeria\u2019s economy growing, inflation declining \u2013 Finance minister",
-     "publisher": "\u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBTOFc5YUlmMmV4Z19UZEdDMUxFdHJTRVF2a1hWNDZ0Y1NWUzB2T0RjYlhnNWxRNUpuUmUyWTJ3ZVhLZVJTT3BNWndQa2J1YXlDeGtJ?oc=5",
-     "published": "2026-10-29T05:58:54+00:00",
-     "snippet": "Nigeria\u2019s economy growing, inflation declining \u2013 Finance minister \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-     "score": 3.68
+     "title": "Naira Outlook Improves as Oil Prices Hit $115 and Foreign Reserves Reach $55bn",
+     "publisher": "https://www.nigeriahousingmarket.com/",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZlVDeEV6RkxDMUtnNDdJUXlkdVlUNnpQbFB0QVJLeU93U0otemtLRUgwMG9aZm5iRDVtbVhjSElHRzNkU1lZMmlQRFRUQXZZbEhBV0xZdzEzYkFIelM5bHNBNDdnQ3dRQWRRRmZZSlhSTmVrT1I2NTdrVXBEUVBCTWZqendhWkNlSEczUVZTeVo2UQ?oc=5",
+     "published": "2026-11-02T10:01:40+00:00",
+     "snippet": "Naira Outlook Improves as Oil Prices Hit $115 and Foreign Reserves Reach $55bn https://www.nigeriahousingmarket.com/",
+     "score": 4.9
     },
     {
      "id": "NGA-3",
-     "title": "NESG chairman: Nigeria must cut inflation to single digits, tackle insecurity to sustain growth",
-     "publisher": "TheCable",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVXhxenNhY2l3SFZPNkstcjBJYVpaei1NU3B1MWVLTktGdlNTWWhTdnFia3JfdGtmNkE3UVJma1lnUEZwRU9kbXo0bWY2N0UxcVRCS2l5aldKTVJIbDdNZU8yU0RjM1p6M2JLLUxFcHN2aVpQWmlxNVdrb3BkMG1PVy1WbUNqNU85SmV6RDV2WEVENWplb0ZubE9ab1p0Mmx6dzEtT2JSZFFZa29jS1lOVFUyUTJGTUJrMmc?oc=5",
-     "published": "2026-10-29T09:55:00+00:00",
-     "snippet": "NESG chairman: Nigeria must cut inflation to single digits, tackle insecurity to sustain growth TheCable",
-     "score": 3.29
+     "title": "Nigeria Budget Overlap Creates Fiscal Indiscipline and Transparency Crisis",
+     "publisher": "Head Topics",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNQzFVZXc2b2wzby0wVFA2OFlvdjFtLUJ3aTdSSWw4SXZPRHVyU2luMzBUclN4N1pYbHBtWmJvUzlyUVZPN3JqS0tPS3FvVndZTC1zVkpoU3VMQlpsNzF0LUhNZl9MYkRIQXZrYXJLOFBqc1NqUXhpVUQyazAteVEtVC1JUmdCVnppSHFZeXFMYTU2QkdjemVmbVFB?oc=5",
+     "published": "2026-11-02T07:47:00+00:00",
+     "snippet": "Nigeria Budget Overlap Creates Fiscal Indiscipline and Transparency Crisis Head Topics",
+     "score": 4.84
     },
     {
      "id": "NGA-4",
-     "title": "CBN threatens sanctions as banks face January 2027 data storage deadline",
-     "publisher": "Legit News",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRy1CbTQ0S3VFeGxHYzFWbm5Bd2hsZVAwVEg1Q0x0VzRmdjNxd3lQT2Z6WW5WdVBrSlJiaXlTLXJkUU10enZnOVdoUndnbjF3OXlhZm9xRWlOX1I0QWkyVDJXRW9QQWZJbnc5V0lrN3BWUTE1MDdtQ1l0ckJiVHo5TkNmcG81LUpCWjlqcm41LVB2N0JHMGczRU03NHBkZUhxNWpSUlB1eU01U0daVHVCemFlOXg?oc=5",
-     "published": "2026-10-29T16:43:15+00:00",
-     "snippet": "CBN threatens sanctions as banks face January 2027 data storage deadline Legit News",
-     "score": 2.98
+     "title": "BOI eyes cheaper loans, $200m AfDB facility to avoid costly Eurobond",
+     "publisher": "The Sun Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWWZmTVJ4Wi1QX0I0TlpIMW5SVTNwTkFkUG9yWUhPR09EU3M0SlBjc0ZVTGk3WjlNaDZuN1RZbzV4RUlTRTVXdndaTzRLaDRmTnVuWDZfYk1VVFpUZ01VbW9mS1NIUkNZX1N5aUNYNnd1d3U5Y2ptbXFqeWJSOWhSYVZ3eEtHTlNVbW5zcE1B?oc=5",
+     "published": "2026-11-02T01:19:11+00:00",
+     "snippet": "BOI eyes cheaper loans, $200m AfDB facility to avoid costly Eurobond The Sun Nigeria",
+     "score": 4.16
     },
     {
      "id": "NGA-5",
-     "title": "[OPINION] Falling Inflation, Rising Hardship: A Businessman\u2019s Perspective On Nigeria\u2019s Economy",
-     "publisher": "OsunDefender",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPN0FVeVZaUTN3TXBsbFBmWVo0Z29WZ3c0NHpmRFNUZFpCZE45dHlEdHhoTHU1WTgxd3hDOHoyYk55amN5SFE1RF9JN18tRlk3R1ByYkFTM1ZXdDlUNFhSYXFsdnRkMGxkRTJlVkRDSF8tRl91aWdPMlVsS3gtMHpVY3dMR0RBb0lOSnB2YVItbjRKOTJOUUlKemlLX2hja0cyWUlUU0FMZUJNbXdid3F2VVlvemE?oc=5",
-     "published": "2026-10-30T10:48:37+00:00",
-     "snippet": "[OPINION] Falling Inflation, Rising Hardship: A Businessman\u2019s Perspective On Nigeria\u2019s Economy OsunDefender",
-     "score": 2.98
+     "title": "Onyema Hails Fidelity Bank\u2019s $400M Eurobond Repayment, Praises Onyeali-Ikpe\u2019s Leadership",
+     "publisher": "Arise News",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOT3phYUNwY3I4dkhqQzNmMk5TemdXb1I4b2FiSmZqRVZOdm9PWkc5RlYxSG9qc3J4OWNNamZOQjhEamdnSExXYlEtdTgzekxkX29QUGczelRaUUtBbDlxSVRxQnRza2pRcV9RS3N0WDdOOHVzUTFQYnFEcTlTdjFycHNMMC1FZzJjS3pGSUdndmt4dEdFYWx3QmpFMl9ZcFZRTmQxRUI0YnhFUQ?oc=5",
+     "published": "2026-11-01T19:05:26+00:00",
+     "snippet": "Onyema Hails Fidelity Bank\u2019s $400M Eurobond Repayment, Praises Onyeali-Ikpe\u2019s Leadership Arise News",
+     "score": 3.99
     },
     {
      "id": "NGA-6",
-     "title": "DMO rejects N1.84trn in Treasury Bills bids as one-year yield falls to 15.8%",
-     "publisher": "Blueprint Newspapers",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVDNyeFl0cEZQaGNBb3oxSFdSYTA5MXFZX2tIbTFZWVFXMjBxNHZyc0RZbVF3UVV4Y2gtN3d5NDJ1WG4yc2V6UDgzSEpfSjd4X0dKYjZCWFFZb3ZYQXJmbkgxZ0xOQm9CWXNlbGh0TmpOcS02ek5rOFJQb2JHT21VZ1NkRkd2bXdhZXBDZ3NaTjhDYUd3M3UwMTBoRmNCUQ?oc=5",
-     "published": "2026-10-30T05:19:32+00:00",
-     "snippet": "DMO rejects N1.84trn in Treasury Bills bids as one-year yield falls to 15.8% Blueprint Newspapers",
-     "score": 2.83
+     "title": "Onyema Commends Fidelity Bank on $400m Eurobond Repayment",
+     "publisher": "Independent Newspaper Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQm9yVVhxOXpmNWdvUmhqS1Jac0VtdGk0aG9RakZRdXB1b3YxVW1jM1YwdXlwREwwSHZfa1NPc2hmSWtDdWhSaGJFX1otQVprbERVUUowbzJnalM0RUFMbXFfbVBPN29ON0p1czFHdDl6YW1EN0l0MGVNX1RsM2QxVHVreHVjTUU?oc=5",
+     "published": "2026-11-01T18:34:47+00:00",
+     "snippet": "Onyema Commends Fidelity Bank on $400m Eurobond Repayment Independent Newspaper Nigeria",
+     "score": 3.97
     },
     {
      "id": "NGA-7",
-     "title": "Abike Dabiri-Erewa Reacts As Diaspora Remittances Hit Record $1.57 Billion In Q2 2026",
-     "publisher": "Naija News",
-     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUTBxNTNON210QmpLS0p0TTJFMkZLQWlHNDhYYm9GSEtKdi1PV1FXS1piaEpGbTN0UGp1Y0Q0NFFjT1RxcmlaN2x2NFY1TXZ1SE84OGVxMkx0NURlMXZ4WVpKZkZKSDU3VktjMVJRMGh6bHlENjlMTlVSSWtoQVpQZ2w3d2lUamd4OEdjUDJsb1pjYkI2T2J2X2V6WV9EZlk?oc=5",
-     "published": "2026-10-30T09:26:40+00:00",
-     "snippet": "Abike Dabiri-Erewa Reacts As Diaspora Remittances Hit Record $1.57 Billion In Q2 2026 Naija News",
-     "score": 2.45
+     "title": "NLC seeks inflation-linked minimum wage ahead of 2027 review",
+     "publisher": "The Guardian Nigeria News",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSmt2NTFpamZiQzhyWFR1MlFycUJwcUxXaXVDYW9pRHVSNGJJV3ROV05wZWRMSkplV1B6c0VabFJYb3htYzAyclgyQTR2N2tUZ05VZXpZbFBTYTk3NDVyNUhHeUJXNWdqbkxSaU9NaExFdGNRS3BCNHBlWFZ5VVJwQThFdXlscFpicWpNTHA4bw?oc=5",
+     "published": "2026-11-02T08:55:59+00:00",
+     "snippet": "NLC seeks inflation-linked minimum wage ahead of 2027 review The Guardian Nigeria News",
+     "score": 3.87
     },
     {
      "id": "NGA-8",
-     "title": "Nigeria's 20-Year US Dollar Bond Yield Falls To 8.50%",
-     "publisher": "MarketForces Africa",
-     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZGFxMWJVQTNaUVREVVpDS25SZTBYdW16VUItdjFFUlFock1Td3R2TUFpYktWeTB4ZkFKeHplOXM3ZFMwdVF4V3NiMGRReTRMVFFLX2xhb0prdzNvc3BKZ0RzRlRLQXZWTG9rd2NoU1VQcmt3bFN1NlVrS2ZXT1BrLVd5NnY?oc=5",
-     "published": "2026-10-29T09:52:43+00:00",
-     "snippet": "Nigeria's 20-Year US Dollar Bond Yield Falls To 8.50% MarketForces Africa",
-     "score": 2.29
+     "title": "CBN warns Access Bank, GTBank, UBA Plc, Zenith, others of sanctions as payment data localisation deadline approaches",
+     "publisher": "ConsumerConnect",
+     "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5DeHA2akNYaDMtQTM2OTVoUmYyTGZPd3o1eWdGX2Z5V0g0dkoyTEl3R2RGaWM5VDRnZllDeUdsNzkwTDBrdHRlMlhtb2RGUQ?oc=5",
+     "published": "2026-11-01T21:25:52+00:00",
+     "snippet": "CBN warns Access Bank, GTBank, UBA Plc, Zenith, others of sanctions as payment data localisation deadline approaches ConsumerConnect",
+     "score": 3.05
     }
    ],
    "macro": {
@@ -1541,67 +1543,74 @@
       }
      },
      "policy_rate": null,
-     "fx": 1346.223823,
+     "fx": 1348.44829,
      "articles": [
-      "644074248fac",
-      "096967f51167",
-      "d8ceb8e9d781",
-      "097995d4e257",
-      "bd1a96a63d4f",
-      "a6dede860f22",
-      "f4a3a179e727",
-      "78f4f9794b5e",
-      "92e3c6a4e162",
-      "55e8318aea59",
-      "59a31ef9f3e3",
-      "e8afaf7e0f0b",
-      "35631d0c8019",
-      "f5b3fa96d0ab",
-      "3a108d6e0633",
-      "1d1fd4246163",
-      "7985a5f2e8aa",
-      "97472335612c",
-      "de738210a9e8",
-      "b8a9ac22038a",
-      "4ec1f013278e",
-      "31891168510c",
-      "66e3535b6707",
-      "a4ee99283c98",
-      "3ffecf36927d",
-      "e882b6949f2a",
-      "a6607df53e81",
-      "13041d4413c4",
-      "138d35bd7edf",
-      "0815dcb506a3",
-      "339c7de3c33c",
-      "37321421b27b",
-      "ffbc0fc55e27",
-      "08a1f2239085",
-      "27e0a44628e3",
-      "0d1d4eb70a22",
-      "ecb58a388534",
-      "d7346b0f733c",
-      "f00b5a642493",
-      "8bf97e272e1d",
-      "bf5b8617416a",
-      "ded9545139dc",
-      "80cfde6ebbf2",
-      "c81fc3ff3521",
-      "9964d051e925",
-      "cc037ca98c0a",
-      "a1e418b6629d",
-      "c36c035823d1",
-      "85362a3b34d7",
-      "31bb58e92859",
-      "40b14129defe",
-      "abaa251ba6ea",
-      "b7ee726aec93",
-      "2701b882e84a",
-      "254d029974ef",
-      "9cccfc91519e",
-      "2e65d9a59f52",
-      "8ffef7df66f7",
-      "8925a14f65cf"
+      "91c8dec00b62",
+      "a95b45324a0f",
+      "c89facf43b88",
+      "5f8bb12d4541",
+      "f76c762249be",
+      "ac26195605e0",
+      "430aa824c4d8",
+      "68ee53a7c34b",
+      "ffe6c3f96601",
+      "0b428a71f17d",
+      "dfadc41e146c",
+      "ca170bd7c70a",
+      "b57c5ef1c36e",
+      "14915111ee52",
+      "4c1faaecc146",
+      "25490ed3c81c",
+      "4ae3ed2cbd9f",
+      "d0b60ac8b165",
+      "948427583656",
+      "01974db17a81",
+      "7712d4f2847c",
+      "59b704cf4764",
+      "8e4db042ca56",
+      "3d993668a372",
+      "2c2573bc6b7f",
+      "f773d450d2f9",
+      "02bcc1b34f7b",
+      "557ed0694a76",
+      "5e9c391a59a4",
+      "3c3403ee336b",
+      "ba774e17e474",
+      "067da15023b9",
+      "5d718883599c",
+      "530e3135d682",
+      "3ae9a15cab99",
+      "12c851bb60c6",
+      "7dc1eaa9b461",
+      "2ef0dda47eb6",
+      "3bab1a9ddcf8",
+      "1073c17c07a6",
+      "8e7bce64fa68",
+      "77ce0ffa5886",
+      "ffadfd9a96c1",
+      "cbfc8cea1594",
+      "522d837d520e",
+      "41ac6d9b4644",
+      "5904fa5ece1e",
+      "0407bb3f0c0d",
+      "a2360c164bd1",
+      "3ccba81699e3",
+      "0470faa49b34",
+      "5ac3d88df729",
+      "a98520a809d8",
+      "ff567b87e981",
+      "cf4304d507ef",
+      "1f5eb1b45f27",
+      "4a092b93ce59",
+      "52752de95aae",
+      "0878de80c12c",
+      "8d73134a1122",
+      "ddca0274b948",
+      "7f58fb37a9a6",
+      "3304a5cab961",
+      "2de9f0b5471c",
+      "4f459f213470",
+      "2671a0428916"
      ]
     },
     "lines": [
@@ -1616,18 +1625,13 @@
      "Current account 2026 (IMF WEO forecast): 7.0% of GDP",
      "Current account 2027 (IMF WEO forecast): 4.4% of GDP",
      "Policy rate: not published by BIS for this country",
-     "NGN per USD (open.er-api.com, Fri, 30 Oct 2026): 1346"
+     "NGN per USD (open.er-api.com, Mon, 02 Nov 2026): 1348"
     ]
    },
    "changes": [],
-   "angle_sources": [
-    "NGA-1",
-    "NGA-6",
-    "NGA-7",
-    "NGA-8"
-   ],
+   "angle_sources": [],
    "angle_flags": [],
-   "note": ""
+   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
   },
   {
    "country": {
@@ -1638,104 +1642,111 @@
     "ccy": "KES",
     "query": "Kenya (IMF OR eurobond OR shilling OR CBK OR budget OR debt)"
    },
-   "headline": "IMF warns on Kenya fiscal challenges as domestic debt service strains revenues",
+   "headline": "\"Our focus\": IMF tells Ruto to broaden Kenya's tax base, not raise rates",
    "bullets": [
     {
-     "text": "The IMF stated Kenya faces considerable debt and fiscal challenges, emphasizing the necessity of credible fiscal consolidation.",
+     "text": "\"Our focus\": IMF tells Ruto to broaden Kenya's tax base, not raise rates (Tuko News).",
      "sources": [
       "KEN-1"
      ],
      "flags": []
     },
     {
-     "text": "Treasury revealed that half of Kenya Revenue Authority collections fund debt service, prompting MPs to raise concern over Ksh533.7B in domestic debt interest.",
-     "sources": [
-      "KEN-5"
-     ],
-     "flags": []
-    },
-    {
-     "text": "October inflation rose to 7.3%, approaching the Central Bank of Kenya's upper tolerance limit.",
+     "text": "IMF asks Kenya to broaden tax base ahead of December talks (The Standard).",
      "sources": [
       "KEN-2"
      ],
      "flags": []
+    },
+    {
+     "text": "Kenya\u2019s central bank maps 300 AI use cases (Africa Business Communities).",
+     "sources": [
+      "KEN-3"
+     ],
+     "flags": []
+    },
+    {
+     "text": "Nakuru Builder Shares Cost of Building Modest 2-Bedroom House, Kenyans Question KSh 1m Budget (Tuko News).",
+     "sources": [
+      "KEN-4"
+     ],
+     "flags": []
     }
    ],
-   "bond_angle": "Elevated debt servicing absorbing half of tax revenues alongside an IMF call for consolidation reinforces fiscal vulnerability. Nearing the upper inflation limit could constrain monetary policy flexibility, keeping pressure on external sovereign yields.",
-   "method": "llm:gemini-3.8-flash",
+   "bond_angle": "",
+   "method": "extractive",
    "articles": [
     {
      "id": "KEN-1",
-     "title": "IMF says Kenya faces considerable debt and fiscal challenges, needs credible fiscal consolidation",
-     "publisher": "marketscreener.com",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZkxmQ0FGeERkMHdTU3hRLUg5eVllVi1FSENjOEIxbVlfSVlMa05yQUhFM3A2NUZSZTREU04wYVNwR0g0bGpfS1NTVWdJU25KcTlPdjRVeVJDVzNVVmVTYWVMMUIzc1Itbk9TZlBUYVh6WTVwd2NocHlEZXBsZ2NPTDZuaW1jSWo2RERGeERqc0QtUGc3XzBqVTFvZXk4T09JYVh6Vjl3S0RZV19za0l3bkZaMWRtWENDT2tPd1N5S3NBZWpTRF9acVhzVnc4am5LT052YUxWeWFwZFZPakJlelo5cw?oc=5",
-     "published": "2026-10-29T21:57:24+00:00",
-     "snippet": "IMF says Kenya faces considerable debt and fiscal challenges, needs credible fiscal consolidation marketscreener.com",
-     "score": 7.63
+     "title": "\"Our focus\": IMF tells Ruto to broaden Kenya's tax base, not raise rates",
+     "publisher": "Tuko News",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQU1vWXhCeXJBWnU3RGZTSUFjNmE0Q2hHQTZjaW81dktxdzdFREZmYXUxSHhJbURVRXV4YzZpaElPOUNldFdoQ29zcVpVd3ZHMjdXM2xDX1hOZ1FjSDhSeWJBMU9oZnpDby1ieGVZWDJiVEhJdUd0ZXdOVzhxVFFyNkR6QTlHQVllNG1JeWl1YWpGSUQtSk02ejRZdFZ6aTF3SkJRTGVqZFJocTM2STVrcE1sd1ZUdw?oc=5",
+     "published": "2026-11-02T10:36:22+00:00",
+     "snippet": "\"Our focus\": IMF tells Ruto to broaden Kenya's tax base, not raise rates Tuko News",
+     "score": 4.92
     },
     {
      "id": "KEN-2",
-     "title": "Kenya Inflation Hits 7.3% in October, Nears CBK Upper Limit",
-     "publisher": "The Kenyan Wallstreet",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPS29HMW9BcDN0TF9NRGdETlhXLUZXalFaemhkSWdZOGZwMl9CSUZvMlVabFY1eEt6LXMyaXM4aTFFTGRjd2tKaTYwNU9QQ2IxT09xSUV6S0NRSWV2QlcyLXZXNFBlVV9ldi1fSlU0dHhqQ1l1SndqOVVjbEVXUU91My1lblE5d3ZSR3hiOW9RSUVIUQ?oc=5",
-     "published": "2026-10-30T10:56:09+00:00",
-     "snippet": "Kenya Inflation Hits 7.3% in October, Nears CBK Upper Limit The Kenyan Wallstreet",
-     "score": 2.99
+     "title": "IMF asks Kenya to broaden tax base ahead of December talks",
+     "publisher": "The Standard",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTnFOdXl2Mng2VnZJWFc3MmVFdWxyNVJDVHlkMENNLXBBOWF1bDROeko1N1JOcDB1SVNSdDdNMzlRMk91YVI3WnoxSDFlWm1aTkZLZ3c5bXFFYlVxM2NhQ1hYcmdTX1hDa2R0c0FCSEVMR05pVVhGdmJwSVJPQXR6MjZiTVM5UWhtMjZueVExV05YWjRLX19Yc3k4OEdIbTFRQ3hiWFFaM1VraXFIeVA1enV2UExnQl96a25GZ1YyQ2F1Q3RuZkE?oc=5",
+     "published": "2026-11-02T05:01:07+00:00",
+     "snippet": "IMF asks Kenya to broaden tax base ahead of December talks The Standard",
+     "score": 4.76
     },
     {
      "id": "KEN-3",
-     "title": "What Kenya's 2026/27 Budget Means for Builders and Investors",
-     "publisher": "https://streamlinefeed.co.ke/",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdFZyMmVhcHFFTjg0WV8xQzN4dUR6RFhoMUVNVVFxVTMtdFNIUUxtb1RIQ085aTFJQ3hpQjF2SEVIamR6Y0l5Q0pMUG55blV3TXRuZlVoalZOZWVXMTVnbU5ZeFh2REY2VkZXVVV0V3Y4VzdCR3M0VTF3aXJQcHg3Vk5WeVZJSlNwcjA1TUZRSU5hUkRIWXhxRGd6VElRUQ?oc=5",
-     "published": "2026-10-30T04:08:41+00:00",
-     "snippet": "What Kenya's 2026/27 Budget Means for Builders and Investors https://streamlinefeed.co.ke/",
-     "score": 2.8
+     "title": "Kenya\u2019s central bank maps 300 AI use cases",
+     "publisher": "Africa Business Communities",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOXFDRUhkekx2NFplQjF4TjBOTllpN2l6UFRpT28xZDhHR1FOVU5qR2p1dUc3MGZXMUVQV3NsX0xUemtmYmY5MHdoNHhDRVRuZkFUWHI0azZGUkEzSlBBRS11cy1IR2NsNkRtOW1PU2VXTGszRXJYR3pRU1Y5dElRZ2xhTjZfU0VXYU85WGdnNEhBQQ?oc=5",
+     "published": "2026-11-02T06:29:25+00:00",
+     "snippet": "Kenya\u2019s central bank maps 300 AI use cases Africa Business Communities",
+     "score": 3.31
     },
     {
      "id": "KEN-4",
-     "title": "The products quietly eating your 2027 budget.",
-     "publisher": "LinkedIn",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVjU0c0pxdVlkNmRGYWJJcmRGS21pSFNLRHpjdU1sQWVpbXFkYUpnbFgyWWtkNTlqYkpUQXpzU1JJZ3EzOURnWE1UMlM3amFwaUJ2cHRoenhUeVk1ZkdnOUc2c2t1SHhyY2swVGJuRTR0NGxpVVBIb21LZjg5QVpQZXltaw?oc=5",
-     "published": "2026-10-30T02:18:13+00:00",
-     "snippet": "The products quietly eating your 2027 budget. LinkedIn",
-     "score": 2.75
+     "title": "Nakuru Builder Shares Cost of Building Modest 2-Bedroom House, Kenyans Question KSh 1m Budget",
+     "publisher": "Tuko News",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNa2U5NTZ1Q0VHOWV1UGtaZThqZ1kwWEMtMDhtTHdVX1g0ZkVMc2FLT0JtQ0NpeGwyVUFicEp3cjBkU25rdEdoeFd4Wmg5ZlNlUnlxeklHRzZFMzN5YUs3OXZqVGVoNEd2NEgzcC1mM2h1MVJLeGZyZ2dmZFhGTlN1amNzY20wTDJXclcwVkFGQVZ5ekk0Zng1ZU9OTXlHbW0taGtVV0hNLUk2Q01KNGFDWmpmajUtVHdIaUtOaW4tU0F6dnotamkyQjZxSEExQ1p5bWkyVVJn?oc=5",
+     "published": "2026-11-02T08:51:42+00:00",
+     "snippet": "Nakuru Builder Shares Cost of Building Modest 2-Bedroom House, Kenyans Question KSh 1m Budget Tuko News",
+     "score": 2.87
     },
     {
      "id": "KEN-5",
-     "title": "MPs raise alarm over Ksh533.7B domestic debt interest as treasury reveals half of KRA revenue goes to debt",
-     "publisher": "People Daily",
-     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRTF0Mkx4WnNpRFFCRjZWTm5ZdEJRbFpKVGZBT3FQMGx3bnJmWlE0c0hWZUkyRXVPOWVUTTJ0dlBvelh1TmswamU0b0g1WHpEM1FrNlVPcjJuLTZsMXNYUTBTX05RRW5IN3FDRzNpc19MX1p0cGpzSGJyQlg5bEpHZEp2eTNWWjFKVG5paTNmODg2bm5jOXFtVTBPa21ZRnltRGR2QnZDUmpiY2VNUWRrU2QxdkFVbkdDT0JhckhRZktFbFNYXzN3RTVfYWxNcUtyalRmNEtObVExOGc?oc=5",
-     "published": "2026-10-29T16:21:49+00:00",
-     "snippet": "MPs raise alarm over Ksh533.7B domestic debt interest as treasury reveals half of KRA revenue goes to debt People Daily",
-     "score": 2.47
+     "title": "Why Kenya's Inflation Hit 7.3% and What the CBK May Do Next",
+     "publisher": "The Kenyan Wallstreet",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5UWTBaQm0yOU9zWk9LRFBtMFpKX0F6UWwtSml5ZUtoVFRrNEo5UUJTVVp2VTl5R1pVUnFFMjVaRlFENll4eGpFelQzX0lvYXZmb2NnNmVNZnBHdUlMdTY4aTZRbnBsck1oTUpZc1hvcktGMlpYMmc?oc=5",
+     "published": "2026-11-02T03:50:09+00:00",
+     "snippet": "Why Kenya's Inflation Hit 7.3% and What the CBK May Do Next The Kenyan Wallstreet",
+     "score": 2.73
     },
     {
      "id": "KEN-6",
-     "title": "Global South jurists push for greater say in debt, trade rules",
-     "publisher": "www.standardmedia.co.ke",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWWt4Z3dEOGwxLVR1bENxZ0huVURScUFhai0tcWN2OERYbWljZGk4ZHBhN2ZndEZDSkM2QVp6dk1ScjQ5ZW91UDg0d25IOUJodUU1SjBKSEl5X1hyWmNzczB2RHVEYmNGd1Jjc3pxZXNpUWR6cmVWMHVndndVdG5FZmNzdzZaQ3IyaU1YZHN0UFY2REFRMExSb0FLT0xpWG1IS2xQMWF1SUlvS1BMMVVoeU03Ykx1OEVwWUlJemFhQk91dFU?oc=5",
-     "published": "2026-10-29T10:09:18+00:00",
-     "snippet": "Global South jurists push for greater say in debt, trade rules www.standardmedia.co.ke",
-     "score": 2.3
+     "title": "Debt, salaries gobble up Sh13trn in approved spending over three years: COB report",
+     "publisher": "Daily Nation",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdzVjS0xLbnllSm40NzJ1aXhaUFRlYmZFVndnTlNJQ1BDZHpjZmI2ZFhQYWFGeG12b0I1NC1hWTlFZlRfUGpzZHA2VW1SdXhYUE1CYVdXZlk1aWRrLXhKRlJsR2xObjQyNkFxRm94ZWxka3ZjVExqcmFjQURISXJ2ZGhHU1lDZWtDemdLQlA4UjQtQ1d0NE1JMW5zTHpsOXNGWC16bWREVThWdU14UHNxREd6X0s4UkdRTEh3ZXZjWFl5S2Vn?oc=5",
+     "published": "2026-11-02T03:00:00+00:00",
+     "snippet": "Debt, salaries gobble up Sh13trn in approved spending over three years: COB report Daily Nation",
+     "score": 2.71
     },
     {
      "id": "KEN-7",
-     "title": "Kenya\u2019s army has not announced recruitment through October 2026 gazette notice circulating online",
-     "publisher": "Africa Check",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdExocjJob202VGlLRFdBdG1BckFmLVQ2bHlHenNvYlBXZFlCcWNiUEpXdEFRb1hqUDNhSjh6MEUwcnpkczhyZ1BJYUppei1jWnpodzZtZ0lQMTBEV2NSZG96OWZ5RWVrd1IxSXRGcUdTZG1qS05CcElZNEwtYnZuYzZYRjgyaHFUdnJieWllRURXVEo3SmVOdmJEdlh6VXI2aV9TbDVFc2FEX01vanlKM1NHbDBCVUZrM1Y2bg?oc=5",
-     "published": "2026-10-30T09:43:30+00:00",
-     "snippet": "Kenya\u2019s army has not announced recruitment through October 2026 gazette notice circulating online Africa Check",
-     "score": 0.95
+     "title": "Saudi labour reforms blamed for decline in Kenyan diaspora remittances",
+     "publisher": "Capital FM Africa",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYklzZ1V4bEZHSmxKekJZREh3UVhNdTBoWWRhU3p5cXFPdDIzMmtHdjZJdS10TzNQMGtDbUZ5Vi0xdW1BZEdvbENUNkNsSjJ6YloyY3BKQS1WVGVlbmVtRmpWMWVETHVyLW5sVlZTR2p0NFREUVNGSUJmSk94STE2ejdZenp6dE1yVmV0ckdwaGhRNDV1ODRKX29vZDA?oc=5",
+     "published": "2026-11-02T06:04:13+00:00",
+     "snippet": "Saudi labour reforms blamed for decline in Kenyan diaspora remittances Capital FM Africa",
+     "score": 2.29
     },
     {
      "id": "KEN-8",
-     "title": "Ecobank Kenya Appoints Risper Alaro Non Executive Director",
-     "publisher": "Khusoko",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZURpQktaWENwcWZxcEYxU2NkemtFMlkxMGVlWGpnbUpqcGN1QXRBV1dlV1ZPRUd5ZDVTd3dlQWpxMXgxNjBYcnFEZEMzb2FUSzNSd3VKLWFiMHhaRXdqUXBHcXZlQ0RXc0NPV3YtdmU1S0RaYmUza2tSak02WnRsT0RGZ2wyQnExUW8weDdEbkliVmQw?oc=5",
-     "published": "2026-10-30T04:24:11+00:00",
-     "snippet": "Ecobank Kenya Appoints Risper Alaro Non Executive Director Khusoko",
-     "score": 0.81
+     "title": "The trust debt: Kenya must honour its social contract",
+     "publisher": "The Standard",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOM3lrRWl0ZlJwU3NlZ2NNZUxtb1hSS2pZRUFFeXllS0YtQVFyX1pqb056VkZWdjhheTJONVBacW5CSmZkOVZ2U040VW9yQXk2YnlzUU93NUQ5bmprbXA2WUNXLXZsRjVwYzdUMV9hbU1RbTZBSjBiQWVNRER2T0Z2eWx2OUh6WHRRTkxFRUx5cXczLTNyM3NmU1dhYUxoVE0xYTR2eFdVZFh1dzdsS0FwRA?oc=5",
+     "published": "2026-11-01T10:49:31+00:00",
+     "snippet": "The trust debt: Kenya must honour its social contract The Standard",
+     "score": 2.26
     }
    ],
    "macro": {
@@ -1763,26 +1774,26 @@
       }
      },
      "policy_rate": null,
-     "fx": 129.89007,
+     "fx": 129.93775,
      "articles": [
-      "7cec07aa22f1",
-      "9e2d9b986c32",
-      "2b564dd7b2c4",
-      "d7bb6712decc",
-      "16e21c3ed78e",
-      "41fa78ddc129",
+      "88696abdc5b2",
+      "3b80db39c936",
+      "ef34ff3aa0fd",
+      "1ec3bfd51c26",
+      "674ccd63974e",
+      "01ec17694c27",
+      "33a721b0d19c",
+      "8fe8f697934b",
+      "4e86dc172bf9",
+      "47048958b711",
+      "0e54a06314e9",
+      "d3739d7ec1db",
+      "bdb5620dc1dd",
       "6cd85450d036",
-      "6866382289ec",
-      "7fe1252fa092",
-      "ac902a853d9e",
-      "ef01dff271ac",
-      "6c6de63a49cd",
-      "5caaec183aa3",
-      "1864defda853",
-      "92583e407b0a",
-      "f38c88f67dda",
-      "6d86a3d404b1",
-      "5e39c1db4f78"
+      "39ebacd5ed5b",
+      "e71743609976",
+      "c9b7e6b8d2ef",
+      "62b8808dd144"
      ]
     },
     "lines": [
@@ -1797,17 +1808,13 @@
      "Current account 2026 (IMF WEO forecast): -4.5% of GDP",
      "Current account 2027 (IMF WEO forecast): -4.1% of GDP",
      "Policy rate: not published by BIS for this country",
-     "KES per USD (open.er-api.com, Fri, 30 Oct 2026): 129.9"
+     "KES per USD (open.er-api.com, Mon, 02 Nov 2026): 129.9"
     ]
    },
    "changes": [],
-   "angle_sources": [
-    "KEN-1",
-    "KEN-2",
-    "KEN-5"
-   ],
+   "angle_sources": [],
    "angle_flags": [],
-   "note": ""
+   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
   },
   {
    "country": {
@@ -1818,112 +1825,111 @@
     "ccy": "ZAR",
     "query": "South Africa (rand OR SARB OR budget OR Treasury OR rating)"
    },
-   "headline": "China and South Africa renew currency swap as rand steadies ahead of budget",
+   "headline": "Moody's Investor Services maintains Pepkor's credit rating and stable outlook | Cape Times - newspaper",
    "bullets": [
     {
-     "text": "China and South Africa have renewed their bilateral currency swap agreement.",
+     "text": "Moody's Investor Services maintains Pepkor's credit rating and stable outlook | Cape Times - newspaper (Magzter).",
      "sources": [
-      "ZAF-7"
+      "ZAF-1"
      ],
      "flags": []
     },
     {
-     "text": "The rand held steady ahead of upcoming budget and trade data, following an earlier 0.3% slip as producer inflation reached 6.2%.",
-     "sources": [
-      "ZAF-5",
-      "ZAF-6"
-     ],
-     "flags": []
-    },
-    {
-     "text": "The government sold 900 million rand of inflation-linked bonds at auction.",
+     "text": "All South Africans want for Christmas is no interest rate hike (The South African).",
      "sources": [
       "ZAF-2"
      ],
      "flags": []
     },
     {
-     "text": "Debate continues over whether South Africa's debt outlook is improving amid comparisons between Fitch ratings and Treasury projections.",
+     "text": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating (thenational.co.za).",
      "sources": [
-      "ZAF-1"
+      "ZAF-3"
+     ],
+     "flags": []
+    },
+    {
+     "text": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating as consumer spending weakens (thenational.co.za).",
+     "sources": [
+      "ZAF-4"
      ],
      "flags": []
     }
    ],
-   "bond_angle": "The renewed currency swap offers external liquidity support, but sovereign bond sentiment remains tethered to fiscal delivery as markets look to upcoming budget data against an IMF-projected 78.0% debt-to-GDP load.",
-   "method": "llm:gemini-3.8-flash",
+   "bond_angle": "",
+   "method": "extractive",
    "articles": [
     {
      "id": "ZAF-1",
-     "title": "Fitch vs Treasury: Is SA\u2019s debt outlook improving?",
-     "publisher": "Moneyweb",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbFRTTnRCXzBvRDYzdXBkRTE3NTRab1JTU19KbTRjcExTeU1pZGpFekxKcFJRNHBnQkZJUm5hWXpzWlhOc0lJN2NNR0dUaEVRYnFVNHphVlN3dWxzSEFXOHd6X0Q5OXVPUERZRWZKbElqNGcxVkF2RjBnOWlZWVpPbXFycENreW9JbktESlExTVV2a1ctTFNub2RVNlJWM2VzODdab0twTzhWTHpXSlE?oc=5",
-     "published": "2026-10-29T19:40:30+00:00",
-     "snippet": "Fitch vs Treasury: Is SA\u2019s debt outlook improving? Moneyweb",
-     "score": 6.56
+     "title": "Moody's Investor Services maintains Pepkor's credit rating and stable outlook | Cape Times - newspaper",
+     "publisher": "Magzter",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQVFjdl9rMjlEM2FsQTdjaFhPa1J2TFY0SERSQXBwd01tZEJkcDVmdVVpSEYzeW9HMFhkdkxhYWZFSEtQel9zS1E2d0dWanBqdVdZYy1JUlZNSnZSbmQ2OHJsNEF6R3Z6VmtIb1lOQklBRzB0RVdwYlEySzhEczNLWWlpcnRsMDk0czZzR2YtRTlsYzh6ZHhkVkk1UUlsX2plMmxUc0JveXNtRGhHUmpUYVhSRGlrWEJKMWlpbVAybW9teFpEZkRF?oc=5",
+     "published": "2026-11-02T00:47:58+00:00",
+     "snippet": "Moody's Investor Services maintains Pepkor's credit rating and stable outlook | Cape Times - newspaper Magzter",
+     "score": 7.15
     },
     {
      "id": "ZAF-2",
-     "title": "South Africa sells 900 million rand of inflation-linked bonds at auction",
-     "publisher": "marketscreener.com",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPczVfMnJPb2RQaTM5eHlmS0JkT0ZxeGpvYmh3czNoUTFTdEljLU1WVkdQY19Wb1FDQ09NeDRkcm1xM0lWLUhlcmJGUGNOLVJZOXJ5ZnlmRFRlYTZWdHJxOEZyZG1OWm0tWDRpYk1hUUQ2QWtXSzdlczNFa0NQQnV4T0N1VkUzOExWRHY2SVB2eGxUUWtIQ1FaU2dyMWxhQTluU3NJd0thdmpwRk1IaXpmVjROcHByY055Z2NvR0Q3YUZsbzA?oc=5",
-     "published": "2026-10-30T10:37:35+00:00",
-     "snippet": "South Africa sells 900 million rand of inflation-linked bonds at auction marketscreener.com",
-     "score": 4.98
+     "title": "All South Africans want for Christmas is no interest rate hike",
+     "publisher": "The South African",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQcjN6V1d1VVJCTmllOWNaNC1RMVlULTNpZF9LaTF2c09BcFhuSTV6WVVqQ3d5Ykk0c1dlV2VVY0N0aUFrNm1Id3pZZG1uSmlvVU9NYklEcWFVOHY0UmZIbU9iajJkREJvNk1EaGRIb0FfaXY1eUFXelRfVEFSWTF4aW1JemQ2S0w0bnB5bHZYb2E2RkN1elVUSXlZb1RoYWdUS0JHUFRxMA?oc=5",
+     "published": "2026-11-02T10:13:06+00:00",
+     "snippet": "All South Africans want for Christmas is no interest rate hike The South African",
+     "score": 6.41
     },
     {
      "id": "ZAF-3",
-     "title": "Budget Feud Casts Pall Over Senegal\u2019s Debt Fix",
-     "publisher": "Bloomberg.com",
-     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYVRMSGFoOHBmTEVWNkpld0hMOXFMTlFJSUpScGJsellZOXJzZkZYeXpzRGJ4TVlCNTFrS2dxOVo1c0hHeW02VGVjbEJVck1URlhaQXdBcG1ONGc3YkJxTTBxc01ubjBkQ2VtaFFLeUNIdFFXNld5RHViWjlCWjRMa2JqQ3daZk05SW1RajU0dEs0SVBwaWpmd2lKbU9XdW1FVFRLV1BGa1FKSktEcVc0UHpPd2NJX2ttSERMTEgzTDIzdw?oc=5",
-     "published": "2026-10-29T13:00:14+00:00",
-     "snippet": "Budget Feud Casts Pall Over Senegal\u2019s Debt Fix Bloomberg.com",
-     "score": 4.38
+     "title": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating",
+     "publisher": "thenational.co.za",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRGFJeEhEb2RfdWQ5dTdhQjdSWFg1VjhUb2U5bmlxdHkydmlyeU1qYktPay11ZFk2eWNrYXFNMVVXOXJ3Qkk2Nl92eVVWdFhuNkE0LWNzYk5BUHBXelhaQTVwcHMtWkNDOXFkcmJXQVZvWmx3VWdITms0SjlyeXI1LTd2Q0s?oc=5",
+     "published": "2026-11-02T01:00:00+00:00",
+     "snippet": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating thenational.co.za",
+     "score": 3.15
     },
     {
      "id": "ZAF-4",
-     "title": "Nedbank rating affirmed with stable outlook in South Africa",
-     "publisher": "Traders Union",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOLTV4Z2xnbkJhbk5nQmFlQktGSEducW03NFBDYV9lSzEzdmlvVXhvdEsycmgxdTBSMFJIWUNiYnZQY1lOTHh6Q0R1YnlDY01OTFp3NDE4ZGFJbnFNSmRQdjlSX3pwaVJTOUhyd25MaF8wejZHbU1yQW5MNVAwemJ2UTdsZ2N3dkRkV19SRVBQbTZNbTlsMjg5RQ?oc=5",
-     "published": "2026-10-29T18:28:36+00:00",
-     "snippet": "Nedbank rating affirmed with stable outlook in South Africa Traders Union",
-     "score": 4.03
+     "title": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating as consumer spending weakens",
+     "publisher": "thenational.co.za",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdm1GemxWVmFIeFhjVFRBSERJWnVmR3Yxa1JYMm5sVFk1Y29kY1l0ZElaWktiODFNZkljTkFmX0VEVmZ5STZfZ3lyMWx5NUQ1aUltU1VtRXFPU0Z5NTR3R2FNM2ZPY2lUVEhvdjJLTmJhOGo0VnNCbnBPX1VmaHh3NnN4Um15bjE4Z0lfUnBISHF0YUFLeFY1RFh1aHh4eW9iYUZLcFhGczhJVUk?oc=5",
+     "published": "2026-11-01T09:00:00+00:00",
+     "snippet": "Moody\u2019s affirms Pepkor\u2019s Ba2 rating as consumer spending weakens thenational.co.za",
+     "score": 2.71
     },
     {
      "id": "ZAF-5",
-     "title": "South African rand steady ahead of budget, trade data",
-     "publisher": "Reuters",
-     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOVUlKcmhNWTNCbWhpSkNkSlZPTVlMbEZYeFFnSjJrb0NMeTVTdWVmNzJXQWNCNHo3S0doQ2lQd2VILW9LaThBYW9fTDNjbW9ReWZFeVhKcHUyZGNpdkhYeFFLQkxReVo2bkJGMUlvc2tjUWtaRkJXSk4zREp2Z2VFaFFFekFIbDVpNGNSVDIteHJzUEdETllSOHl1WExUdlE?oc=5",
-     "published": "2026-10-30T06:46:00+00:00",
-     "snippet": "South African rand steady ahead of budget, trade data Reuters",
-     "score": 2.87
+     "title": "South African Rand Holds Steady As Gold Climbs, Oil Prices Ease",
+     "publisher": "MarketForces Africa",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNVU96Y1ZJZGZVZmt0MlFZME9qV0J5cUlvOG5CVmlRUnktS1pKMjM1VEtkNXl1SnNiQk45b0JQMjNLZU05c204SGhIRmlhcHZvRXRRR0VjSTktYk5OeG9PNzljcjhrWVAzR1NDaUVRSFFRbld1emlmOU40YV9YSFJKNWY1MExSVlN2bjVuSHJobU1oN2s?oc=5",
+     "published": "2026-11-02T10:53:47+00:00",
+     "snippet": "South African Rand Holds Steady As Gold Climbs, Oil Prices Ease MarketForces Africa",
+     "score": 1.93
     },
     {
      "id": "ZAF-6",
-     "title": "Rand Slips 0.3% as Gold, Platinum Decline and Producer Inflation Hits 6.2% - News and Statistics",
-     "publisher": "IndexBox",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRWc1VnBvTWZuWmZyRkowR015NGFqTjluZXNRa3FCel9ORTk3NERlclNZd2dYYnVWdU1STFZNMm1ITkRtRjJBS2pPR1VpNTZlVzZYSzNkSHA3SkhWY1VUcXRMY2poWnpLY3BFdTEwV1Y1UG1uaExsc1IzVEVlbXNrZ2Jid1RHNUVzZ0pSQktpdGJlVXBiSHZoWVlTWlRFT2NIVVVFYUNqSEcxR2RpZEpfXw?oc=5",
-     "published": "2026-10-29T15:40:40+00:00",
-     "snippet": "Rand Slips 0.3% as Gold, Platinum Decline and Producer Inflation Hits 6.2% - News and Statistics IndexBox",
-     "score": 2.45
+     "title": "End of an era for Eskom, and tens of thousands protest in Germany",
+     "publisher": "Daily Investor",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbGFBWEhxZEthWFR6RUNFUjFpbUl2bENRS2MyVjdtNUpLcjhwaEVWSFhoVnBmLVZpMlNha08taGgyLUQ5Z2VDNThvejBRU1dPSUxJRFpkRUtPV3V0eUpSVzRKa1dESFNfRGdpVUdoUERxSEE1YVJvRlNhdS1jOGZWY3hySVBPZG54Q0hUZ0Nic2JVdFh6QnBjM2tPRUFxb0YzdTUzU1dicEgtOVUt?oc=5",
+     "published": "2026-11-01T07:00:00+00:00",
+     "snippet": "End of an era for Eskom, and tens of thousands protest in Germany Daily Investor",
+     "score": 1.65
     },
     {
      "id": "ZAF-7",
-     "title": "China and South Africa renew currency swap agreement",
-     "publisher": "CNBC Africa",
-     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbkxnQXotV2c1NF9tWDhGczlvWUVwdnJxZW1LVWFtdTVfVk8ya1E4Z0xTTVlXYVdvSEl2eXJ5ZWwwMTg0N2JBNjFvN2J1TUowemxUT25YOWJCUEQ3NkZUZEMyWjNtNDVnRzJ4RmVNdTdqeEIxa2xfclJSNloyWjV2TEM2MFA4eVVEN0VXdw?oc=5",
-     "published": "2026-10-30T09:45:11+00:00",
-     "snippet": "China and South Africa renew currency swap agreement CNBC Africa",
-     "score": 2.45
+     "title": "South African billionaire Michiel le Roux gives Democratic Alliance $4.7 million in 2026",
+     "publisher": "Billionaires.Africa",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOODNXMzFuMlFFNi1SbmozNjdkSjNVQmpWS05TUjhkQzRpMy1mUW8xR1VUNlF3WFZEbEdxY3hBcXI5aFhtVUR6Zlo4SEQ5N3RQdDdZOFE1ZkdjX3ExbTBtRmx5LVk4Z3hrX2laNldUajBQNDBmM29nSWthb2FRazhua2d4RWFkTm1PandRaW5nUU80ejdhUnlUbTVpVk15dkFXWGcyXzlrVlJ3dmhWTjREejVOaHowVzhXZzU4MkYxeFJlYkRyaElSa0MtWQ?oc=5",
+     "published": "2026-11-02T13:20:12+00:00",
+     "snippet": "South African billionaire Michiel le Roux gives Democratic Alliance $4.7 million in 2026 Billionaires.Africa",
+     "score": 1.0
     },
     {
      "id": "ZAF-8",
-     "title": "Rand weakens ahead of producer inflation data",
-     "publisher": "Channel Africa",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUFM3VlVNQWZVZENHaHZ6djlxUDVlWTYxcGJRQ19KV0NPeWNyUm9ONkFSOENOSWR6eEV3U2lZTkdWYzBlWDI1TEtHV19OYkhrTzFOTnZyVHd0UVdfRF9aYXQ5V3pyelpabzJ4MnpHMEFEVVVDMjlTNlhhSHBGTHlPS0J2dG91UDhtWEZRMk5iM2pxbE5XQ2JQclZrYVlvZw?oc=5",
-     "published": "2026-10-29T08:19:13+00:00",
-     "snippet": "Rand weakens ahead of producer inflation data Channel Africa",
-     "score": 2.25
+     "title": "South Africa\u2019s Rand Ticked Up On Better Factory Mood",
+     "publisher": "Finimize",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYk1iOG9Yd1VHSU5WLTRPYnhldG14cmc5aURVUlAtbzl3YlNpUFhpaXUwVUo2QXJJODNKMUpWY0JDLVJGLWtIWmNuOW1KcDJSMFBfZkdCZVA3aVc3QnpPYlNsaG9uOEtaeE1ZWGhlTWxad0tSZnowYllHemZybFBWM19UN08tTmc?oc=5",
+     "published": "2026-11-02T13:00:25+00:00",
+     "snippet": "South Africa\u2019s Rand Ticked Up On Better Factory Mood Finimize",
+     "score": 0.99
     }
    ],
    "macro": {
@@ -1955,35 +1961,39 @@
       "rate": 7.25,
       "change_bp": 25
      },
-     "fx": 16.618705,
+     "fx": 16.694252,
      "articles": [
-      "bb4d4a60ad76",
-      "cf3ccd6c7a4c",
-      "d40002228a13",
-      "0395a3522ddd",
-      "9f975b42d89b",
-      "616932834206",
-      "af536011c3c5",
-      "6affa29180b3",
+      "5d94f71b2227",
+      "14e7ded6ae41",
+      "0c7b6c4a864a",
+      "e728abcc1016",
+      "1602a39d35d5",
+      "dbab627d9c8f",
       "af72b387d5bf",
-      "b101cc5c5105",
-      "a6b575ffeefc",
-      "2d0c9f00badf",
-      "f875b6aac614",
-      "389fe94ed0e2",
-      "27383e335124",
-      "2e501deef649",
-      "3f573f211a4a",
+      "f9d94623cfca",
       "5f7c1a643971",
-      "4ebf0f76b92e",
-      "4d68fc0f8b68",
-      "062ce972ab11",
-      "327feb984e30",
-      "1fbfa72b4caa",
-      "dd3396883cb1",
-      "7842a02feb6b",
-      "7381679d6712",
-      "108f8bf464a2"
+      "03e119ac22c1",
+      "b7f2edefe942",
+      "70c8b03aca6c",
+      "4b51d224d3e6",
+      "18f0162a2e2f",
+      "35f68b68d5ed",
+      "66ff5fb9c8eb",
+      "54b7acd4790d",
+      "225f2c32ec7a",
+      "afe144234edf",
+      "04eb527d3646",
+      "502d7101be07",
+      "3e2f36fda546",
+      "b856e7e26524",
+      "d5406ecc26ac",
+      "868a9e725b99",
+      "261fa4dde1cb",
+      "25a8344026f9",
+      "8d76922779af",
+      "5fb6265aa880",
+      "d5dcb6e20a9e",
+      "4ba667ddf3b0"
      ]
     },
     "lines": [
@@ -1998,17 +2008,13 @@
      "Current account 2026 (IMF WEO forecast): -0.7% of GDP",
      "Current account 2027 (IMF WEO forecast): -0.9% of GDP",
      "Policy rate (BIS, 2026-09): 7.25%",
-     "ZAR per USD (open.er-api.com, Fri, 30 Oct 2026): 16.62"
+     "ZAR per USD (open.er-api.com, Mon, 02 Nov 2026): 16.69"
     ]
    },
    "changes": [],
-   "angle_sources": [
-    "ZAF-5",
-    "ZAF-7",
-    "DATA"
-   ],
+   "angle_sources": [],
    "angle_flags": [],
-   "note": ""
+   "note": "LLM step failed (RuntimeError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in d); fell back to extractive."
   }
  ]
 }
