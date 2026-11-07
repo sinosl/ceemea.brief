@@ -2,7 +2,7 @@
 
 An automated daily macro brief for ten emerging-market sovereigns in Central and Eastern Europe, Central Asia, the Middle East and Africa. It is written for a debt portfolio manager who has two minutes before the open.
 
-**Live brief:** `https://<your-username>.github.io/ceemea-brief/` *(published by GitHub Actions every weekday morning)*
+**Live brief:** `https://sinosl.github.io/ceemea-brief/` *(published by GitHub Actions every weekday morning)*
 
 Countries: Poland, Hungary, Romania, Türkiye, Kazakhstan, Egypt, Saudi Arabia, Nigeria, Kenya, South Africa (edit `config/countries.yaml` to change).
 
