@@ -1,27 +1,52 @@
 # Countries covered by the daily brief.
-#   iso3     IMF DataMapper code
-#   bis      BIS policy-rate area code (blank if BIS does not publish one)
-#   ccy      currency quoted against USD
-#   query    Google News search; keep it focused on what moves sovereign bonds
+#   group      ceemea = the core CEEMEA sovereigns; global = global drivers (developed economies and China)
+#   iso3       IMF / World Bank / OECD code
+#   bis        BIS policy-rate area code (blank if BIS does not publish one; XM = euro area)
+#   ccy        currency quoted against USD
+#   developed  counts towards the developed-economy average on deep-dive pages
+#   oecd       OECD publishes monthly CPI breakdown and 10-year yields for this country
+#   query      Google News search; keep it focused on what moves bond markets
 countries:
-  - {name: Poland,       region: CEE,          iso3: POL, bis: PL, ccy: PLN, query: 'Poland (economy OR budget OR NBP OR inflation OR bonds OR rating)'}
-  - {name: Hungary,      region: CEE,          iso3: HUN, bis: HU, ccy: HUF, query: 'Hungary (economy OR budget OR MNB OR forint OR bonds OR rating)'}
+  # ---- Global drivers
+  - {name: United States,  group: global, region: North America, iso3: USA, bis: US, ccy: USD, developed: true, oecd: true, query: '(Federal Reserve OR Treasury yields OR US inflation OR US jobs OR US economy)'}
+  - {name: Germany,        group: global, region: Euro area,     iso3: DEU, bis: XM, ccy: EUR, developed: true, oecd: true, query: '(ECB OR Bund yields OR Germany economy OR German inflation OR eurozone)'}
+  - {name: France,         group: global, region: Euro area,     iso3: FRA, bis: XM, ccy: EUR, developed: true, oecd: true, query: 'France (economy OR budget OR deficit OR OAT yields OR inflation OR rating)'}
+  - {name: United Kingdom, group: global, region: Europe,        iso3: GBR, bis: GB, ccy: GBP, developed: true, oecd: true, query: '(Bank of England OR gilt yields OR UK inflation OR UK economy OR Reeves budget)'}
+  - {name: Japan,          group: global, region: Asia,          iso3: JPN, bis: JP, ccy: JPY, developed: true, oecd: true, query: '(Bank of Japan OR JGB yields OR yen OR Japan economy OR Japan inflation)'}
+  - {name: China,          group: global, region: Asia,          iso3: CHN, bis: CN, ccy: CNY, oecd: true, query: "(People's Bank of China OR yuan OR China economy OR China property OR China exports)"}
+  # ---- CEEMEA
+  - {name: Poland,       region: CEE,          iso3: POL, bis: PL, ccy: PLN, oecd: true, query: 'Poland (economy OR budget OR NBP OR inflation OR bonds OR rating)'}
+  - {name: Hungary,      region: CEE,          iso3: HUN, bis: HU, ccy: HUF, oecd: true, query: 'Hungary (economy OR budget OR MNB OR forint OR bonds OR rating)'}
   - {name: Romania,      region: CEE,          iso3: ROU, bis: RO, ccy: RON, query: 'Romania (deficit OR budget OR BNR OR bonds OR rating OR leu)'}
-  - {name: Türkiye,      region: CEE,          iso3: TUR, bis: TR, ccy: TRY, query: 'Turkey (lira OR central bank OR inflation OR eurobond OR rating)'}
+  - {name: Türkiye,      region: CEE,          iso3: TUR, bis: TR, ccy: TRY, oecd: true, query: 'Turkey (lira OR central bank OR inflation OR eurobond OR rating)'}
   - {name: Kazakhstan,   region: Central Asia, iso3: KAZ, bis: '', ccy: KZT, query: 'Kazakhstan (tenge OR National Bank OR oil OR budget OR rating)'}
   - {name: Egypt,        region: Middle East,  iso3: EGY, bis: '', ccy: EGP, query: 'Egypt (IMF OR pound OR central bank OR eurobond OR inflation)'}
-  - {name: Saudi Arabia, region: Middle East,  iso3: SAU, bis: SA, ccy: SAR, query: 'Saudi Arabia (budget OR deficit OR bond issue OR oil OR SAMA)'}
+  - {name: Saudi Arabia, region: Middle East,  iso3: SAU, bis: SA, ccy: SAR, oecd: true, query: 'Saudi Arabia (budget OR deficit OR bond issue OR oil OR SAMA)'}
   - {name: Nigeria,      region: Africa,       iso3: NGA, bis: '', ccy: NGN, query: 'Nigeria (naira OR CBN OR eurobond OR inflation OR budget)'}
   - {name: Kenya,        region: Africa,       iso3: KEN, bis: '', ccy: KES, query: 'Kenya (IMF OR eurobond OR shilling OR CBK OR budget OR debt)'}
-  - {name: South Africa, region: Africa,       iso3: ZAF, bis: ZA, ccy: ZAR, query: 'South Africa (rand OR SARB OR budget OR Treasury OR rating)'}
+  - {name: South Africa, region: Africa,       iso3: ZAF, bis: ZA, ccy: ZAR, oecd: true, query: 'South Africa (rand OR SARB OR budget OR Treasury OR rating)'}
 
-# IMF World Economic Outlook series shown in the overview table
+# IMF World Economic Outlook series shown in the overview tables
 imf_indicators:
   NGDP_RPCH:   {label: Real GDP growth, unit: '%'}
   PCPIPCH:     {label: Inflation, unit: '%'}
   GGXWDG_NGDP: {label: Govt debt, unit: '% GDP'}
   GGXCNL_NGDP: {label: Fiscal balance, unit: '% GDP'}
   BCA_NGDPD:   {label: Current account, unit: '% GDP'}
+
+# World Bank series for the country deep dives (annual; latest available year is shown)
+worldbank_indicators:
+  NY.GDP.PCAP.CD:       {label: GDP per person, unit: 'US$', digits: 0, section: overview}
+  NV.AGR.TOTL.ZS:       {label: Agriculture, unit: '% of GDP', section: structure}
+  NV.IND.TOTL.ZS:       {label: Industry, unit: '% of GDP', section: structure}
+  NV.SRV.TOTL.ZS:       {label: Services, unit: '% of GDP', section: structure}
+  NE.EXP.GNFS.ZS:       {label: Exports, unit: '% of GDP', section: external}
+  NE.IMP.GNFS.ZS:       {label: Imports, unit: '% of GDP', section: external}
+  BX.TRF.PWKR.DT.GD.ZS: {label: Remittances received, unit: '% of GDP', section: external}
+  FS.AST.PRVT.GD.ZS:    {label: Credit to the private sector, unit: '% of GDP', section: external}
+  SL.UEM.TOTL.ZS:       {label: Unemployment, unit: '% of labour force', section: labour}
+  SL.UEM.1524.ZS:       {label: Youth unemployment (15-24), unit: '%', section: labour}
+  FP.CPI.TOTL.ZG:       {label: Consumer price inflation, unit: '% a year', section: labour}
 
 # Headlines kept per country, and how far back to look
 news:
