@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>test</title>
+<item><title>Northland central bank cuts interest rate by 50bp to 5.25% - Test Wire</title><link>https://example.org/1</link>
+<pubDate>Mon, 20 Oct 2026 04:00:00 GMT</pubDate><source url="https://example.org">Test Wire</source><description>Inflation slowed to 4.1% in September.</description></item>
+<item><title>Northland central bank cuts interest rate by 50bp to 5.25% - Other Wire</title><link>https://example.org/1b</link>
+<pubDate>Mon, 20 Oct 2026 04:30:00 GMT</pubDate><source url="https://example.org">Other Wire</source></item>
+<item><title>Northland football team wins match - Sports Daily</title><link>https://example.org/2</link>
+<pubDate>Mon, 20 Oct 2026 03:00:00 GMT</pubDate><source url="https://example.org">Sports Daily</source></item>
+<item><title>Old Northland budget story - Test Wire</title><link>https://example.org/3</link>
+<pubDate>Wed, 01 Oct 2026 03:00:00 GMT</pubDate><source url="https://example.org">Test Wire</source></item>
+</channel></rss>
