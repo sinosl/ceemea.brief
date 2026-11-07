@@ -1,0 +1,1085 @@
+{
+ "USA": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 2.3,
+    "2027": 2.3
+   },
+   "PCPIPCH": {
+    "2026": 3.6,
+    "2027": 2.8
+   },
+   "GGXWDG_NGDP": {
+    "2026": 126.8,
+    "2027": 128.7
+   },
+   "GGXCNL_NGDP": {
+    "2026": -8.5,
+    "2027": -7.8
+   },
+   "BCA_NGDPD": {
+    "2026": -3.9,
+    "2027": -3.8
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 3.875,
+   "change_bp": 0
+  },
+  "fx": null,
+  "yield": {
+   "value": 4.86,
+   "date": "2026-11-06",
+   "prev": 4.84,
+   "prev_date": "2026-11-05",
+   "source": "US Treasury",
+   "freq": "daily"
+  },
+  "cpi": {
+   "headline": {
+    "period": "2026-09",
+    "value": 3.74
+   },
+   "core": {
+    "period": "2026-08",
+    "value": 2.45
+   },
+   "food": {
+    "period": "2026-08",
+    "value": 2.19
+   }
+  },
+  "articles": [
+   "66ef80c9c77f",
+   "2a3d306a10cc",
+   "8405882d616d",
+   "6a392b8ec9b7",
+   "5d8f4dfe3270",
+   "596cb8ae8f41",
+   "8130784f3967",
+   "6134b18d5f5b",
+   "cb1bb9e4761d",
+   "730b9dbdbdd1",
+   "58056e8f3027",
+   "554d9fc21fca",
+   "fb6ed110ca70",
+   "ffb485d03f5e",
+   "4d8684a1ce54",
+   "702a00d29856",
+   "6378862e7eab",
+   "3246da036c09",
+   "3aec28cabf2a",
+   "3da514c35dcf",
+   "680c55237b16",
+   "b8197aa019dc",
+   "b763be9b5271",
+   "3ff899d23ca8",
+   "b457525cb254",
+   "afc68ad4b873",
+   "6a535bb13900",
+   "17abe1145538",
+   "65ba41c37986",
+   "5ea7d94ca5c9",
+   "d9f21206d727",
+   "f55af0fce406",
+   "6527c5796cda",
+   "bb6f1f1fcf36",
+   "63d5c816ff2b",
+   "af500ea46365",
+   "75e6fb74d5a0",
+   "995731ed3fe9",
+   "d8981386d3ac",
+   "67df7ebf8c4d",
+   "ea68afc823a2",
+   "c26a2a896e88",
+   "34df1bc6f083",
+   "fd280737fffb",
+   "5f831190dfd1",
+   "6150ccf06b04",
+   "fda38d6db93a",
+   "f971f8570451",
+   "beadead5fccc",
+   "7de36c5be554",
+   "34ec170c005f",
+   "5e84e6e49806",
+   "90c7552e3bff",
+   "52564bce4d29",
+   "e4d77be9637e",
+   "079acae16e8b",
+   "6dd8b13424d1",
+   "b51057c01a02",
+   "bd0281fb9afa",
+   "3b9776ce252a",
+   "cd5c6daf17dc",
+   "f623a820c8d1",
+   "27ab7db4c496",
+   "f5b1774a6d3c",
+   "235351323d27",
+   "cd29dd200914",
+   "84d556d2c68a",
+   "a99d4af51b6c"
+  ]
+ },
+ "DEU": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 1.3,
+    "2027": 1.1
+   },
+   "PCPIPCH": {
+    "2026": 2.7,
+    "2027": 3.1
+   },
+   "GGXWDG_NGDP": {
+    "2026": 64.6,
+    "2027": 66.9
+   },
+   "GGXCNL_NGDP": {
+    "2026": -4.3,
+    "2027": -4.6
+   },
+   "BCA_NGDPD": {
+    "2026": 4.5,
+    "2027": 4.2
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 2.5,
+   "change_bp": 0
+  },
+  "fx": 0.896118,
+  "yield": {
+   "value": 3.42,
+   "date": "2026-10",
+   "prev": 3.47,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "core": {
+    "period": "2026-09",
+    "value": 2.56
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 0.29
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 3.26
+   }
+  },
+  "articles": [
+   "e7e069a761b6",
+   "639c015bb165",
+   "ba011521d9c0",
+   "74fa618f66ae",
+   "51b44919755e",
+   "96fb397c646c",
+   "912bbb771579",
+   "702a00d29856",
+   "78c75946f0ce",
+   "f632cf8ce182"
+  ]
+ },
+ "FRA": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 0.4,
+    "2027": 0.7
+   },
+   "PCPIPCH": {
+    "2026": 2.4,
+    "2027": 2.2
+   },
+   "GGXWDG_NGDP": {
+    "2026": 118.5,
+    "2027": 120.4
+   },
+   "GGXCNL_NGDP": {
+    "2026": -5.4,
+    "2027": -5.2
+   },
+   "BCA_NGDPD": {
+    "2026": -0.7,
+    "2027": -0.2
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 2.5,
+   "change_bp": 0
+  },
+  "fx": 0.896118,
+  "yield": {
+   "value": 4.9,
+   "date": "2026-10",
+   "prev": 4.48,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "headline": {
+    "period": "2026-09",
+    "value": 3.08
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 1.52
+   },
+   "core": {
+    "period": "2026-09",
+    "value": 1.54
+   }
+  },
+  "articles": [
+   "f965c2f08600",
+   "ec4657106d51",
+   "9186e34a7047",
+   "5e440accbcc2",
+   "1c179336446f",
+   "6bccc66b87a9",
+   "bf16ed2bf25a",
+   "c19b73048d27",
+   "78e85b99cb53",
+   "69f8d3e88fe6",
+   "b8197aa019dc",
+   "9efde085c3a9",
+   "4b09bf6c3f61",
+   "33e5538bf17b"
+  ]
+ },
+ "GBR": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 1.3,
+    "2027": 1.2
+   },
+   "PCPIPCH": {
+    "2026": 3.3,
+    "2027": 2.8
+   },
+   "GGXWDG_NGDP": {
+    "2026": 102.0,
+    "2027": 102.5
+   },
+   "GGXCNL_NGDP": {
+    "2026": -3.8,
+    "2027": -3.0
+   },
+   "BCA_NGDPD": {
+    "2026": -3.3,
+    "2027": -3.2
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 3.75,
+   "change_bp": 0
+  },
+  "fx": 0.747719,
+  "yield": {
+   "value": 5.34,
+   "date": "2026-10",
+   "prev": 5.24,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "core": {
+    "period": "2026-09",
+    "value": 3.1
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 1.3
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 3.6
+   }
+  },
+  "articles": [
+   "f12fec4f1dd3",
+   "3ecbd314a40e",
+   "e5f56f0dc6ff",
+   "0f9bf0c7ee8d",
+   "f7f20d0cb19b",
+   "0f8d0c1b4a67",
+   "fd57e1ad0c57",
+   "72913a074b7d",
+   "924668ffec15",
+   "4e60bcb75d9f",
+   "3e6dda0989cc"
+  ]
+ },
+ "JPN": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 0.7,
+    "2027": 0.7
+   },
+   "PCPIPCH": {
+    "2026": 2.0,
+    "2027": 2.6
+   },
+   "GGXWDG_NGDP": {
+    "2026": 199.4,
+    "2027": 196.4
+   },
+   "GGXCNL_NGDP": {
+    "2026": -1.4,
+    "2027": -2.1
+   },
+   "BCA_NGDPD": {
+    "2026": 4.6,
+    "2027": 4.3
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 1.25,
+   "change_bp": 0
+  },
+  "fx": 158.368984,
+  "yield": {
+   "value": 2.94,
+   "date": "2026-10",
+   "prev": 3.05,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "core": {
+    "period": "2026-09",
+    "value": 2.2
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 2.8
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 2.1
+   }
+  },
+  "articles": [
+   "0a66389317b1",
+   "008f47fa97bd",
+   "51a2397cdaf5",
+   "93d010f65896",
+   "7f6d3dcd1723",
+   "548312dc84d8",
+   "a79f9bcc65ea",
+   "020d9c0c6f6f",
+   "46f3a53e1739",
+   "4953108fbcbb",
+   "46b9cf01e7cc",
+   "93527549db15",
+   "063ff7e4f680",
+   "c7f0790cb942",
+   "ac268ec0cc23",
+   "2892e070eaef",
+   "3c70358d7c2e"
+  ]
+ },
+ "CHN": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 4.5,
+    "2027": 4.0
+   },
+   "PCPIPCH": {
+    "2026": 1.0,
+    "2027": 1.4
+   },
+   "GGXWDG_NGDP": {
+    "2026": 104.4,
+    "2027": 109.1
+   },
+   "GGXCNL_NGDP": {
+    "2026": -8.0,
+    "2027": -8.4
+   },
+   "BCA_NGDPD": {
+    "2026": 4.0,
+    "2027": 3.9
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 3.0,
+   "change_bp": 0
+  },
+  "fx": 6.686107,
+  "yield": {
+   "value": 1.68,
+   "date": "2026-09",
+   "prev": 1.69,
+   "prev_date": "2026-08",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "food": {
+    "period": "2026-09",
+    "value": -1.7
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 0.9
+   }
+  },
+  "articles": [
+   "b1d68a06efca",
+   "f3686c313a11",
+   "6e46000ed245",
+   "dc89c40464a2",
+   "38b5510eba6a",
+   "7f6671bd97c3",
+   "0b984ffadf7a",
+   "ae851c9d624f",
+   "9c7ba3c4fa14",
+   "4555503963af",
+   "1a385b1f14f7",
+   "b223eb9c7cd0",
+   "2ebafa12064d",
+   "b86f301d74f7"
+  ]
+ },
+ "POL": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 3.4,
+    "2027": 2.5
+   },
+   "PCPIPCH": {
+    "2026": 3.2,
+    "2027": 2.8
+   },
+   "GGXWDG_NGDP": {
+    "2026": 66.6,
+    "2027": 70.7
+   },
+   "GGXCNL_NGDP": {
+    "2026": -7.2,
+    "2027": -7.0
+   },
+   "BCA_NGDPD": {
+    "2026": -1.9,
+    "2027": -1.5
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 3.75,
+   "change_bp": 0
+  },
+  "fx": 3.93685,
+  "yield": {
+   "value": 6.32,
+   "date": "2026-10",
+   "prev": 6.23,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "headline": {
+    "period": "2026-09",
+    "value": 4.1
+   },
+   "core": {
+    "period": "2025-12",
+    "value": 2.7
+   },
+   "food": {
+    "period": "2025-12",
+    "value": 2.4
+   }
+  },
+  "articles": [
+   "851e407c9d32",
+   "b1ff0a480905",
+   "b69185b47012",
+   "a24944193002",
+   "08301a47ff65",
+   "f32640650462",
+   "15cdbe1c57e9",
+   "36a62ecc5a84",
+   "ca86d2c6a41d",
+   "cecebd0859be",
+   "f9a71eb039d2",
+   "da6af7137cd9",
+   "129c00d461df",
+   "8ea3a13cb74f",
+   "d67090a331ed",
+   "9d6963a8e2f0",
+   "f202a7432ac9",
+   "673340279d0b",
+   "f3812bccdbbd"
+  ]
+ },
+ "HUN": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 1.9,
+    "2027": 2.1
+   },
+   "PCPIPCH": {
+    "2026": 1.9,
+    "2027": 2.8
+   },
+   "GGXWDG_NGDP": {
+    "2026": 78.7,
+    "2027": 81.4
+   },
+   "GGXCNL_NGDP": {
+    "2026": -7.3,
+    "2027": -6.2
+   },
+   "BCA_NGDPD": {
+    "2026": -0.5,
+    "2027": 0.3
+   }
+  },
+  "policy_rate": {
+   "period": "2026-09",
+   "rate": 5.5,
+   "change_bp": 0
+  },
+  "fx": 325.538035,
+  "yield": {
+   "value": 5.57,
+   "date": "2026-10",
+   "prev": 5.69,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "core": {
+    "period": "2026-09",
+    "value": 3.32
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 1.54
+   },
+   "food": {
+    "period": "2026-09",
+    "value": -4.64
+   }
+  },
+  "articles": [
+   "3e5a66accbfb",
+   "89a32ce3a6a9",
+   "e285ab786dc8",
+   "0dafdc08342f",
+   "baeaf29aebe3",
+   "ca8081326147",
+   "442fe474d85f",
+   "69d39c2a2e79",
+   "5392491ae830",
+   "7ac68764f078",
+   "706cd6db7e44",
+   "d7c1a5cc5a08",
+   "79c03122b902",
+   "930337ed7b6a",
+   "34a5a6a204c7",
+   "2717aa3e73ab",
+   "648a8e2966a3",
+   "e169446ccdd5",
+   "fd995d6fa6e7",
+   "77d1e9674c45",
+   "167878a27d69",
+   "35a7035a6a34",
+   "29ca15afff89"
+  ]
+ },
+ "ROU": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": -0.5,
+    "2027": 2.2
+   },
+   "PCPIPCH": {
+    "2026": 8.2,
+    "2027": 4.1
+   },
+   "GGXWDG_NGDP": {
+    "2026": 62.6,
+    "2027": 64.9
+   },
+   "GGXCNL_NGDP": {
+    "2026": -6.2,
+    "2027": -5.8
+   },
+   "BCA_NGDPD": {
+    "2026": -7.0,
+    "2027": -6.7
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 6.5,
+   "change_bp": 0
+  },
+  "fx": 4.780091,
+  "yield": null,
+  "cpi": {},
+  "articles": [
+   "4740e9f17d9d",
+   "f8256edf5de5",
+   "727fbfd24b3e",
+   "1649d2297f17",
+   "02456e5ba3aa",
+   "72a93bd61492",
+   "5f05601aed7b",
+   "bc4db5356c2a"
+  ]
+ },
+ "TUR": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 2.7,
+    "2027": 3.6
+   },
+   "PCPIPCH": {
+    "2026": 31.2,
+    "2027": 26.5
+   },
+   "GGXWDG_NGDP": {
+    "2026": 22.5,
+    "2027": 22.6
+   },
+   "GGXCNL_NGDP": {
+    "2026": -3.1,
+    "2027": -3.9
+   },
+   "BCA_NGDPD": {
+    "2026": -2.9,
+    "2027": -2.4
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 36.0,
+   "change_bp": -100
+  },
+  "fx": 50.177369,
+  "yield": null,
+  "cpi": {
+   "core": {
+    "period": "2026-09",
+    "value": 28.83
+   },
+   "headline": {
+    "period": "2026-09",
+    "value": 29.73
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 27.62
+   }
+  },
+  "articles": [
+   "3149fee54e73",
+   "20ea20ec8ce4",
+   "792cefb59ade",
+   "bf04ae9c71a3",
+   "09ab652c5cce",
+   "bff9f6aee112",
+   "96487da06bbc",
+   "ca1b695ffc72",
+   "dc768805247d",
+   "afa1c075630a",
+   "ac268ec0cc23",
+   "91ed7c58236e",
+   "b053fd4c4e7c",
+   "e537774e3085",
+   "54d42ff44b6d",
+   "f9d920cbff27"
+  ]
+ },
+ "KAZ": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 4.4,
+    "2027": 4.9
+   },
+   "PCPIPCH": {
+    "2026": 10.3,
+    "2027": 8.2
+   },
+   "GGXWDG_NGDP": {
+    "2026": 23.8,
+    "2027": 25.1
+   },
+   "GGXCNL_NGDP": {
+    "2026": -1.0,
+    "2027": -2.3
+   },
+   "BCA_NGDPD": {
+    "2026": 0.5,
+    "2027": -0.7
+   }
+  },
+  "policy_rate": null,
+  "fx": 449.176281,
+  "yield": null,
+  "cpi": {},
+  "articles": [
+   "c9fa2e2c718f",
+   "bb815e668467",
+   "46d48a20df83",
+   "c153b6b72705",
+   "5a7d7c42f195",
+   "ce76f9c64319",
+   "b6c56035ce96",
+   "920e3c54298b",
+   "daa6589dc710",
+   "9a818fa50aaa",
+   "4e3fd600e140",
+   "a9a60a193c7e",
+   "7f3cc0fb2a88",
+   "4d110e49674d",
+   "4380fc6ad2d3",
+   "62dbeba98c3e"
+  ]
+ },
+ "EGY": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 5.1,
+    "2027": 4.7
+   },
+   "PCPIPCH": {
+    "2026": 13.3,
+    "2027": 14.8
+   },
+   "GGXWDG_NGDP": {
+    "2026": 84.0,
+    "2027": 82.9
+   },
+   "GGXCNL_NGDP": {
+    "2026": -11.4,
+    "2027": -8.9
+   },
+   "BCA_NGDPD": {
+    "2026": -4.4,
+    "2027": -4.9
+   }
+  },
+  "policy_rate": null,
+  "fx": 53.901088,
+  "yield": null,
+  "cpi": {},
+  "articles": [
+   "3149fee54e73",
+   "c1c0efe9ea8c",
+   "98628e4d74c6",
+   "38e51969954a",
+   "61e6c69ac8c7",
+   "4f5a81f350ab",
+   "8590fede661c",
+   "a72a206e669f",
+   "a9faba280efd",
+   "ea601cbaa123",
+   "7295397a80cf",
+   "32cce6bbba38",
+   "25dc917708ec",
+   "0c1b9cbf0734",
+   "6bc2408fe167",
+   "9db0436d90e5",
+   "2f974b79ee87",
+   "eb2b98bc10dc",
+   "9d2707913ed3",
+   "953676732a6f",
+   "b80646619c15",
+   "cad70347bc9b",
+   "2c36c89a27ea"
+  ]
+ },
+ "SAU": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": -3.3,
+    "2027": 7.9
+   },
+   "PCPIPCH": {
+    "2026": 1.9,
+    "2027": 2.2
+   },
+   "GGXWDG_NGDP": {
+    "2026": 35.4,
+    "2027": 37.3
+   },
+   "GGXCNL_NGDP": {
+    "2026": -6.5,
+    "2027": -4.0
+   },
+   "BCA_NGDPD": {
+    "2026": -3.5,
+    "2027": -1.3
+   }
+  },
+  "policy_rate": {
+   "period": "2026-09",
+   "rate": 4.5,
+   "change_bp": 25
+  },
+  "fx": 3.75,
+  "yield": null,
+  "cpi": {
+   "headline": {
+    "period": "2026-09",
+    "value": 1.87
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 1.38
+   }
+  },
+  "articles": [
+   "bfa082e35818",
+   "fe50bb029be6",
+   "ea34075f3cd0",
+   "73d0dfae762d",
+   "1c8a33c2f953",
+   "fd37e1035f73",
+   "19923092d6c2",
+   "88a23c9bee99",
+   "9a2626f62509",
+   "4abf23ad2162",
+   "25c4b3981442",
+   "78c232230f78",
+   "50bc0c9f3ae6",
+   "1834fd4b6a1e",
+   "baef1301123e"
+  ]
+ },
+ "NGA": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 4.2,
+    "2027": 4.3
+   },
+   "PCPIPCH": {
+    "2026": 15.6,
+    "2027": 14.7
+   },
+   "GGXWDG_NGDP": {
+    "2026": 34.6,
+    "2027": 32.8
+   },
+   "GGXCNL_NGDP": {
+    "2026": -3.3,
+    "2027": -2.9
+   },
+   "BCA_NGDPD": {
+    "2026": 7.0,
+    "2027": 4.4
+   }
+  },
+  "policy_rate": null,
+  "fx": 1348.106327,
+  "yield": null,
+  "cpi": {},
+  "articles": [
+   "3149fee54e73",
+   "b0c669dbfa65",
+   "a9d0fa1e3232",
+   "21f839561306",
+   "1898532d17f0",
+   "4bcf5463f7ae",
+   "1134dc90601b",
+   "7832bb6478ad",
+   "299a53cbd4c8",
+   "3f5561a28c15",
+   "3c757254f665",
+   "b7926fefe801",
+   "d51d88cd627d",
+   "f47d55081eac",
+   "e6188a21f7af",
+   "b10951c51ee0",
+   "d54041ccea11",
+   "34eed322ba0a",
+   "07dcf95556b0",
+   "12c92ff3a44d",
+   "990c602ed636",
+   "7537b9d09f46",
+   "86380244e9f3",
+   "d9ff260b5bed",
+   "7ba3d17ef2ec",
+   "8117bb0629ff",
+   "fe54f2700f4c",
+   "d7210eb99cc3",
+   "f206b5655cc1",
+   "d7cba545d17b",
+   "9060d5d6b3a0",
+   "46b53cf1e83c",
+   "e3498de8ba50",
+   "2b890ce487ed",
+   "a973bced3afc",
+   "c220260a6ff3",
+   "36edc74d11ff",
+   "b8795a5ad5f2",
+   "80690efc1cec",
+   "c53e84fc8e07",
+   "05e579989fbe",
+   "765e05c1ffe2",
+   "c3ed22d3b89a",
+   "ffdded9a0da5",
+   "e000c731fe6b",
+   "7eb4eb275593",
+   "893b61e06301",
+   "757608428865",
+   "56b6b3410ddd",
+   "8a856fc11d73",
+   "10bc47477ff1",
+   "ff2e7e041dbc",
+   "8c19c623ec3b",
+   "3932f7c19c59",
+   "259b87d872c0",
+   "526878fbe030",
+   "d0f92b9a8ca6",
+   "6d8d2b1eb222",
+   "96d218c78ad1",
+   "ac29794171fe",
+   "7fcb7ad292c8",
+   "60be80a1c2df",
+   "3e5d5c568118",
+   "8bececeb9576",
+   "b692e8bf0de0",
+   "864b627621ee",
+   "6e77fa2a930c",
+   "3b48015cb8a5",
+   "1b2646daccaf"
+  ]
+ },
+ "KEN": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 4.5,
+    "2027": 4.7
+   },
+   "PCPIPCH": {
+    "2026": 6.0,
+    "2027": 5.0
+   },
+   "GGXWDG_NGDP": {
+    "2026": 72.9,
+    "2027": 73.8
+   },
+   "GGXCNL_NGDP": {
+    "2026": -6.6,
+    "2027": -6.1
+   },
+   "BCA_NGDPD": {
+    "2026": -4.5,
+    "2027": -4.1
+   }
+  },
+  "policy_rate": null,
+  "fx": 129.941015,
+  "yield": null,
+  "cpi": {},
+  "articles": [
+   "db3c66d5a446",
+   "077438bb97b8",
+   "d7fa4de69ca7",
+   "7184b6db240e",
+   "3ca56001e9d1",
+   "51e1b3c2db2d",
+   "778f429d3ea2",
+   "e8db8818b949",
+   "abddc837f2ec",
+   "fc8fc336b5db",
+   "6cd85450d036",
+   "65419a0556ec",
+   "632a9ee114bf",
+   "37a84eaa14ea",
+   "4f2d2092bd9e",
+   "a134209f5f5e",
+   "d9aaa8c1f322",
+   "80e632492e5b",
+   "caff73a7f75b",
+   "7f518ccfd9d5",
+   "a4b258fd9486",
+   "680168e3eb58",
+   "2fd55c15bb50",
+   "ee5ba29adac0",
+   "37a7da1ef0df"
+  ]
+ },
+ "ZAF": {
+  "imf": {
+   "NGDP_RPCH": {
+    "2026": 1.0,
+    "2027": 1.3
+   },
+   "PCPIPCH": {
+    "2026": 4.4,
+    "2027": 3.9
+   },
+   "GGXWDG_NGDP": {
+    "2026": 78.0,
+    "2027": 78.1
+   },
+   "GGXCNL_NGDP": {
+    "2026": -4.4,
+    "2027": -3.9
+   },
+   "BCA_NGDPD": {
+    "2026": -0.7,
+    "2027": -0.9
+   }
+  },
+  "policy_rate": {
+   "period": "2026-10",
+   "rate": 7.25,
+   "change_bp": 0
+  },
+  "fx": 16.5148,
+  "yield": {
+   "value": 8.94,
+   "date": "2026-10",
+   "prev": 8.95,
+   "prev_date": "2026-09",
+   "source": "OECD",
+   "freq": "monthly average"
+  },
+  "cpi": {
+   "headline": {
+    "period": "2026-09",
+    "value": 4.35
+   },
+   "food": {
+    "period": "2026-09",
+    "value": 0.96
+   }
+  },
+  "articles": [
+   "af72b387d5bf",
+   "ad7d1af94486",
+   "7bb0c90550c2",
+   "aa1fc236a646",
+   "b102c68c9676",
+   "3f573f211a4a",
+   "f1c78ec28769",
+   "a7e915175a37",
+   "358f38e6f3d9",
+   "e419a4bb94b0",
+   "4ebf0f76b92e",
+   "f79811069690",
+   "8102a8783028"
+  ]
+ }
+}
