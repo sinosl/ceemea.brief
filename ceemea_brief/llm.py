@@ -15,6 +15,12 @@ import requests
 ENDPOINT = os.environ.get("LLM_ENDPOINT", "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions")
 MODEL = os.environ.get("CEEMEA_MODEL", "gemini-3.8-flash")
 PAUSE_SECONDS = float(os.environ.get("LLM_PAUSE", "7"))   # free tier allows about 10 requests a minute
+RETRY_WAITS = (15, 45)        # seconds to wait before each retry when the service is busy
+RETRY_CODES = {429, 500, 502, 503, 504}
+
+
+class BusyError(RuntimeError):
+    """The service is temporarily overloaded or rate-limited; worth retrying."""
 
 
 def available() -> bool:
@@ -28,6 +34,17 @@ class ChatClient:
         self._last_call = 0.0
 
     def complete(self, system: str, user: str, *, max_tokens: int = 4000) -> str:
+        """Send one request; if the service is busy (429/5xx), wait and retry up to twice."""
+        for attempt in range(len(RETRY_WAITS) + 1):
+            try:
+                return self._once(system, user, max_tokens)
+            except BusyError:
+                if attempt == len(RETRY_WAITS):
+                    raise
+                time.sleep(RETRY_WAITS[attempt])
+        raise RuntimeError("unreachable")
+
+    def _once(self, system: str, user: str, max_tokens: int) -> str:
         wait = PAUSE_SECONDS - (time.monotonic() - self._last_call)
         if wait > 0:
             time.sleep(wait)
@@ -39,8 +56,8 @@ class ChatClient:
             timeout=120,
         )
         self._last_call = time.monotonic()
-        if resp.status_code == 429:
-            raise RuntimeError("rate limit reached")
+        if resp.status_code in RETRY_CODES:
+            raise BusyError(f"HTTP {resp.status_code} after retries: {resp.text[:120]}")
         if resp.status_code >= 400:
             raise RuntimeError(f"HTTP {resp.status_code}: {resp.text[:150]}")
         try:
