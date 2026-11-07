@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ c.name }} · Country deep dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1b1f24;--muted:#5d6670;--line:#e2ddd3;--accent:#0f4c5c;--accent-soft:#e3eef0;--warn:#9a5b00;--down:#a12a2a;
+  --agri:#6c9a4b;--ind:#0f4c5c;--serv:#c9a24b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121417;--paper:#1a1d21;--ink:#e7e4de;--muted:#9aa3ac;--line:#2c3137;--accent:#7fc4d4;--accent-soft:#1f3238;--warn:#e9b45a;--down:#e88a8a;--agri:#8fbf6d;--ind:#7fc4d4;--serv:#e0c070}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--paper)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 20px 18px;flex-wrap:wrap}
+.kicker{font:500 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 34px/1.1 Newsreader,Georgia,serif;margin:8px 0 0}
+.date{color:var(--muted);font-size:14px}
+nav{display:flex;gap:16px} nav a{font-size:13.5px;text-decoration:none}
+h2{font:600 22px/1.2 Newsreader,Georgia,serif;margin:34px 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:22px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi b{display:block;font:600 24px/1.1 Newsreader,Georgia,serif}
+.kpi span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.lede{font-weight:600;margin:0 0 6px}
+ul.h{margin:0;padding-left:18px} ul.h li{margin:5px 0}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font:500 11px/1.3 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);vertical-align:bottom}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+tr:last-child td{border-bottom:0}
+.muted{color:var(--muted)} .neg{color:var(--down)}
+svg.spark{width:120px;height:28px;vertical-align:middle}
+.bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:10px 0 8px;background:var(--line)}
+.bar i{display:block;height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:var(--c)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.note{font-size:12.5px;color:var(--muted)}
+.flag{display:block;margin-top:3px;font-size:12.5px;color:var(--warn);background:#fbf0dc;padding:3px 8px;border-radius:4px}
+footer{margin:40px 0 50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div>
+    <div class="kicker">Country deep dive · {{ "Global driver" if c.group == "global" else "CEEMEA" }} · {{ c.region }}</div>
+    <h1>{{ c.name }}</h1>
+    <div class="date">Data as of {{ when }}</div>
+  </div>
+  <nav><a href="../index.html#{{ c.iso3 }}">Today's brief</a><a href="index.html">All countries</a><a href="../archive/index.html">Archive</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="kpis">
+    {% set gdp = sections.overview|selectattr("ind","equalto","NY.GDP.PCAP.CD")|first %}
+    <div class="kpi"><b>{{ "US$" ~ fmt_num(gdp.value, 0) if gdp and gdp.value is not none else "–" }}</b><span>GDP per person{% if gdp and gdp.year %} ({{ gdp.year }}){% endif %}</span></div>
+    {% set g = (imf.get("NGDP_RPCH") or {}).get(year|string) %}
+    <div class="kpi"><b class="{{ 'neg' if g is not none and g < 0 }}">{{ fmt_num(g) ~ "%" if g is not none else "–" }}</b><span>Real GDP growth, {{ year }} (IMF forecast)</span></div>
+    {% set h = cpi_rows|selectattr("label","equalto","All items")|first %}
+    {% if h %}<div class="kpi"><b>{{ fmt_num(h.value) }}%</b><span>Inflation, {{ h.period }} (OECD)</span></div>
+    {% else %}{% set i = (imf.get("PCPIPCH") or {}).get(year|string) %}<div class="kpi"><b>{{ fmt_num(i) ~ "%" if i is not none else "–" }}</b><span>Inflation, {{ year }} (IMF forecast)</span></div>{% endif %}
+    <div class="kpi"><b>{{ fmt_num(rate.rate, 2) ~ "%" if rate else "–" }}</b><span>Policy rate{% if rate %} ({{ rate.period }}, BIS){% else %} (not in BIS){% endif %}</span></div>
+    <div class="kpi"><b>{{ fmt_num(yld.value, 2) ~ "%" if yld else "–" }}</b><span>10-year yield{% if yld %} ({{ yld.date }}, {{ yld.freq }}){% else %} (not available){% endif %}</span></div>
+    {% set d = (imf.get("GGXWDG_NGDP") or {}).get(year|string) %}
+    <div class="kpi"><b>{{ fmt_num(d) ~ "%" if d is not none else "–" }}</b><span>Government debt, % of GDP, {{ year }} (IMF)</span></div>
+  </div>
+
+  {% if highlights %}
+  <h2>What stands out</h2>
+  <div class="card"><ul class="h">{% for t in highlights %}<li>{{ t }}</li>{% endfor %}</ul>
+    <p class="note" style="margin:10px 0 0">Computed automatically: the indicators where {{ c.name }} differs most from the {{ peer_name }} average (latest available year for each country).</p></div>
+  {% endif %}
+
+  <h2>Today's brief</h2>
+  <div class="card">
+    <p class="lede">{{ brief.headline }}</p>
+    <ul class="h">{% for bl in brief.bullets %}<li>{{ bl.text }}{% for f in bl.flags %}<span class="flag">⚑ {{ f }}</span>{% endfor %}</li>{% endfor %}</ul>
+    <p class="note" style="margin:10px 0 0"><a href="../index.html#{{ c.iso3 }}">Sources and checks in today's brief →</a></p>
+  </div>
+
+  <h2>Inflation by component</h2>
+  {% if cpi_rows %}
+  <div class="table-scroll"><table>
+    <thead><tr><th>Component</th><th>Latest, % y/y</th><th>Month</th><th>A year earlier</th><th>Last 13 months</th></tr></thead>
+    <tbody>{% for r in cpi_rows %}
+      <tr><td>{{ r.label }}</td><td>{{ fmt_num(r.value) }}</td><td class="muted">{{ r.period }}</td><td class="muted">{{ fmt_num(r.year_ago) }}</td>
+      <td>{% if r.points %}<svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="{{ r.points }}" fill="none" stroke="var(--accent)" stroke-width="1.8"/></svg>{% endif %}</td></tr>
+    {% endfor %}</tbody></table></div>
+  <p class="note">Source: OECD consumer price indices ({{ cpi_rows[0].flow }} classification), annual growth rate. Core excludes food and energy.</p>
+  {% else %}
+  <div class="card note">The OECD does not publish a monthly inflation breakdown for {{ c.name }}. Annual consumer price inflation from the World Bank is shown under "Labour market and prices" below.</div>
+  {% endif %}
+
+  <h2>Economic structure</h2>
+  {% set a, i, s = structure.get("NV.AGR.TOTL.ZS"), structure.get("NV.IND.TOTL.ZS"), structure.get("NV.SRV.TOTL.ZS") %}
+  <div class="card">
+    {% if a is not none and i is not none and s is not none %}
+    {% set tot = a + i + s %}
+    <div class="bar"><i style="width:{{ a / tot * 100 }}%;background:var(--agri)"></i><i style="width:{{ i / tot * 100 }}%;background:var(--ind)"></i><i style="width:{{ s / tot * 100 }}%;background:var(--serv)"></i></div>
+    <div class="legend"><span style="--c:var(--agri)">Agriculture {{ fmt_num(a) }}%</span><span style="--c:var(--ind)">Industry {{ fmt_num(i) }}%</span><span style="--c:var(--serv)">Services {{ fmt_num(s) }}%</span></div>
+    <p class="note" style="margin:10px 0 0">Value added as a share of GDP (World Bank). Shares do not sum to 100% because GDP also includes taxes less subsidies on products.</p>
+    {% else %}<p class="note" style="margin:0">Sector shares are not available for {{ c.name }}.</p>{% endif %}
+  </div>
+
+  {% for key in ["overview", "labour", "external", "structure"] %}
+  <h2>{{ section_names[key] }} compared</h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Indicator</th><th>{{ c.name }}</th><th>Year</th><th>CEEMEA avg</th><th>Developed avg</th></tr></thead>
+    <tbody>{% for r in sections[key] %}
+      <tr><td>{{ r.label }} <span class="muted">({{ r.unit }})</span></td>
+        <td class="{{ 'neg' if r.value is not none and r.value < 0 }}"><b>{{ fmt_num(r.value, r.digits) }}</b></td><td class="muted">{{ r.year or "–" }}</td>
+        <td class="muted">{{ fmt_num(r.ceemea, r.digits) }}</td><td class="muted">{{ fmt_num(r.developed, r.digits) }}</td></tr>
+    {% endfor %}</tbody></table></div>
+  {% endfor %}
+  <p class="note">Source: World Bank World Development Indicators, latest available year per country. Averages are simple (unweighted) means across the {{ cfg.countries|rejectattr("group","equalto","global")|list|length }} CEEMEA countries and the {{ cfg.countries|selectattr("developed")|list|length }} developed economies in this brief.</p>
+
+  <footer>Part of the CEEMEA Morning Brief · Generated {{ report.generated[:16].replace("T"," ") }} UTC · Research tool only; not investment advice.</footer>
+</main>
+</body>
+</html>

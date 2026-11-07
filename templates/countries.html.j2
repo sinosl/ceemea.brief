@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Country deep dives</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1b1f24;--muted:#5d6670;--line:#e2ddd3;--accent:#0f4c5c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121417;--paper:#1a1d21;--ink:#e7e4de;--muted:#9aa3ac;--line:#2c3137;--accent:#7fc4d4}}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:30px 20px 50px}
+a{color:var(--accent);text-decoration:none}
+h1{font:600 32px Newsreader,Georgia,serif;margin:6px 0}
+h2{font:600 21px Newsreader,Georgia,serif;margin:30px 0 12px}
+.kicker{font:500 11.5px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tile{display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink)}
+.tile:hover{border-color:var(--accent)}
+.tile b{font:600 18px Newsreader,Georgia,serif;display:block}
+.tile span{font-size:12.5px;color:var(--muted)}
+</style>
+</head>
+<body><div class="wrap">
+<p><a href="../index.html">← Today's brief</a></p>
+<div class="kicker">Country deep dives</div>
+<h1>All countries</h1>
+<p style="color:var(--muted)">Inflation by component, labour market, economic structure and external position for each economy, compared with its peers. Data as of {{ when }}.</p>
+{% for title, grp in [("Global drivers", "global"), ("CEEMEA", "ceemea")] %}
+<h2>{{ title }}</h2>
+<div class="grid">
+{% for x in contexts if (x.c.group == "global") == (grp == "global") %}
+  <a class="tile" href="{{ x.c.iso3 }}.html"><b>{{ x.c.name }}</b><span>{{ x.c.region }}{% if x.cpi_rows %} · monthly CPI breakdown{% endif %}</span></a>
+{% endfor %}
+</div>
+{% endfor %}
+</div></body>
+</html>

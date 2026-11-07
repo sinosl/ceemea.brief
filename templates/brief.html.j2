@@ -56,6 +56,7 @@ td .reg{display:block;font-size:11.5px;color:var(--muted)}
 .angle{margin-top:12px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);font-size:14px}
 .angle b{font:500 11px/1 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--accent)}
 .note{font-size:12.5px;color:var(--warn);margin-top:8px}
+.dd{display:inline-block;margin-top:12px;font-size:13px;font-weight:500;text-decoration:none}
 details{margin-top:12px;font-size:13px}
 summary{cursor:pointer;color:var(--muted)}
 details ol{padding-left:0;list-style:none;margin:8px 0 0}
@@ -71,11 +72,11 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
 {% if report.label %}<div class="banner">{{ report.label }}</div>{% endif %}
 <header class="top"><div class="wrap">
   <div>
-    <div class="kicker">Emerging markets debt · CEEMEA</div>
+    <div class="kicker">Emerging markets debt · CEEMEA, with global drivers</div>
     <h1>Morning Brief</h1>
     <div class="date">{{ when }}</div>
   </div>
-  <nav><a href="{{ base }}index.html">Latest</a><a href="{{ base }}archive/index.html">Archive</a><a href="#method">Method</a></nav>
+  <nav><a href="{{ base }}index.html">Latest</a><a href="{{ base }}country/index.html">Countries</a><a href="{{ base }}archive/index.html">Archive</a><a href="#method">Method</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -85,11 +86,38 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
     <span class="pill">IMF <b>{{ report.status.imf }}</b></span>
     <span class="pill">BIS <b>{{ report.status.bis }}</b></span>
     <span class="pill">FX <b>{{ report.status.fx }}</b></span>
+    {% if report.status.yields %}<span class="pill">Yields <b>{{ report.status.yields }}</b></span>{% endif %}
+    {% if report.status.cpi %}<span class="pill">CPI <b>{{ report.status.cpi }}</b></span>{% endif %}
     <span class="pill {{ 'warn' if report.flags }}">Flags <b>{{ report.flags }}</b> / {{ report.bullets }} bullets</span>
     {% if report.previous %}<span class="pill">Compared with <b>{{ report.previous }}</b></span>{% endif %}
   </div>
 
-  <h2>Dashboard</h2>
+  {% if global_rows %}
+  <h2>Global drivers</h2>
+  <div class="table-scroll"><table>
+    <thead><tr>
+      <th>Economy</th><th>Policy rate<br>BIS, %</th><th>10-year yield<br>%</th><th>Inflation<br>latest, % y/y</th><th>Core inflation<br>latest, % y/y</th>
+      <th>Real GDP growth<br>{{ year }}, %</th><th>FX<br>per USD</th><th>Flags</th>
+    </tr></thead>
+    <tbody>
+    {% for r in global_rows %}
+      <tr>
+        <td><a href="#{{ r.iso3 }}">{{ r.name }}</a><span class="reg">{{ r.region }} · <a href="{{ base }}country/{{ r.iso3 }}.html">deep dive</a></span></td>
+        <td>{% if r.rate %}{{ r.rate.rate|fmt(2) }}{% else %}<span class="reg">n/a</span>{% endif %}</td>
+        <td class="{{ 'alert' if r.yield_alert }}" title="{{ r.yield_alert }}">{% if r.yield %}{{ r.yield.value|fmt(2) }}<span class="reg">{{ r.yield.date }} · {{ r.yield.freq }}</span>{% else %}<span class="reg">n/a</span>{% endif %}</td>
+        <td>{% if r.cpi %}{{ r.cpi.value|fmt }}<span class="reg">{{ r.cpi.period }}</span>{% else %}{{ r.imf["PCPIPCH"]|fmt }}<span class="reg">IMF {{ year }}</span>{% endif %}</td>
+        <td>{% if r.core %}{{ r.core.value|fmt }}<span class="reg">{{ r.core.period }}</span>{% else %}<span class="reg">n/a</span>{% endif %}</td>
+        {% set g = r.imf["NGDP_RPCH"] %}<td class="{{ 'neg' if g is not none and g < 0 }}">{{ g|fmt }}</td>
+        <td class="{{ 'alert' if r.fx_alert }}" title="{{ r.fx_alert }}">{% if r.fx %}{{ r.fx|fmt(r.fx < 10 and 3 or 1) }} <span class="reg" style="display:inline">{{ r.ccy }}</span>{% else %}<span class="reg">base</span>{% endif %}</td>
+        <td class="{{ 'alert' if r.flags }}">{{ r.flags or '' }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <p class="date" style="font-size:12.5px">The policy and markets of these economies set global financing conditions for emerging markets. US 10-year yield is the daily US Treasury close; other yields are OECD monthly averages. Inflation is the latest OECD monthly figure where published, otherwise the IMF forecast. Germany and France share the ECB policy rate.</p>
+  {% endif %}
+
+  <h2>CEEMEA dashboard</h2>
   <div class="table-scroll"><table>
     <thead><tr>
       <th>Country</th>
@@ -99,7 +127,7 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
     <tbody>
     {% for r in rows %}
       <tr>
-        <td><a href="#{{ r.iso3 }}">{{ r.name }}</a><span class="reg">{{ r.region }}</span></td>
+        <td><a href="#{{ r.iso3 }}">{{ r.name }}</a><span class="reg">{{ r.region }} · <a href="{{ base }}country/{{ r.iso3 }}.html">deep dive</a></span></td>
         {% for ind in cfg.imf_indicators %}{% set v = r.imf[ind] %}<td class="{{ 'neg' if v is not none and v < 0 }}">{{ v|fmt }}</td>{% endfor %}
         <td>{% if r.rate %}{{ r.rate.rate|fmt(2) }}{% else %}<span class="reg">n/a</span>{% endif %}</td>
         <td class="{{ 'alert' if r.fx_alert }}" title="{{ r.fx_alert }}">{{ r.fx|fmt(r.fx < 10 and 3 or 1) if r.fx else '–' }} <span class="reg" style="display:inline">{{ r.ccy }}</span></td>
@@ -116,12 +144,10 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
     {% for name, c in all_changes %}<li><span class="c">{{ name }}</span>{{ c.text }}</li>{% endfor %}
   </ul>
   {% else %}
-  <p class="date">{{ "No data changes: policy rates, FX moves over 1% and IMF forecasts are unchanged." if report.previous else "First run: changes are measured from the next brief onwards." }}</p>
+  <p class="date">{{ "No data changes: policy rates, 10-year yields, FX moves over 1% and IMF forecasts are unchanged." if report.previous else "First run: changes are measured from the next brief onwards." }}</p>
   {% endif %}
 
-  <h2>Countries</h2>
-  <div class="grid">
-  {% for b in briefs %}
+  {% macro card(b) %}
     <article class="card" id="{{ b.country.iso3 }}">
       <header><h3>{{ b.country.name }}</h3><span class="meta">{{ b.country.region }} · {{ b.articles|length }} source{{ "" if b.articles|length == 1 else "s" }}</span></header>
       <p class="lede">{{ b.headline }}</p>
@@ -134,10 +160,11 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
       {% endfor %}
       </ul>
       {% if b.bond_angle %}
-      <div class="angle"><b>Bond angle</b>{{ b.bond_angle }}
+      <div class="angle"><b>{{ "Why it matters for EM" if b.country.group == "global" else "Bond angle" }}</b>{{ b.bond_angle }}
         {% for f in b.angle_flags %}<span class="flag">⚑ {{ f }}</span>{% endfor %}</div>
       {% endif %}
       {% if b.note %}<div class="note">{{ b.note }}</div>{% endif %}
+      <a class="dd" href="{{ base }}country/{{ b.country.iso3 }}.html">Country deep dive →</a>
       <details>
         <summary>Sources and data</summary>
         <ol>
@@ -146,12 +173,23 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
         </ol>
       </details>
     </article>
-  {% endfor %}
+  {% endmacro %}
+
+  {% if global_briefs %}
+  <h2>Global drivers: today's news</h2>
+  <div class="grid">
+  {% for b in global_briefs %}{{ card(b) }}{% endfor %}
+  </div>
+  {% endif %}
+
+  <h2>CEEMEA: today's news</h2>
+  <div class="grid">
+  {% for b in ceemea_briefs %}{{ card(b) }}{% endfor %}
   </div>
 
   <footer id="method">
     <h4>How this brief is made</h4>
-    <p>Each morning a Python pipeline pulls headlines (Google News RSS), IMF World Economic Outlook forecasts, BIS policy rates and FX rates for ten CEEMEA sovereigns. Headlines are ranked for bond relevance by a transparent keyword model. Changes since the previous brief (rate moves, FX moves over 1%, IMF revisions) are computed directly from the data. A language model then writes each country summary using only those numbered sources, and must cite a source for every bullet. Before publishing, every figure in the text is checked against the cited source; anything that does not match is flagged ⚑ rather than removed.</p>
+    <p>Each morning a Python pipeline pulls headlines (Google News RSS), IMF World Economic Outlook forecasts, BIS policy rates, FX rates, 10-year government bond yields (US Treasury, OECD) and inflation by component (OECD) for ten CEEMEA sovereigns and six global drivers. Country deep dives add annual World Bank data on economic structure, labour markets, trade and remittances, computed directly with no language model. Headlines are ranked for bond relevance by a transparent keyword model. Changes since the previous brief (rate moves, FX moves over 1%, IMF revisions) are computed directly from the data. A language model then writes each country summary using only those numbered sources, and must cite a source for every bullet. Before publishing, every figure in the text is checked against the cited source; anything that does not match is flagged ⚑ rather than removed.</p>
     <p>Generated {{ report.generated[:16].replace("T"," ") }} UTC. Research tool only; not investment advice. Headlines are third-party content linked to the original publisher.</p>
   </footer>
 </main>
