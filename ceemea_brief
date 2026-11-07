@@ -1,0 +1,874 @@
+"""Plain data containers passed between pipeline stages."""
+from __future__ import annotations
+
+from dataclasses import dataclass, field, asdict
+from typing import Optional
+
+
+@dataclass
+class Country:
+    name: str
+    region: str
+    iso3: str
+    bis: str
+    ccy: str
+    query: str
+    group: str = "ceemea"      # "ceemea" or "global" (global drivers)
+    developed: bool = False    # counts towards the developed-economy average
+    oecd: bool = False         # OECD publishes monthly CPI breakdown / yields
+
+
+@dataclass
+class Article:
+    id: str              # short citation id, e.g. "KEN-3"
+    title: str
+    publisher: str
+    url: str
+    published: str       # ISO timestamp
+    snippet: str = ""
+    score: float = 0.0   # bond-relevance score
+
+
+@dataclass
+class Change:
+    """A data-driven change since the previous run (no LLM involved)."""
+    metric: str
+    before: Optional[float]
+    after: Optional[float]
+    text: str
+
+
+@dataclass
+class Bullet:
+    text: str
+    sources: list[str]
+    flags: list[str] = field(default_factory=list)   # filled by verify.py
+
+
+@dataclass
+class CountryBrief:
+    country: Country
+    headline: str
+    bullets: list[Bullet]
+    bond_angle: str
+    method: str                       # "llm:<model>" or "extractive"
+    articles: list[Article] = field(default_factory=list)
+    macro: dict = field(default_factory=dict)
+    changes: list[Change] = field(default_factory=list)
+    angle_sources: list[str] = field(default_factory=list)
+    angle_flags: list[str] = field(default_factory=list)
+    note: str = ""
+
+    @property
+    def flag_count(self) -> int:
+        return sum(len(b.flags) for b in self.bullets) + len(self.angle_flags)
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+"""Load the country list and settings from config/countries.yaml."""
+from __future__ import annotations
+
+from pathlib import Path
+
+import yaml
+
+from .models import Country
+
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_PATH = ROOT / "config" / "countries.yaml"
+
+
+def load_config(path: Path = CONFIG_PATH) -> dict:
+    with open(path, encoding="utf-8") as fh:
+        raw = yaml.safe_load(fh)
+    raw["countries"] = [Country(**{k: (v if isinstance(v, bool) else str(v or "")) for k, v in c.items()})
+                        for c in raw["countries"]]
+    raw.setdefault("worldbank_indicators", {})
+    return raw
+
+"""Command-line entry point: collect -> rank -> detect changes -> summarise -> verify -> render.
+
+    python -m ceemea_brief.pipeline                 # live run (LLM if LLM_API_KEY is set)
+    python -m ceemea_brief.pipeline --no-llm        # live data, extractive summaries only
+    python -m ceemea_brief.pipeline --replay data/raw/2026-10-20.json   # rerun on saved inputs
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import time
+from dataclasses import asdict
+from datetime import date, datetime, timezone
+from pathlib import Path
+
+from . import changes as changes_mod
+from . import deepdive, llm, relevance, render, summarise, verify
+from .config import ROOT, load_config
+from .models import Article, CountryBrief
+from .sources import bis, fx, imf, news, oecd, treasury, worldbank
+
+
+def log(msg: str) -> None:
+    print(f"[{datetime.now(timezone.utc):%H:%M:%S}] {msg}", flush=True)
+
+
+# ---------------------------------------------------------------- collect
+def collect(cfg: dict, now: datetime) -> dict:
+    """Fetch every source. A failing source is recorded, never fatal."""
+    countries = cfg["countries"]
+    years = [now.year, now.year + 1]
+    raw = {"generated": now.isoformat(), "years": years, "news": {}, "imf": {}, "bis": {}, "fx": {},
+           "yields": {}, "cpi": {}, "worldbank": {}, "status": {}}
+
+    ok = 0
+    for c in countries:
+        try:
+            arts = news.fetch(c, now=now, lookback_hours=cfg["news"]["lookback_hours"])
+            raw["news"][c.iso3] = [asdict(a) for a in arts]
+            ok += 1
+        except Exception as exc:   # noqa: BLE001
+            raw["news"][c.iso3] = []
+            raw["status"][f"news:{c.iso3}"] = f"failed: {exc}"[:200]
+        time.sleep(0.5)            # be polite to the feed
+    raw["status"]["news"] = f"{ok}/{len(countries)} feeds"
+
+    try:
+        data = imf.fetch(list(cfg["imf_indicators"]), [c.iso3 for c in countries], years)
+        raw["imf"] = {ind: {iso: {str(y): v for y, v in s.items()} for iso, s in d.items()} for ind, d in data.items()}
+        raw["status"]["imf"] = "ok"
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["imf"] = f"failed: {exc}"[:200]
+
+    try:
+        raw["bis"] = bis.fetch([c.bis for c in countries])
+        raw["status"]["bis"] = f"ok ({len(raw['bis'])} rates)"
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["bis"] = f"failed: {exc}"[:200]
+
+    try:
+        raw["fx"] = fx.fetch([c.ccy for c in countries])
+        raw["status"]["fx"] = "ok"
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["fx"] = f"failed: {exc}"[:200]
+
+    oecd_areas = [c.iso3 for c in countries if c.oecd]
+    try:
+        raw["yields"] = oecd.fetch_yields(oecd_areas, now.date())
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["yields_oecd"] = f"failed: {exc}"[:200]
+    try:
+        raw["yields"]["USA"] = treasury.fetch(now.date())   # daily beats the OECD monthly average
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["yields_us"] = f"failed: {exc}"[:200]
+    raw["status"]["yields"] = f"{len(raw['yields'])} countries"
+
+    try:
+        raw["cpi"] = oecd.fetch_cpi(oecd_areas, now.date())
+        raw["status"]["cpi"] = f"{len(raw['cpi'])} countries"
+    except Exception as exc:   # noqa: BLE001
+        raw["status"]["cpi"] = f"failed: {exc}"[:200]
+
+    wb, errors = worldbank.fetch(list(cfg["worldbank_indicators"]), [c.iso3 for c in countries],
+                                 now.year - 8, now.year)
+    raw["worldbank"] = wb
+    raw["status"]["worldbank"] = f"{len(wb)}/{len(cfg['worldbank_indicators'])} series"
+    for ind, err in errors.items():
+        raw["status"][f"worldbank:{ind}"] = f"failed: {err}"
+    return raw
+
+
+# ---------------------------------------------------------------- history
+def country_snapshot(c, raw: dict) -> dict:
+    return {
+        "imf": {ind: (raw["imf"].get(ind, {}).get(c.iso3) or {}) for ind in raw["imf"]},
+        "policy_rate": raw["bis"].get(c.bis) if c.bis else None,
+        "fx": (raw["fx"].get("rates") or {}).get(c.ccy) if c.ccy != "USD" else None,
+        "yield": (raw.get("yields") or {}).get(c.iso3),
+        "cpi": {k: {"period": v["period"], "value": v["value"]} for k, v in ((raw.get("cpi") or {}).get(c.iso3) or {}).items()},
+        "articles": [news.article_hash(a["title"]) for a in raw["news"].get(c.iso3, [])],
+    }
+
+
+def previous_snapshot(history_dir: Path, run_date: str) -> tuple[str | None, dict]:
+    files = sorted(p for p in history_dir.glob("*.json") if p.stem < run_date)
+    if not files:
+        return None, {}
+    return files[-1].stem, json.loads(files[-1].read_text())
+
+
+# ---------------------------------------------------------------- per-country
+def data_lines(c, snap: dict, raw: dict, labels: dict) -> list[str]:
+    lines = []
+    for ind, meta in labels.items():
+        for y, v in sorted((snap["imf"].get(ind) or {}).items()):
+            lines.append(f"{meta['label']} {y} (IMF WEO forecast): {v:.1f}{meta['unit'].replace('% GDP', '% of GDP')}")
+    pr = snap["policy_rate"]
+    if pr:
+        lines.append(f"Policy rate (BIS, {pr['period']}): {pr['rate']:.2f}%")
+    else:
+        lines.append("Policy rate: not published by BIS for this country")
+    if snap["fx"]:
+        lines.append(f"{c.ccy} per USD (open.er-api.com, {raw['fx'].get('as_of', '')[:16]}): {snap['fx']:.4g}")
+    y = snap.get("yield")
+    if y:
+        lines.append(f"10-year government bond yield ({y['source']}, {y['freq']}, {y['date']}): {y['value']:.2f}%")
+    cpi = snap.get("cpi") or {}
+    names = {"headline": "all items", "food": "food", "energy": "energy", "core": "excluding food and energy"}
+    for k in ("headline", "food", "energy", "core"):
+        if k in cpi:
+            lines.append(f"Consumer prices, {names[k]}, year-on-year (OECD, {cpi[k]['period']}): {cpi[k]['value']:.1f}%")
+    return lines
+
+
+def build_country(c, raw, prev_snap, cfg, *, now, use_llm, client=None) -> tuple[CountryBrief, dict]:
+    labels = cfg["imf_indicators"]
+    snap = country_snapshot(c, raw)
+    prev = prev_snap.get(c.iso3) if prev_snap else None
+    seen = set(prev.get("articles", [])) if prev else set()
+
+    arts = [Article(**a) for a in raw["news"].get(c.iso3, [])]
+    ranked = relevance.rank(arts, c.iso3, now=now, seen=seen, max_items=cfg["news"]["max_items"],
+                            keyfn=news.article_hash)
+    chg = changes_mod.detect(c, snap, prev, labels)
+    lines = data_lines(c, snap, raw, labels)
+
+    brief = summarise.summarise(c, ranked, lines, chg, use_llm=use_llm, client=client)
+    brief.articles, brief.changes = ranked, chg
+    brief.macro = {"snapshot": snap, "lines": lines}
+    verify.verify(brief, "\n".join(lines + [x.text for x in chg]))
+    return brief, snap
+
+
+# ---------------------------------------------------------------- main
+def run(*, run_date: str, raw: dict, cfg: dict, use_llm: bool, out_dir: Path, history_dir: Path,
+        client=None, label: str = "") -> list[CountryBrief]:
+    now = datetime.fromisoformat(raw["generated"])
+    prev_date, prev_snap = previous_snapshot(history_dir, run_date)
+    briefs, snaps = [], {}
+    for c in cfg["countries"]:
+        log(f"{c.name}: {len(raw['news'].get(c.iso3, []))} headlines")
+        b, snaps[c.iso3] = build_country(c, raw, prev_snap, cfg, now=now, use_llm=use_llm, client=client)
+        briefs.append(b)
+
+    history_dir.mkdir(parents=True, exist_ok=True)
+    (history_dir / f"{run_date}.json").write_text(json.dumps(snaps, indent=1, default=str))
+
+    report = {
+        "run_date": run_date, "generated": raw["generated"], "previous": prev_date,
+        "status": raw["status"], "years": raw["years"], "label": label,
+        "method": next((b.method for b in briefs if b.method.startswith("llm")), "extractive"),
+        "bullets": sum(len(b.bullets) for b in briefs),
+        "flags": sum(b.flag_count for b in briefs),
+        "fallbacks": [b.country.name for b in briefs if b.note.startswith("LLM step failed")],
+    }
+    render.write_site(briefs, report, cfg, out_dir)
+    deepdive.write_pages(briefs, raw, cfg, report, out_dir)
+    log(f"done: {report['bullets']} bullets, {report['flags']} flags, method {report['method']}")
+    return briefs
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description="Build the CEEMEA daily macro brief.")
+    ap.add_argument("--date", default=date.today().isoformat(), help="run date, YYYY-MM-DD")
+    ap.add_argument("--replay", type=Path, help="rerun on a saved raw-input file instead of fetching")
+    ap.add_argument("--no-llm", action="store_true", help="extractive summaries only")
+    ap.add_argument("--out", type=Path, default=ROOT / "docs")
+    ap.add_argument("--data", type=Path, default=ROOT / "data")
+    ap.add_argument("--label", default="", help="banner text, e.g. 'TEST DATA'")
+    args = ap.parse_args(argv)
+
+    cfg = load_config()
+    if args.replay:
+        raw = json.loads(args.replay.read_text())
+    else:
+        raw = collect(cfg, datetime.now(timezone.utc))
+        (args.data / "raw").mkdir(parents=True, exist_ok=True)
+        (args.data / "raw" / f"{args.date}.json").write_text(json.dumps(raw, indent=1))
+    use_llm = not args.no_llm and llm.available()
+    if not args.no_llm and not use_llm:
+        log("LLM_API_KEY not set: using extractive summaries")
+    client = llm.ChatClient() if use_llm else None   # one client, so calls are paced
+    run(run_date=args.date, raw=raw, cfg=cfg, use_llm=use_llm, out_dir=args.out,
+        history_dir=args.data / "history", label=args.label, client=client)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+
+"""Turn ranked headlines and data into a short country brief.
+
+Two back-ends:
+  * LLM (Gemini API free tier; see llm.py) when LLM_API_KEY is set.
+  * Extractive fallback otherwise, or if the model's answer can't be used:
+    top headlines verbatim plus the computed changes. No model involved.
+
+The model only sees the numbered sources and the data table, and must
+cite a source id for every bullet. verify.py then checks it did.
+"""
+from __future__ import annotations
+
+import json
+import re
+
+from . import llm
+from .models import Article, Bullet, Change, Country, CountryBrief
+
+DEFAULT_MODEL = llm.MODEL
+
+SYSTEM = """You are a research associate on an emerging-markets sovereign debt team.
+You write the morning brief a portfolio manager reads in two minutes.
+Some countries are CEEMEA sovereigns the team invests in; others are GLOBAL DRIVERS
+(developed economies and China) whose policy and markets move emerging-market prices.
+
+Rules:
+- Use ONLY the numbered sources and the DATA block provided. No outside knowledge, no guesses.
+- Every bullet must cite at least one source id in "sources" (e.g. ["KEN-2"]) or "DATA".
+- Copy numbers exactly as they appear in the sources or DATA. Do not compute new figures.
+- Headlines are often vague; if a source only hints at something, say so ("reports suggest").
+- CEEMEA countries: prefer what moves hard-currency bonds: IMF programmes, ratings, financing,
+  fiscal slippage, FX and reserves, policy rates, politics that threatens any of these.
+- Global drivers: prefer central bank decisions and guidance, government bond yields, inflation,
+  growth, the dollar or currency, and commodity demand.
+- If nothing material happened, say so plainly. Do not pad.
+Return JSON only, no prose before or after."""
+
+ANGLE = {
+    "ceemea": "one or two sentences: why this matters (or doesn't) for the sovereign's bonds",
+    "global": "one or two sentences: why this matters (or doesn't) for emerging-market borrowers and currencies",
+}
+
+SCHEMA = """{
+  "headline": "one line, <= 15 words, the single most important point today",
+  "bullets": [
+    {"text": "one sentence, <= 35 words", "sources": ["ISO-1"]}
+  ],
+  "bond_angle": "ANGLE",
+  "bond_angle_sources": ["ISO-1", "DATA"]
+}
+Give 2 to 4 bullets."""
+
+
+def build_prompt(country: Country, articles: list[Article], data_lines: list[str], changes: list[Change]) -> str:
+    src = "\n".join(
+        f"[{a.id}] {a.title} ({a.publisher}, {a.published[:10]})" + (f"\n    {a.snippet}" if a.snippet and a.snippet not in a.title else "")
+        for a in articles) or "(no relevant headlines in the last 36 hours)"
+    chg = "\n".join(f"- {c.text}" for c in changes) or "- none"
+    data = "\n".join(f"- {line}" for line in data_lines) or "- none"
+    group = "global" if getattr(country, "group", "ceemea") == "global" else "ceemea"
+    role = "GLOBAL DRIVER" if group == "global" else "CEEMEA SOVEREIGN"
+    return (f"COUNTRY: {country.name} ({country.region}) - {role}\n\n"
+            f"SOURCES:\n{src}\n\n"
+            f"DATA (id DATA):\n{data}\n\n"
+            f"CHANGES SINCE LAST BRIEF (computed, id DATA):\n{chg}\n\n"
+            f"Write the brief as JSON in this shape:\n{SCHEMA.replace('ANGLE', ANGLE[group])}")
+
+
+def extract_json(text: str) -> dict:
+    """Pull the first JSON object out of a model reply (tolerates ``` fences)."""
+    text = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.M).strip()
+    start, end = text.find("{"), text.rfind("}")
+    if start < 0 or end <= start:
+        raise ValueError("no JSON object in reply")
+    return json.loads(text[start:end + 1])
+
+
+def from_llm_json(obj: dict, country: Country, model: str) -> CountryBrief:
+    bullets = [Bullet(text=str(b["text"]).strip(), sources=[str(s) for s in b.get("sources", [])])
+               for b in obj.get("bullets", []) if str(b.get("text", "")).strip()]
+    if not bullets:
+        raise ValueError("model returned no bullets")
+    brief = CountryBrief(country=country, headline=str(obj.get("headline", "")).strip(), bullets=bullets[:4],
+                         bond_angle=str(obj.get("bond_angle", "")).strip(), method=f"llm:{model}")
+    brief.angle_sources = [str(s) for s in obj.get("bond_angle_sources", [])]
+    return brief
+
+
+def llm_brief(country, articles, data_lines, changes, *, client=None, model: str = DEFAULT_MODEL) -> CountryBrief:
+    """client: any object with complete(system, user) -> str (llm.ChatClient, or a fake in tests)."""
+    client = client or llm.ChatClient(model=model)
+    text = client.complete(SYSTEM, build_prompt(country, articles, data_lines, changes))
+    return from_llm_json(extract_json(text), country, getattr(client, "model", model))
+
+
+def extractive_brief(country: Country, articles: list[Article], changes: list[Change]) -> CountryBrief:
+    """No-model fallback: computed changes first, then the top headlines verbatim."""
+    bullets = [Bullet(text=c.text, sources=["DATA"]) for c in changes]
+    bullets += [Bullet(text=f"{a.title} ({a.publisher}).", sources=[a.id]) for a in articles[: max(0, 4 - len(bullets))]]
+    if not bullets:
+        bullets = [Bullet(text="No bond-relevant headlines and no data changes since the last brief.", sources=["DATA"])]
+    headline = changes[0].text if changes else (articles[0].title if articles else "Quiet day")
+    return CountryBrief(country=country, headline=headline, bullets=bullets,
+                        bond_angle="", method="extractive")
+
+
+def summarise(country, articles, data_lines, changes, *, use_llm: bool, client=None, model: str = DEFAULT_MODEL) -> CountryBrief:
+    if use_llm:
+        try:
+            return llm_brief(country, articles, data_lines, changes, client=client, model=model)
+        except Exception as exc:   # noqa: BLE001 - never lose the country because one call failed
+            brief = extractive_brief(country, articles, changes)
+            brief.note = f"LLM step failed ({type(exc).__name__}: {str(exc)[:120]}); fell back to extractive."
+            return brief
+    return extractive_brief(country, articles, changes)
+
+"""Detect what changed in the data since the previous run.
+
+These lines are computed, not written by the model, so the 'what
+changed' section can always be trusted.
+"""
+from __future__ import annotations
+
+from .models import Change
+
+FX_ALERT_PCT = 1.0          # flag FX moves larger than this
+WEO_REVISION_MIN = 0.1      # ignore IMF revisions smaller than this
+YIELD_ALERT_BP = 5          # flag 10-year yield moves of at least this many basis points
+
+
+def fx_move(prev_rate: float | None, rate: float | None) -> float | None:
+    """% change in the local currency against USD (positive = local currency stronger)."""
+    if not prev_rate or not rate:
+        return None
+    return round((prev_rate / rate - 1) * 100, 2)
+
+
+def detect(country, today: dict, previous: dict | None, labels: dict[str, dict]) -> list[Change]:
+    """Compare today's snapshot for one country with the previous run's."""
+    out: list[Change] = []
+    prev = previous or {}
+
+    pr, pr_prev = today.get("policy_rate"), prev.get("policy_rate")
+    # First run: report BIS's own month-on-month change. Later runs: only report a
+    # change against the previous brief, so one decision isn't repeated all month.
+    if pr and not previous and pr.get("change_bp"):
+        verb = "raised" if pr["change_bp"] > 0 else "cut"
+        out.append(Change("policy_rate", pr["rate"] - pr["change_bp"] / 100, pr["rate"],
+                          f"Policy rate {verb} {abs(pr['change_bp'])}bp to {pr['rate']:.2f}% ({pr['period']}, BIS)."))
+    elif pr and pr_prev and pr_prev.get("rate") is not None and abs(pr["rate"] - pr_prev["rate"]) > 1e-9:
+        bp = round((pr["rate"] - pr_prev["rate"]) * 100)
+        verb = "raised" if bp > 0 else "cut"
+        out.append(Change("policy_rate", pr_prev["rate"], pr["rate"],
+                          f"Policy rate {verb} {abs(bp)}bp to {pr['rate']:.2f}% since the last brief (BIS)."))
+
+    move = fx_move(prev.get("fx"), today.get("fx"))
+    if move is not None and abs(move) >= FX_ALERT_PCT:
+        direction = "strengthened" if move > 0 else "weakened"
+        out.append(Change("fx", prev.get("fx"), today.get("fx"),
+                          f"{country.ccy} {direction} {abs(move):.1f}% against USD since the last brief "
+                          f"({prev['fx']:.4g} to {today['fx']:.4g} per USD)."))
+
+    y, y_prev = today.get("yield"), prev.get("yield")
+    if y and y_prev and y.get("date") != y_prev.get("date") and None not in (y.get("value"), y_prev.get("value")):
+        bp = round((y["value"] - y_prev["value"]) * 100)
+        if abs(bp) >= YIELD_ALERT_BP:
+            out.append(Change("yield", y_prev["value"], y["value"],
+                              f"10-year government bond yield {'rose' if bp > 0 else 'fell'} {abs(bp)}bp to "
+                              f"{y['value']:.2f}% since the last brief ({y['source']}, {y['freq']})."))
+
+    for ind, meta in labels.items():
+        for year, val in (today.get("imf", {}).get(ind) or {}).items():
+            old = ((prev.get("imf") or {}).get(ind) or {}).get(str(year), ((prev.get("imf") or {}).get(ind) or {}).get(year))
+            if old is not None and abs(val - old) >= WEO_REVISION_MIN:
+                out.append(Change(f"imf:{ind}:{year}", old, val,
+                                  f"IMF revised its {year} forecast for {meta['label'][0].lower() + meta['label'][1:]} from {old:.1f} to {val:.1f}{meta['unit'].replace('% GDP', '% of GDP')}."))
+    return out
+
+"""Render the brief as static HTML for GitHub Pages (docs/)."""
+from __future__ import annotations
+
+import json
+from datetime import date
+from pathlib import Path
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+from .config import ROOT
+from .models import CountryBrief
+
+env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]),
+                  trim_blocks=True, lstrip_blocks=True)
+
+
+def fmt(v, digits=1, suffix=""):
+    return "–" if v is None else f"{v:.{digits}f}{suffix}"
+
+
+env.filters["fmt"] = fmt
+
+
+def overview_rows(briefs: list[CountryBrief], cfg: dict, year: int) -> list[dict]:
+    rows = []
+    for b in briefs:
+        snap = b.macro["snapshot"]
+        imf = {ind: (snap["imf"].get(ind) or {}).get(str(year)) for ind in cfg["imf_indicators"]}
+        fx_chg = next((c for c in b.changes if c.metric == "fx"), None)
+        y_chg = next((c for c in b.changes if c.metric == "yield"), None)
+        rows.append({"name": b.country.name, "region": b.country.region, "iso3": b.country.iso3,
+                     "group": b.country.group, "imf": imf, "rate": snap["policy_rate"], "fx": snap["fx"],
+                     "ccy": b.country.ccy, "fx_alert": fx_chg.text if fx_chg else "", "flags": b.flag_count,
+                     "yield": snap.get("yield"), "yield_alert": y_chg.text if y_chg else "",
+                     "cpi": (snap.get("cpi") or {}).get("headline"), "core": (snap.get("cpi") or {}).get("core"),
+                     "headline": b.headline})
+    return rows
+
+
+def long_date(d: str) -> str:
+    x = date.fromisoformat(d)
+    return f"{x.strftime('%A')} {x.day} {x.strftime('%B %Y')}"
+
+
+def write_site(briefs: list[CountryBrief], report: dict, cfg: dict, out_dir: Path) -> None:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    arch = out_dir / "archive"
+    arch.mkdir(exist_ok=True)
+    year = report["years"][0]
+    rows = overview_rows(briefs, cfg, year)
+    ctx = dict(briefs=briefs, report=report, cfg=cfg, year=year, rows=[r for r in rows if r["group"] != "global"],
+               global_rows=[r for r in rows if r["group"] == "global"],
+               global_briefs=[b for b in briefs if b.country.group == "global"],
+               ceemea_briefs=[b for b in briefs if b.country.group != "global"],
+               when=long_date(report["run_date"]),
+               all_changes=[(b.country.name, c) for b in briefs for c in b.changes])
+    page = env.get_template("brief.html.j2")
+    (out_dir / "index.html").write_text(page.render(base="", **ctx), encoding="utf-8")
+    (arch / f"{report['run_date']}.html").write_text(page.render(base="../", **ctx), encoding="utf-8")
+    (out_dir / "latest.json").write_text(json.dumps(
+        {"report": report, "briefs": [b.to_dict() for b in briefs]}, indent=1, default=str), encoding="utf-8")
+
+    dates = sorted((p.stem for p in arch.glob("20*.html")), reverse=True)
+    (arch / "index.html").write_text(env.get_template("archive.html.j2").render(dates=dates, long_date=long_date),
+                                     encoding="utf-8")
+    (out_dir / ".nojekyll").write_text("")
+
+"""Country deep-dive pages: a structural and microeconomic breakdown of each economy.
+
+Everything here is computed from the data, with no language model involved:
+inflation by component (OECD, monthly), labour market, economic structure,
+trade and external position (World Bank, annual), with each figure compared
+against the CEEMEA and developed-economy averages.
+"""
+from __future__ import annotations
+
+from pathlib import Path
+
+from .models import CountryBrief
+
+CPI_LABELS = {"headline": "All items", "food": "Food", "energy": "Energy", "core": "Core (excl. food and energy)"}
+SECTIONS = {"overview": "Income", "structure": "Economic structure", "labour": "Labour market and prices",
+            "external": "Trade, remittances and credit"}
+
+
+def peer_averages(wb: dict, cfg: dict) -> dict:
+    """{indicator: {"ceemea": avg, "developed": avg}} over countries with data."""
+    groups = {"ceemea": [c.iso3 for c in cfg["countries"] if c.group != "global"],
+              "developed": [c.iso3 for c in cfg["countries"] if c.developed]}
+    out = {}
+    for ind in cfg["worldbank_indicators"]:
+        vals = wb.get(ind, {})
+        out[ind] = {}
+        for g, isos in groups.items():
+            xs = [vals[i]["value"] for i in isos if i in vals]
+            out[ind][g] = round(sum(xs) / len(xs), 2) if xs else None
+    return out
+
+
+def peer_group(c) -> tuple[str, str]:
+    return ("developed", "developed-economy") if c.group == "global" else ("ceemea", "CEEMEA")
+
+
+def fmt_num(v, digits=1):
+    if v is None:
+        return "–"
+    return f"{v:,.0f}" if digits == 0 else f"{v:,.{digits}f}"
+
+
+def highlights(c, wb: dict, avgs: dict, cfg: dict, n: int = 3) -> list[str]:
+    """The n indicators where the country differs most from its peer average (computed, not written by a model)."""
+    key, name = peer_group(c)
+    scored = []
+    for ind, meta in cfg["worldbank_indicators"].items():
+        obs, avg = wb.get(ind, {}).get(c.iso3), avgs.get(ind, {}).get(key)
+        if not obs or avg is None:
+            continue
+        gap = (obs["value"] - avg) / max(abs(avg), 1.0)
+        scored.append((abs(gap), ind, meta, obs, avg))
+    scored.sort(key=lambda t: t[0], reverse=True)
+    out = []
+    for size, ind, meta, obs, avg in scored[:n]:
+        d = int(meta.get("digits", 1))
+        unit = meta["unit"]
+        pre, post = ("US$", "") if unit == "US$" else ("", unit if unit.startswith("%") else f" {unit}")
+        direction = ("well " if size >= 0.5 else "") + ("above" if obs["value"] > avg else "below")
+        out.append(f"{meta['label']} is {pre}{fmt_num(obs['value'], d)}{post} ({obs['year']}), {direction} "
+                   f"the {name} average of {pre}{fmt_num(avg, d)}{post}.")
+    return out
+
+
+def sparkline(series: list, width: int = 120, height: int = 28) -> str:
+    """SVG polyline points for a short series of [period, value] pairs."""
+    vals = [v for _, v in series]
+    if len(vals) < 2:
+        return ""
+    lo, hi = min(vals), max(vals)
+    span = (hi - lo) or 1.0
+    step = width / (len(vals) - 1)
+    return " ".join(f"{i * step:.1f},{height - 2 - (v - lo) / span * (height - 4):.1f}" for i, v in enumerate(vals))
+
+
+def country_context(c, brief: CountryBrief, raw: dict, cfg: dict, avgs: dict) -> dict:
+    wb = raw.get("worldbank") or {}
+    key, peer_name = peer_group(c)
+    sections: dict = {s: [] for s in SECTIONS}
+    for ind, meta in cfg["worldbank_indicators"].items():
+        obs = wb.get(ind, {}).get(c.iso3)
+        sections.setdefault(meta.get("section", "overview"), []).append({
+            "label": meta["label"], "unit": meta["unit"], "digits": int(meta.get("digits", 1)),
+            "value": obs["value"] if obs else None, "year": obs["year"] if obs else None,
+            "ceemea": avgs[ind]["ceemea"], "developed": avgs[ind]["developed"], "ind": ind})
+    structure = {row["ind"]: row["value"] for row in sections["structure"]}
+    cpi = (raw.get("cpi") or {}).get(c.iso3) or {}
+    cpi_rows = [dict(label=CPI_LABELS[k], points=sparkline(v["series"]), **v) for k, v in cpi.items() if k in CPI_LABELS]
+    cpi_rows.sort(key=lambda r: list(CPI_LABELS.values()).index(r["label"]))
+    snap = brief.macro.get("snapshot", {})
+    return {"c": c, "brief": brief, "sections": sections, "section_names": SECTIONS, "structure": structure,
+            "cpi_rows": cpi_rows, "yld": snap.get("yield"), "rate": snap.get("policy_rate"), "fx": snap.get("fx"),
+            "imf": snap.get("imf", {}), "peer_name": peer_name, "peer_key": key,
+            "highlights": highlights(c, wb, avgs, cfg)}
+
+
+def write_pages(briefs: list[CountryBrief], raw: dict, cfg: dict, report: dict, out_dir: Path) -> None:
+    from .render import env, long_date   # shared Jinja environment and filters
+    folder = out_dir / "country"
+    folder.mkdir(parents=True, exist_ok=True)
+    avgs = peer_averages(raw.get("worldbank") or {}, cfg)
+    page = env.get_template("country.html.j2")
+    year = report["years"][0]
+    contexts = []
+    for b in briefs:
+        ctx = country_context(b.country, b, raw, cfg, avgs)
+        contexts.append(ctx)
+        (folder / f"{b.country.iso3}.html").write_text(
+            page.render(report=report, cfg=cfg, year=year, when=long_date(report["run_date"]), fmt_num=fmt_num, **ctx),
+            encoding="utf-8")
+    (folder / "index.html").write_text(env.get_template("countries.html.j2").render(
+        contexts=contexts, report=report, when=long_date(report["run_date"])), encoding="utf-8")
+
+"""OECD Data Explorer (SDMX REST API, no key): monthly CPI breakdown and 10-year yields.
+
+* CPI: the OECD is moving from its COICOP 1999 dataset to a COICOP 2018 one,
+  and some countries stopped updating in the old one. Both are queried and the
+  most recent series for each country and category is kept.
+* Long-term (10-year) government bond yields: monthly averages from the
+  short-term economic statistics "financial market" dataset.
+
+Requests name only the countries flagged `oecd: true`. If a batch request is
+refused, countries are retried one at a time so one bad code can't sink the rest.
+"""
+from __future__ import annotations
+
+import csv
+import io
+import time
+from datetime import date
+
+from . import http
+
+BASE = "https://sdmx.oecd.org/public/rest/data"
+CPI_FLOWS = [
+    "OECD.SDD.TPS,DSD_PRICES_COICOP2018@DF_PRICES_C2018_ALL,1.0",
+    "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0",
+]
+YIELD_FLOW = "OECD.SDD.STES,DSD_STES@DF_FINMARK,4.0"
+
+# CPI categories shown on deep-dive pages: label -> codes tried in order
+CPI_CATEGORIES = {
+    "headline": ["_T"],
+    "food": ["CP01"],
+    "energy": ["NRG"],
+    "core": ["_TXCP01_NRG"],
+}
+
+
+def _rows(text: str) -> list[dict]:
+    """SDMX-CSV rows with column names reduced to their codes ('REF_AREA:Reference area' -> 'REF_AREA')."""
+    reader = csv.DictReader(io.StringIO(text))
+    cols = {name: name.split(":")[0].strip().upper() for name in (reader.fieldnames or [])}
+    if "OBS_VALUE" not in cols.values() or "REF_AREA" not in cols.values():
+        raise ValueError(f"unexpected OECD columns: {reader.fieldnames}")
+    out = []
+    for row in reader:
+        r = {cols[k]: (v or "").split(":")[0].strip() for k, v in row.items() if k in cols}
+        if r.get("OBS_VALUE") not in ("", "NaN", "NAN"):
+            out.append(r)
+    return out
+
+
+def start_period(today: date, months_back: int) -> str:
+    y, m = today.year, today.month - months_back
+    while m <= 0:
+        y, m = y - 1, m + 12
+    return f"{y:04d}-{m:02d}"
+
+
+def _get(flow: str, key: str, start: str) -> str:
+    return http.get(f"{BASE}/{flow}/{key}", params={"startPeriod": start, "format": "csvfile"}, timeout=90).text
+
+
+def _batched(flow: str, areas: list[str], key_tail: str, start: str) -> list[dict]:
+    """One request for all areas; on failure, one request per area (best effort)."""
+    try:
+        return _rows(_get(flow, "+".join(areas) + key_tail, start))
+    except Exception:   # noqa: BLE001
+        rows = []
+        for a in areas:
+            try:
+                rows += _rows(_get(flow, a + key_tail, start))
+            except Exception:   # noqa: BLE001 - country not covered by this dataset
+                pass
+            time.sleep(1.0)
+        return rows
+
+
+def parse_cpi(rows_by_flow: list[tuple[str, list[dict]]]) -> dict:
+    """{iso3: {category: {"period", "value", "year_ago", "series": [[period, value], ...], "flow"}}}"""
+    best: dict = {}
+    for flow, rows in rows_by_flow:
+        series: dict = {}
+        for r in rows:
+            if r.get("FREQ", "M") != "M" or r.get("MEASURE", "CPI") != "CPI":
+                continue
+            series.setdefault((r["REF_AREA"], r.get("EXPENDITURE", "_T")), []).append(
+                (r["TIME_PERIOD"], float(r["OBS_VALUE"])))
+        for (area, code), obs in series.items():
+            cat = next((c for c, codes in CPI_CATEGORIES.items() if code in codes), None)
+            if not cat:
+                continue
+            obs.sort()
+            current = best.get(area, {}).get(cat)
+            if current and current["period"] >= obs[-1][0]:
+                continue   # the other dataset is at least as recent
+            best.setdefault(area, {})[cat] = {
+                "period": obs[-1][0], "value": round(obs[-1][1], 2),
+                "year_ago": round(obs[-13][1], 2) if len(obs) >= 13 else None,
+                "series": [[p, round(v, 2)] for p, v in obs[-13:]],
+                "flow": "COICOP 2018" if "C2018" in flow else "COICOP 1999",
+            }
+    return best
+
+
+def fetch_cpi(areas: list[str], today: date) -> dict:
+    start = start_period(today, 15)
+    collected = []
+    for flow in CPI_FLOWS:
+        collected.append((flow, _batched(flow, areas, ".M.N.CPI.PA..N.GY", start)))
+    return parse_cpi(collected)
+
+
+def parse_yields(rows: list[dict]) -> dict:
+    """{iso3: {"value", "date", "prev", "prev_date", "source", "freq"}} from monthly IRLT rows."""
+    series: dict = {}
+    for r in rows:
+        if r.get("MEASURE") == "IRLT" and r.get("FREQ", "M") == "M":
+            series.setdefault(r["REF_AREA"], []).append((r["TIME_PERIOD"], float(r["OBS_VALUE"])))
+    out = {}
+    for area, obs in series.items():
+        obs.sort()
+        out[area] = {"value": round(obs[-1][1], 2), "date": obs[-1][0],
+                     "prev": round(obs[-2][1], 2) if len(obs) > 1 else None,
+                     "prev_date": obs[-2][0] if len(obs) > 1 else None,
+                     "source": "OECD", "freq": "monthly average"}
+    return out
+
+
+def fetch_yields(areas: list[str], today: date) -> dict:
+    return parse_yields(_batched(YIELD_FLOW, areas, ".M.IRLT.PA.....", start_period(today, 4)))
+
+"""World Bank World Development Indicators (API v2, no key).
+
+Annual series for the deep-dive pages. One request per indicator covers all
+countries; the latest non-empty year is kept for each country.
+"""
+from __future__ import annotations
+
+from . import http
+
+URL = "https://api.worldbank.org/v2/country/{countries}/indicator/{indicator}"
+
+
+def parse(payload, iso3s: list[str]) -> dict[str, dict]:
+    """{iso3: {"value", "year"}} using the most recent non-null observation."""
+    if not isinstance(payload, list) or len(payload) < 2 or payload[1] is None:
+        msg = payload[0].get("message") if isinstance(payload, list) and payload and isinstance(payload[0], dict) else payload
+        raise ValueError(f"World Bank returned no data: {str(msg)[:120]}")
+    out: dict[str, dict] = {}
+    for rec in payload[1]:
+        iso, val, year = rec.get("countryiso3code"), rec.get("value"), rec.get("date")
+        if iso not in iso3s or val is None or not str(year).isdigit():
+            continue
+        if iso not in out or int(year) > out[iso]["year"]:
+            out[iso] = {"value": round(float(val), 2), "year": int(year)}
+    return out
+
+
+def fetch(indicators: list[str], iso3s: list[str], first_year: int, last_year: int) -> tuple[dict, dict]:
+    """Returns ({indicator: {iso3: {...}}}, {indicator: error}) - one failed indicator doesn't stop the rest."""
+    data, errors = {}, {}
+    for ind in indicators:
+        try:
+            payload = http.get(URL.format(countries=";".join(iso3s), indicator=ind),
+                               params={"format": "json", "date": f"{first_year}:{last_year}", "per_page": 1000},
+                               timeout=60).json()
+            data[ind] = parse(payload, iso3s)
+        except Exception as exc:   # noqa: BLE001
+            errors[ind] = str(exc)[:150]
+    return data, errors
+
+"""US Treasury daily par yield curve (CSV, no key): the daily 10-year yield.
+
+This is the benchmark emerging-market dollar bonds are priced against, so it
+is worth having daily rather than as a monthly average.
+"""
+from __future__ import annotations
+
+import csv
+import io
+from datetime import date, datetime
+
+from . import http
+
+URL = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/"
+       "daily-treasury-rates.csv/{year}/all")
+
+
+def parse(text: str) -> list[tuple[str, float]]:
+    """[(ISO date, 10-year yield), ...] sorted oldest first."""
+    reader = csv.DictReader(io.StringIO(text.lstrip("﻿")))
+    cols = {(name or "").strip().strip('"'): name for name in (reader.fieldnames or [])}
+    if "Date" not in cols or "10 Yr" not in cols:
+        raise ValueError(f"unexpected Treasury columns: {reader.fieldnames}")
+    out = []
+    for row in reader:
+        raw_date, raw_val = (row[cols["Date"]] or "").strip(), (row[cols["10 Yr"]] or "").strip()
+        if not raw_val:
+            continue
+        out.append((datetime.strptime(raw_date, "%m/%d/%Y").date().isoformat(), float(raw_val)))
+    return sorted(out)
+
+
+def fetch(today: date) -> dict:
+    """{"value", "date", "prev", "prev_date", "source", "freq"} for the latest two trading days."""
+    obs = []
+    for year in (today.year, today.year - 1):
+        resp = http.get(URL.format(year=year), params={"type": "daily_treasury_yield_curve",
+                                                       "field_tdr_date_value": year, "page": "", "_format": "csv"})
+        obs = parse(resp.text) + obs
+        if len(obs) >= 2:
+            break
+    if not obs:
+        raise ValueError("no Treasury yield observations")
+    last, prev = obs[-1], (obs[-2] if len(obs) > 1 else (None, None))
+    return {"value": last[1], "date": last[0], "prev": prev[1], "prev_date": prev[0],
+            "source": "US Treasury", "freq": "daily"}
