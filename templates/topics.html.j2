@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.name ~ " · " if mode == "topic" else "" }}Topic archive</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1b1f24;--muted:#5d6670;--line:#e2ddd3;--accent:#0f4c5c;--accent-soft:#e3eef0;--warn:#9a5b00;--warn-soft:#fbf0dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121417;--paper:#1a1d21;--ink:#e7e4de;--muted:#9aa3ac;--line:#2c3137;--accent:#7fc4d4;--accent-soft:#1f3238;--warn:#e9b45a;--warn-soft:#33291a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:30px 20px 50px}
+a{color:var(--accent)}
+.kicker{font:500 11.5px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 32px Newsreader,Georgia,serif;margin:6px 0}
+h2{font:600 21px Newsreader,Georgia,serif;margin:28px 0 10px}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:18px}
+.tile{display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.tile:hover{border-color:var(--accent)}
+.tile b{font:600 18px Newsreader,Georgia,serif;display:block}
+.tile span{font-size:12.5px;color:var(--muted);display:block}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.item .m{font:500 11.5px "IBM Plex Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.item b{display:block;margin:4px 0}
+.item ul{margin:4px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
+.flag{font-size:12px;color:var(--warn);background:var(--warn-soft);padding:1px 6px;border-radius:4px}
+.wk{background:var(--accent-soft);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+</style>
+</head>
+<body><div class="wrap">
+{% if mode == "index" %}
+<p><a href="../index.html">← Today's brief</a> · <a href="../weekly/index.html">This week</a></p>
+<div class="kicker">Topic archive</div>
+<h1>Economics by topic</h1>
+<p class="muted">Every country story from the daily brief, filed under the economic concepts it illustrates. A quick way to find recent real-world examples of each idea.</p>
+<div class="grid">
+{% for slug, c in concepts.items() %}
+  <a class="tile" href="{{ slug }}.html"><b>{{ c.name }}</b><span>{{ counts[slug] }} stor{{ "y" if counts[slug] == 1 else "ies" }}{% if latest[slug] %} · latest {{ latest[slug] }}{% endif %}</span></a>
+{% endfor %}
+</div>
+{% else %}
+<p><a href="index.html">← All topics</a> · <a href="../index.html">Today's brief</a></p>
+<div class="kicker">Topic</div>
+<h1>{{ meta.name }}</h1>
+<p class="muted">{{ items|length }} stor{{ "y" if items|length == 1 else "ies" }}, newest first. Tagged automatically by keyword, so a few may only touch on the topic.</p>
+{% if weekly %}
+<h2>Explained in the weekly digest</h2>
+{% for w in weekly %}<div class="wk"><a href="../weekly/{{ w.week }}.html"><b>{{ w.title }}</b></a> <span class="muted">· {{ w.country }} · {{ w.date }}</span></div>{% endfor %}
+{% endif %}
+<h2>From the daily brief</h2>
+{% for r in items %}
+<div class="item">
+  <div class="m">{{ long_date(r.date) }} · {{ r.country }}</div>
+  <b><a href="../archive/{{ r.date }}.html#{{ r.iso3 }}">{{ r.headline }}</a></b>
+  <ul>{% for bl in r.bullets[:3] %}<li>{{ bl.text }}{% if bl.flags %} <span class="flag">⚑ unverified figure</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+{% else %}
+<p class="muted">No stories filed under this topic yet.</p>
+{% endfor %}
+{% endif %}
+</div></body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economics in the news{% if dg %} · {{ dg.week }}{% endif %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1b1f24;--muted:#5d6670;--line:#e2ddd3;--accent:#0f4c5c;--accent-soft:#e3eef0;--warn:#9a5b00;--warn-soft:#fbf0dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121417;--paper:#1a1d21;--ink:#e7e4de;--muted:#9aa3ac;--line:#2c3137;--accent:#7fc4d4;--accent-soft:#1f3238;--warn:#e9b45a;--warn-soft:#33291a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--paper)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 20px 18px;flex-wrap:wrap}
+.kicker{font:500 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 34px/1.1 Newsreader,Georgia,serif;margin:8px 0 0}
+.date{color:var(--muted);font-size:14px}
+nav{display:flex;gap:16px} nav a{font-size:13.5px;text-decoration:none}
+.story{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-top:22px}
+.story h2{font:600 24px/1.2 Newsreader,Georgia,serif;margin:6px 0 10px}
+.meta{font:500 11.5px "IBM Plex Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.chip{display:inline-block;font:600 12px "IBM Plex Sans",system-ui,sans-serif;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;text-decoration:none;margin-right:6px}
+.spec{font-size:12.5px;color:var(--muted)}
+h3{font:600 13px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px}
+.flag{display:block;margin-top:4px;font-size:12.5px;color:var(--warn);background:var(--warn-soft);padding:3px 8px;border-radius:4px}
+.src{font-size:13px;color:var(--muted)} .src a{color:var(--muted)}
+.note{font-size:13px;color:var(--warn);margin-top:14px}
+.weeks{list-style:none;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:10px}
+.weeks li{padding:10px 14px;border-bottom:1px solid var(--line)} .weeks li:last-child{border-bottom:0}
+footer{margin:40px 0 50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+{% set up = "../" %}
+<header class="top"><div class="wrap">
+  <div>
+    <div class="kicker">Economics in the news · weekly</div>
+    <h1>{% if dg %}Week of {{ long_date(dg.start) }}{% else %}Economics in the news{% endif %}</h1>
+    <div class="date">Three stories from the week's brief and the economics behind them</div>
+  </div>
+  <nav><a href="{{ up }}index.html">Today's brief</a><a href="{{ up }}topics/index.html">Topics</a>{% if not is_index %}<a href="index.html">Latest week</a>{% endif %}</nav>
+</div></header>
+
+<main class="wrap">
+{% if not dg %}
+  <div class="story"><p style="margin:0">The first weekly digest is published on Friday, once a week of daily briefs has been collected.</p></div>
+{% else %}
+  {% if dg.note %}<p class="note">{{ dg.note }}</p>{% endif %}
+  {% for s in dg.stories %}
+  {% set c = concepts[s.concept] %}
+  <article class="story">
+    <div class="meta">{{ loop.index }} · {{ s.country }} · {{ long_date(s.date) }}</div>
+    <h2>{{ s.title }}</h2>
+    <a class="chip" href="{{ up }}topics/{{ s.concept }}.html">{{ c.name }}</a>
+
+    <h3>What happened</h3>
+    <p style="margin:0">{{ s.what_happened }}</p>
+    {% for f in s.flags %}<span class="flag">⚑ {{ f }}</span>{% endfor %}
+
+    {% if s.explanation %}<h3>The economics</h3><p style="margin:0">{{ s.explanation }}</p>{% endif %}
+
+    <p class="src" style="margin-top:14px">Sources:
+      {% for a in s.sources %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a> ({{ a.publisher }}){{ "; " if not loop.last }}{% endfor %}
+      · <a href="{{ up }}archive/{{ s.date }}.html#{{ s.iso3 }}">full brief for that day</a></p>
+  </article>
+  {% endfor %}
+  {% if not dg.stories %}<div class="story"><p style="margin:0">No stories were stored for this week.</p></div>{% endif %}
+{% endif %}
+
+  {% if all_weeks|length > 1 or not is_index %}
+  <h2 style="font:600 22px Newsreader,Georgia,serif;margin:34px 0 12px">All weeks</h2>
+  <ul class="weeks">{% for w in all_weeks %}<li><a href="{{ w.week }}.html">Week of {{ long_date(w.start) }}</a> <span class="spec">· {{ w.stories|map(attribute="title")|join(" · ") }}</span></li>{% endfor %}</ul>
+  {% endif %}
+
+  <footer>Stories are chosen and explained by a language model using only that week's brief, which links to every original source. Figures are checked against the cited story and flagged ⚑ if they cannot be matched.</footer>
+</main>
+</body>
+</html>

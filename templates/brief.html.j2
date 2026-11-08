@@ -76,7 +76,7 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
     <h1>Morning Brief</h1>
     <div class="date">{{ when }}</div>
   </div>
-  <nav><a href="{{ base }}index.html">Latest</a><a href="{{ base }}country/index.html">Countries</a><a href="{{ base }}archive/index.html">Archive</a><a href="#method">Method</a></nav>
+  <nav><a href="{{ base }}index.html">Latest</a><a href="{{ base }}country/index.html">Countries</a><a href="{{ base }}weekly/index.html">This week</a><a href="{{ base }}topics/index.html">Topics</a><a href="{{ base }}archive/index.html">Archive</a><a href="#method">Method</a></nav>
 </div></header>
 
 <main class="wrap">
@@ -189,7 +189,7 @@ footer h4{font:600 15px Newsreader,Georgia,serif;color:var(--ink);margin:0 0 6px
 
   <footer id="method">
     <h4>How this brief is made</h4>
-    <p>Each morning a Python pipeline pulls headlines (Google News RSS), IMF World Economic Outlook forecasts, BIS policy rates, FX rates, 10-year government bond yields (US Treasury, OECD) and inflation by component (OECD) for ten CEEMEA sovereigns and six global drivers. Country deep dives add annual World Bank data on economic structure, labour markets, trade and remittances, computed directly with no language model. Headlines are ranked for bond relevance by a transparent keyword model. Changes since the previous brief (rate moves, FX moves over 1%, IMF revisions) are computed directly from the data. A language model then writes each country summary using only those numbered sources, and must cite a source for every bullet. Before publishing, every figure in the text is checked against the cited source; anything that does not match is flagged ⚑ rather than removed.</p>
+    <p>Each morning a Python pipeline pulls headlines (Google News RSS), IMF World Economic Outlook forecasts, BIS policy rates, FX rates, 10-year government bond yields (US Treasury, OECD) and inflation by component (OECD) for ten CEEMEA sovereigns and six global drivers. Country deep dives add annual World Bank data on economic structure, labour markets, trade and remittances, computed directly with no language model. Every story is filed by economic concept in the topic archive, and each Friday a weekly digest explains the economics behind three of the week's stories. Headlines are ranked for bond relevance by a transparent keyword model. Changes since the previous brief (rate moves, FX moves over 1%, IMF revisions) are computed directly from the data. A language model then writes each country summary using only those numbered sources, and must cite a source for every bullet. Before publishing, every figure in the text is checked against the cited source; anything that does not match is flagged ⚑ rather than removed.</p>
     <p>Generated {{ report.generated[:16].replace("T"," ") }} UTC. Research tool only; not investment advice. Headlines are third-party content linked to the original publisher.</p>
   </footer>
 </main>
