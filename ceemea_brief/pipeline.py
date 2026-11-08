@@ -15,7 +15,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 from . import changes as changes_mod
-from . import deepdive, llm, relevance, render, summarise, verify
+from . import deepdive, llm, relevance, render, summarise, topics, verify, weekly
 from .config import ROOT, load_config
 from .models import Article, CountryBrief
 from .sources import bis, fx, imf, news, oecd, treasury, worldbank
@@ -154,7 +154,7 @@ def build_country(c, raw, prev_snap, cfg, *, now, use_llm, client=None) -> tuple
 
 # ---------------------------------------------------------------- main
 def run(*, run_date: str, raw: dict, cfg: dict, use_llm: bool, out_dir: Path, history_dir: Path,
-        client=None, label: str = "") -> list[CountryBrief]:
+        client=None, label: str = "", weekly_digest: bool | None = None) -> list[CountryBrief]:
     now = datetime.fromisoformat(raw["generated"])
     prev_date, prev_snap = previous_snapshot(history_dir, run_date)
     briefs, snaps = [], {}
@@ -176,6 +176,17 @@ def run(*, run_date: str, raw: dict, cfg: dict, use_llm: bool, out_dir: Path, hi
     }
     render.write_site(briefs, report, cfg, out_dir)
     deepdive.write_pages(briefs, raw, cfg, report, out_dir)
+
+    # Store today's stories, then build the weekly digest (Fridays) and the topic archive.
+    data_dir = history_dir.parent
+    topics.save_day(briefs, run_date, data_dir)
+    if weekly_digest is None:
+        weekly_digest = date.fromisoformat(run_date).weekday() == 4
+    if weekly_digest:
+        dg = weekly.build(run_date, data_dir, out_dir, use_llm=use_llm, client=client)
+        log(f"weekly digest {dg['week']}: {len(dg['stories'])} stories from {dg['count']} candidates")
+    weekly_items = weekly.write_pages(data_dir, out_dir)
+    topics.write_archive(data_dir, out_dir, weekly_items)
     log(f"done: {report['bullets']} bullets, {report['flags']} flags, method {report['method']}")
     return briefs
 
@@ -188,6 +199,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, default=ROOT / "docs")
     ap.add_argument("--data", type=Path, default=ROOT / "data")
     ap.add_argument("--label", default="", help="banner text, e.g. 'TEST DATA'")
+    ap.add_argument("--weekly", action="store_true", help="build the weekly digest even if today is not Friday")
     args = ap.parse_args(argv)
 
     cfg = load_config()
@@ -202,7 +214,8 @@ def main(argv: list[str] | None = None) -> int:
         log("LLM_API_KEY not set: using extractive summaries")
     client = llm.ChatClient() if use_llm else None   # one client, so calls are paced
     run(run_date=args.date, raw=raw, cfg=cfg, use_llm=use_llm, out_dir=args.out,
-        history_dir=args.data / "history", label=args.label, client=client)
+        history_dir=args.data / "history", label=args.label, client=client,
+        weekly_digest=True if args.weekly else None)
     return 0
 
 
