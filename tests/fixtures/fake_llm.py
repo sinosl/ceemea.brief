@@ -14,6 +14,8 @@ class FakeClient:
 
     def complete(self, system: str, user: str, **kw) -> str:
         self.prompts.append(user)
+        if user.startswith("ITEMS:"):                      # weekly digest prompt
+            return json.dumps(fx_data.WEEKLY_REPLY)
         iso = next(k for k in fx_data.LLM_REPLY if f"[{k}-" in user or (k == "STH" and "Southmark" in user))
         reply = fx_data.LLM_REPLY[iso]
         return reply if isinstance(reply, str) else "```json\n" + json.dumps(reply) + "\n```"

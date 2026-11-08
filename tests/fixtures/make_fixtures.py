@@ -111,6 +111,13 @@ LLM_REPLY = {
         "bond_angle": "Higher benchmark yields raise borrowing costs for emerging-market issuers.", "bond_angle_sources": ["WST-1", "DATA"]},
 }
 
+WEEKLY_REPLY = {"stories": [
+    {"item": "W1", "title": "Northland cuts rates as inflation slows", "what_happened": "The central bank cut its policy rate by 50bp to 5.25% as inflation slowed to 4.1%.",
+     "concept": "monetary-policy", "explanation": "Lower interest rates reduce the cost of borrowing, raising consumption and investment, so aggregate demand rises."},
+    {"item": "W3", "title": "Eastovia's currency slides", "what_happened": "The currency weakened 3.1% against the dollar as reserves fell to 2.0 months of imports.",
+     "concept": "not-a-concept", "explanation": "Falling reserves signal less support for the currency, reducing demand for it."},
+    {"item": "W99", "title": "Not a real item"}]}
+
 if __name__ == "__main__":
     (HERE / "countries_test.yaml").write_text(COUNTRIES)
     (HERE / "feed.xml").write_text(RSS)
