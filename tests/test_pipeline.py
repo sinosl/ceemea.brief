@@ -298,3 +298,69 @@ def test_full_run_writes_global_section_and_deep_dives(tmp_path, cfg):
     assert "Figure 75 not found" in page                     # flags carry through to the deep dive
     assert "does not publish a monthly inflation breakdown" in (tmp_path / "docs" / "country" / "EST.html").read_text()
     assert "Westland" in (tmp_path / "docs" / "country" / "index.html").read_text()
+
+
+def test_chat_client_retries_when_service_busy(monkeypatch):
+    from ceemea_brief import llm
+    replies = iter([503, 503, 200])
+
+    class Resp:
+        def __init__(self, code): self.status_code, self.text = code, "busy"
+        def json(self): return {"choices": [{"message": {"content": "ok"}}]}
+
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: Resp(next(replies)))
+    monkeypatch.setattr(llm, "PAUSE_SECONDS", 0)
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    assert llm.ChatClient(token="t").complete("s", "u") == "ok"          # succeeds on the third try
+
+    replies = iter([503, 503, 503])
+    with pytest.raises(llm.BusyError):
+        llm.ChatClient(token="t").complete("s", "u")                    # gives up after two retries
+
+
+# ------------------------------------------------------------------ topics, weekly digest, diagrams
+def test_topic_tagging():
+    from ceemea_brief import topics
+    tags = topics.tag("The central bank cut its policy rate by 50bp; the lira weakened 3% against the dollar.")
+    assert tags[:2] == ["exchange-rates", "monetary-policy"] or set(tags[:2]) == {"exchange-rates", "monetary-policy"}
+    assert topics.tag("Football team wins the cup") == []
+
+
+def test_weekly_digest_and_topic_archive(tmp_path, cfg):
+    from ceemea_brief import weekly
+    data = tmp_path / "data"
+    hist = data / "history"
+    hist.mkdir(parents=True)
+    (hist / "2026-10-19.json").write_text(json.dumps(fx_data.PREVIOUS))
+    raw = fx_data.raw_inputs()
+    raw["generated"] = "2026-10-23T06:00:00+00:00"
+    pipeline.run(run_date="2026-10-23", raw=raw, cfg=cfg, use_llm=True, out_dir=tmp_path / "docs",
+                 history_dir=hist, client=FakeClient())            # 23 Oct 2026 is a Friday
+    dg = json.loads((data / "weekly" / "2026-W43.json").read_text())
+    s1, s2 = dg["stories"]                                         # the unknown item W99 is dropped
+    assert (s1["country"], s1["concept"], s1["flags"]) == ("Northland", "monetary-policy", [])
+    assert (s2["country"], s2["concept"]) == ("Eastovia", "exchange-rates")   # unknown concept replaced by its tag
+    assert s2["flags"] == ["Figure 2.0 not found in any source; check before use."]
+    page = (tmp_path / "docs" / "weekly" / "index.html").read_text()
+    assert "Northland cuts rates" in page and "The economics" in page and "⚑" in page
+    assert "marks" not in page and "<svg" not in page and "Edexcel" not in page
+    assert (tmp_path / "docs" / "weekly" / "2026-W43.html").exists()
+    topic = (tmp_path / "docs" / "topics" / "monetary-policy.html").read_text()
+    assert "Explained in the weekly digest" in topic and "../archive/2026-10-23.html#NTH" in topic
+    assert "Monetary policy" in (tmp_path / "docs" / "topics" / "index.html").read_text()
+    assert len(json.loads((data / "briefs" / "2026-10-23.json").read_text())) == 4
+
+
+def test_weekly_falls_back_without_model(tmp_path, cfg):
+    from ceemea_brief import weekly
+    data = tmp_path / "data"
+    hist = data / "history"
+    hist.mkdir(parents=True)
+    pipeline.run(run_date="2026-10-22", raw=fx_data.raw_inputs(), cfg=cfg, use_llm=False,
+                 out_dir=tmp_path / "docs", history_dir=hist, weekly_digest=True)
+    dg = weekly.load_all(data)[0]
+    assert len(dg["stories"]) == 3 and all(s["method"] == "extractive" for s in dg["stories"])
+    assert len({s["iso3"] for s in dg["stories"]}) == 3
+    pipeline.run(run_date="2026-10-21", raw=fx_data.raw_inputs(), cfg=cfg, use_llm=False,
+                 out_dir=tmp_path / "docs", history_dir=hist)
+    assert len(weekly.load_all(data)) == 1
